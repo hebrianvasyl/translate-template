@@ -29,7 +29,7 @@
 наприклад код:
 ```html
     <h4 class="f-feedback-tile">Обратная связь</h4>
-	```
+```
 результат:
 ```html
 <h4 class="f-feedback-tile">/*{'Обратная связь'|translate}*/</h4>
