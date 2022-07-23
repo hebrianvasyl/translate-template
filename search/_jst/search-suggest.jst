@@ -1,0 +1,52 @@
+{if count}
+	<div class="popup light-popup search-suggest">
+		<ul class="search-suggest-l">
+        {for record in records}
+            <li class="search-suggest-l-i">
+                <a href="${record.href}"  class="search-suggest-l-i-link clearfix" name="${record_index}">
+                    <table>
+                        <tr>
+                            <td class="image-column">
+                                <div class="g-l-i-img">
+                                    {if record.title.indexOf("Уценка") != -1}
+                                    <div class="additional-tags">
+                                        <div class="tag tag-sale small">
+                                            <img src="/*{$settings.path.design}*//_.gif">
+                                            <span>Уценка</span>
+                                        </div>
+                                    </div>
+                                    {/if}
+
+                                    ${record.image}
+                                </div>
+                            </td>
+                            <td class="title-column">
+                                {if record.sub_title_big}
+                                    <div class="g-l-i-sub-title-big">${record.sub_title_big}</div>
+                                    <div class="g-l-i-sub-title-small">${record.sub_title_small}</div>
+                                {else}
+                                <div class="g-l-i-title">${record.title}</div>
+                                {/if}
+                            </td>
+                            <td class="price-column">
+                                {if (record.sell_status == "available" || record.sell_status == "limited") && record.price_raw > 0}
+                                    <div class="g-l-i-price-coast">${record.price}</div>
+                                {else}
+                                    <div class="item-status status-${record.sell_status}">
+                                    ${record.sell_status_title}
+                                    </div>
+                                {/if}
+                            </td>
+                        </tr>
+                    </table>
+                </a>
+            </li>
+        {/for}
+        </ul>
+
+		<a href="#" name="show-all" class="search-popup-link show-results-link">
+			<span class="show-results-title">Все результаты</span>
+			<span class="show-results-count">${count}</span>
+		</a>
+	</div>
+{/if}

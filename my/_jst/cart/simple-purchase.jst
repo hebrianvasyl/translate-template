@@ -1,0 +1,101 @@
+<li id="cart_item${purchase.record.id}" class="cart-g-l-i cart-g-l-i-popup clearfix" name="simple-purchase-item"
+	gtm-data='{
+	    "eventLabel":"${purchase.record.goods.id}",
+	    "ecommerce": {
+            "remove": {
+                "products": [{
+                    "name": "${purchase.record.goods.title}",
+                    "id": "${purchase.record.record_id}",
+                    "price": "${purchase.record.price_with_discount.primary.decimals.replace(' ', '')}",
+                    "brand": "${purchase.record.goods.producer}",
+                    "category": "${purchase.record.goods.parent}",
+                    "quantity": "${purchase.record.quantity}"
+                }]
+            }
+        }
+    }'
+	enhanced-gtm-data='{
+		"eventLabel":"${purchase.record.goods.id}",
+		"ecommerce": {
+			"remove": {
+				"products": [{
+					"name": "${purchase.record.goods.title}",
+					"id": "${purchase.record.record_id}",
+					"price": "${purchase.record.price_with_discount.primary.decimals.replace(' ', '')}",
+					"brand": "${purchase.record.goods.producer}",
+					"category": "${purchase.record.goods.parent}",
+					"quantity": "${purchase.record.quantity}"
+				}]
+			}
+		}
+	}'
+>
+	{if object_purchase.isATP()}
+		<div id="purchase_${purchase.record.id}" class="{if object_purchase.isWillBeAddedToOrder()}checked{else}unchecked{/if}">
+	{else}
+		<div id="purchase_${purchase.record.id}" class="{if object_purchase.isWillBeAddedToOrder()}checked{else}ended{/if}">
+	{/if}
+		<div class="cart-g-l-img float-lt">
+			<input type="hidden" name="id" value="${purchase.record.id}">
+			{if object_purchase.isATP()}
+				<input type="checkbox" class="cart-i-check" name="will_be_added_to_order" {if object_purchase.isWillBeAddedToOrder()} checked {/if}>
+			{/if}
+			{if purchase.record.goods.attachments.images[0].medium}
+				{var img = purchase.record.goods.attachments.images[0].medium}
+				<a href="${purchase.record.goods.external_href}" class="cart-g-l-img-link" name="goods-link">
+					<img src="${img.url}" width="${img.width}" height="${img.height}" alt="${purchase.record.goods.title}">
+				</a>
+			{/if}
+		</div>
+		<div class="cart-g-l-content">
+			{if object_purchase.isATP()}
+				<table class="g-l-info popup-cart-g-l-i-info">
+					<tr>
+						<td class=" g-l-info-price">
+                            <div class="cart-g-l-i-title">
+                                <a href="${purchase.record.goods.external_href}" name="goods-link" class="novisited">${purchase.record.goods.title}</a>
+                                {if purchase.record.goods.sell_status == "customized"}
+                                <div class="goods_customized_status">Под заказ.</div>
+                                {/if}
+                            </div>
+						</td>
+						<td class="g-l-info-amount popup-cart-amount"><input type="text" name="quantity" class="input-field g-l-i-amount" value="${purchase.record.quantity}" onFocus="this.select()"></td>
+						<td class="g-l-info-cost" name="cost_with_discount">
+							{if purchase.record.cost_with_discount}
+								${purchase.record.cost_with_discount}
+							{else}
+								${purchase.record.cost}
+							{/if}
+						</td>
+					</tr>
+				</table>
+			{else}
+				<p class="ended-status">Товар закончился</p>
+
+				{var like_href = purchase.record.parent_href}
+
+				{if purchase.record.relations_info && purchase.record.relations_info.like}
+					{var like_href = purchase.record.goods.external_href + "#tab=similar"}
+				{/if}
+
+				<ul class="cart-variants-links-l clearfix">
+					<li class="cart-variants-links-l-i float-lt">
+						<a class="cart-variants-links-l-i-link" href="${like_href}">Выбрать похожую модель</a>
+					</li>
+				</ul>
+			{/if}
+			{if purchase.record.goods.configurable_details}
+				<div class="config-param">
+					{for param in purchase.record.goods.configurable_details}
+						{if param.value}
+							<p class="config-param-line">${param.title}: ${param.value}</p>
+						{/if}
+					{/for}
+				</div>
+			{/if}
+		</div>
+		<a class="delete g-i-delete" name="delete" href="#">
+			<img class="delete-img" width="18" height="20" alt="очистить" src="/*{$settings.path.design}*//_.gif">
+		</a>
+	</div>
+</li>

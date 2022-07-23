@@ -1,0 +1,17 @@
+{if typeof title != 'undefined'}
+<h1 class="light-popup-title">Вы вошли как <span class="user-enter-name">${title}</span></h1>
+{/if}
+<form action="/cgi-bin/form.php?r=/*{$menu.my.href}*/signin/oauth/${type}/&action=authorizeByLogin" class="f-social-confirm">
+	<div class="f-step">
+		<label class="f-label" for="phone-field" style="margin: 0 0 8px 0;">Введите свой номер телефона:</label>
+		<input type="text" class="custom-field-error input-field phone-number inner__item" id="phone-field" name="phone" _required="required" pattern="^\+?[0-9\-() ]{10,19}$" placeholder="+38 (0" tabindex="1" autofocus>
+		<input type="hidden" name="social_id" value="${social_id}">
+		<div class="text-hint phone" style="margin: 4px 0 0 0;">Например, (067) 123-45-67</div>
+	</div>
+	<div class="f-step">
+		<span class="btn-link btn-grey">
+			<button type="submit" class="btn-link-i submit btn-checkout" tabindex="2">Войти</button>
+		</span>
+		<a href="#" class="close-text-link forget forgot-pass-link" name="close">Отмена</a>
+	</div>
+</form>

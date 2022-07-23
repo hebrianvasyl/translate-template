@@ -1,0 +1,28 @@
+<div name="app-message"></div>
+{if typeof title != 'undefined'}
+<h1 class="light-popup-title">Вы вошли как <span class="user-enter-name">${title}</span></h1>
+{/if}
+
+<form class="f-social-confirm">
+	<div class="f-step">
+		<label class="f-label" for="login-field" style="margin: 0 0 8px 0;">Введите свой номер телефона:</label>
+		<input type="text" class="input-field phone-number inner__item" id="login-field" name="login" {if typeof phone != 'undefined'}value="${phone}"{/if}>
+		<div class="text-hint phone" style="margin: 4px 0 0 0;">Например, (067) 123-45-67</div>
+	</div>
+	<div class="user-message" name="msg">
+		<div class="user-message-content" style="color:red;margin:10px 0 20px 0;">
+			{if typeof phone != 'undefined'}Указанный номер телефона уже используется зарегистрированным пользователем, <b>введите пароль</b>.{/if}
+		</div>
+	</div>
+	<div class="f-step">
+		<label class="f-label for-password" for="password-field" style="margin: 0 0 8px 0;">Пароль:</label>
+		<input type="password" class="input-field password inner__item" id="password-field" name="password" autofocus>
+	</div>
+	<div class="f-step">
+		<span class="btn-link btn-grey">
+			<button type="submit" class="btn-link-i submit btn-checkout" name="signin">Войти</button>
+		</span>
+		<a href="#" class="remind-password-link underline novisited forget forgot-pass-link" name="remind">Забыли пароль?</a>
+		<a href="#" class="close-text-link novisited forget forgot-pass-link" name="close">Отмена</a>
+	</div>
+</form>

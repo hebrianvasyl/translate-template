@@ -1,0 +1,123 @@
+{eval}
+
+source_data = getDataFromSource();
+
+if (source_data.sell_status !== undefined) {
+	sell_status = source_data.sell_status;
+	sell_status_title = source_data.sell_status_title;
+}
+
+if (source_data.price !== undefined) {
+	price_uah_object = new Currency_class(source_data.price);
+} else {
+	price_uah_object = new Currency_class(price_uah);
+}
+price_uah_object.setOptions({
+html_tpl: '/*{template_js_fetch file="_jst/price.jst" jst=1}*/'
+});
+if (source_data.old_price !== undefined ) {
+	old_price_object = new Currency_class(source_data.old_price);
+} else if (old_price) {
+	old_price_object = new Currency_class(old_price);
+} else {
+	old_price_object = null;
+}
+
+if (source_data.is_all_details_values_selected !== undefined) {
+	is_all_details_values_selected = source_data.is_all_details_values_selected;
+} else {
+	is_all_details_values_selected = null;
+}
+
+is_ready_to_buy = source_data.goods_id !== null;
+
+discount_value = 0;
+if(old_price_object.get('raw') > price_uah_object.get('raw')) {
+	discount_value = Math.ceil(((price_uah_object.get('raw') - old_price_object.get('raw')) / old_price_object.get('raw')) * 100);
+}
+
+{/eval}
+<!--общий блок-->
+<div class="pp-price-label ${sell_status} {if old_price_object && old_price_object.get('raw') > price_uah_object.get('raw')}with-sell-price{/if}">
+	{if sell_status == "unavailable" || sell_status == "waiting_for_supply"}
+		<div name="sell_status" class="status status-unavailable">
+			<div class="sell-status-title">
+				${sell_status_title}
+			</div>
+		</div>
+		<div class="let-me-know aligned-center" name="waitlist_details"></div>
+	{elseif sell_status == "archive"}
+		<div class="status sell-status-title status-archive">Снят с продаж</div>
+	{else}
+
+	<div name="sell_status" class="status status-${sell_status} {if inCart()}status-in-cart{/if} {if sell_status == "call"}before{/if}">
+		{if inCart()}
+			<div class="sell-status-title">
+				<span class="in-card-span after">Уже в корзине</span>
+			</div>
+		{else}
+			<div class="sell-status-title">
+				${sell_status_title}
+			</div>
+		{/if}
+	</div>
+
+	{if old_price_object || price_uah_object.get('raw')}
+	<!--вывод правого блока с ценой-->
+		<div class="pp-price-label-i coast-block {if old_price_object && old_price_object.get('raw') > price_uah_object.get('raw')}sell-price{/if}">
+			<div class="pp-price-old-wrap">
+                {if old_price_object && old_price_object.get('raw') > price_uah_object.get('raw')}
+                    <div class="pp-price-cost pp-price-cost-old crossed">
+                        ${old_price_object.get('html')}
+                    </div>
+                    {if discount_value != 0}
+                    <div class="pp-price-discount-value">${discount_value}%</div>
+                    {/if}
+                {/if}
+            </div>
+			<div class="pp-price-cur-wrap">
+			/*{App::getStoresFacade()->getCurrenciesStorage()->getPrimaryCurrency() assign='primary_currency'}*/
+				<div class="pp-price-cost uah pp-price-cost-cur" name="/*{$primary_currency.name}*/">
+					{if source_data.same_price !== undefined && !is_ready_to_buy}
+						${source_data.same_price}
+					{elseif price_uah_object.get('raw') != null}
+						{if !is_ready_to_buy}
+							<span>от</span>
+						{/if}
+						${price_uah_object.get('html')}
+					{/if}
+				</div>
+			</div>
+		</div>
+	{/if}
+	<!--вывод левого блока с кнопкой-->
+	<div class="pp-price-label-i">
+		{if sell_status == "call"}
+			<div class="contact-phones-b{if price_uah_object} no-priced{/if}">
+				/*{include file="content-header-requisites.tpl" position='product_page'}*/
+			</div>
+		{else}
+			<div class="pp-to-buy clearfix" name="buy_details">
+				<form method="post" action="/*{$menu.my.href}*/cgi-bin/form.php?r=/*{$menu.my->cart.href|@urlencode}*/&action=buy">
+					{if inCart()}
+						<span class="g-l-i-price-buy">
+                            <a class="btn-link-i g-buy g-buy-in-cart" name="showcart" class="make-order g-buy">
+                                Оформить заказ&nbsp;
+                            </a>
+                        </span>
+					{elseif is_ready_to_buy}
+						<span class="g-l-i-price-buy">
+							<a class="btn-link-i g-buy" name="topurchases" class="make-order g-buy">
+								{if sell_status == "customized" }Под заказ{else}Купить{/if}
+							</a>
+						</span>
+					{elseif !is_all_details_values_selected}
+						<div class="buy-grey">Купить</div>
+					{/if}
+				</form>
+			</div>
+		{/if}
+		<div class="additional-btn-place">&nbsp;</div>
+	</div>
+	{/if}
+</div>

@@ -1,0 +1,266 @@
+<div class="new-wishlist-b hidden" id="new_wishlist_block">
+	<form class="clearfix" action="#" name="create_wishlist_form" method="get">
+
+		<div class="float-lt">
+			<input type="hidden" name="action" value="create" />
+			<label>Название списка</label>
+			<input class="input-field" type="text" required="1" value="Мой список" name="wishlist_title" onFocus="this.selectionStart = this.value.length">
+			<span class="btn-link btn-link-blue">
+				<button type="submit" class="btn-link-i">Сохранить</button>
+			</span>
+		</div>
+
+		<a href="#" onclick="return false" class="wishlist-status float-rt novisited" name="is_default">
+			<span>Сделать по-умолчанию</span>
+		</a>
+	</form>
+</div>
+
+{if Object.getLength(wishlists)}
+
+	{for wishlist in wishlists}
+
+		<div id="wishlist_${wishlist.id}" class=" wishlist-b" name="wishlist">
+
+			<div class="wishlist-i wishlist-head clearfix">
+				<div class="wishlist-head-i float-lt">
+					<h4 class="wishlist-title float-lt" name="wishlist_title">${wishlist.title.stripScripts()}</h4>
+					<form class="wishlist-edit-b hidden" name="wishlist_rename_form">
+						<input class="input-field" type="text" required="1" name="wishlist_title" value="${wishlist.title.stripScripts()}" onFocus="this.selectionStart = this.value.length">
+						<span class="btn-link btn-link-blue btn-link-save">
+							<button type="submit" class="btn-link-i">Сохранить</button>
+						</span>
+						<span class="btn-link btn-grey submit-btn btn-link-abort" name="wishlist_abort">
+							<a href="#" class="btn-link-i">Отменить</a>
+						</span>
+						<input type="hidden" name="wishlist_id" value="${wishlist.id}" />
+						<input type="hidden" name="action" value="rename" />
+					</form>
+					<div class="wishlist-btn-controls float-lt" name="links_hint">
+						<a class="wishlist-btn-controls-i btn-rename float-lt hint-link" href="#" data-title="Переименовать список" name="rename_wishlist">
+							<img class="wishlist-btn-controls-img" height="15" width="15" src="/*{$settings.path.design}*//icon-pencil.png" alt="Переименовать" />
+						</a>
+						<a class="wishlist-btn-controls-i btn-del float-lt hint-link" data-title="Удалить список" href="#" name="delete_wishlist">
+							<img class="wishlist-btn-controls-img" height="16" width="13" src="/*{$settings.path.design}*//icon-remove.png" alt="Удалить" />
+						</a>
+					</div>
+				</div>
+
+				{if Object.getLength(wishlists)>1}
+					<div class="wishlist-status float-rt" name="is_wishlist_default">
+						{if wishlist.is_default != 0}
+							<span class="wishlist-status-default before">Список по-умолчанию</span>
+						{else}
+							<a href="#" onclick="return false" class="wishlist-status float-rt novisited" name="make_default">
+								<span>Сделать по-умолчанию</span>
+							</a>
+						{/if}
+					</div>
+				{/if}
+
+
+			</div>
+
+			<div class="site-content catalog stock-catalog" style="padding-bottom: 20px;">
+                <div id="goods-parent">
+					<div class="goods g-tile g-tile-with-separate" name="wishlist_goods">
+
+						<div class="g-l catalog-l">
+
+							{if Object.getLength(wishlist.goods)}
+							{for goods_item in wishlist.goods}
+
+								<div id="wishlist_goods_${goods_item.wishlist_goods_id}" class="g-l-i g-l-i-list" name="wishlist_goods_item" style="margin: 10px 0;">
+
+									<div class="g-l-i-content clearfix visible">
+										<div class="g-l-i-content-i float-lt" id="goods${goods_item.id}">
+											<div class="g-l-i-img">
+                                                <a class="g-l-i-img-link" href="${goods_item.href}">
+                                                    <div class="g-l-i-img-link-i">
+                                                        <img class="g-l-i-img-link-i-img" alt="{$record.title|escape:'quotes'}"
+                                                             alt="${goods_item.title}"
+                                                             title="${goods_item.title}"
+                                                             name="tips-${goods_item.id}"
+                                                             src="${goods_item.image}"
+                                                             width="${goods_item.image_width}"
+                                                             height="${goods_item.image_height}"
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+
+											<div class="g-l-i-details">
+								                <a href="${goods_item.href}">
+								                    <div class="g-details-title">
+								                        ${goods_item.sub_title_big}
+								                    </div>
+								                    <div class="g-details-sub-title-small">
+								                        ${goods_item.sub_title_small}
+								                    </div>
+								                </a>
+											</div>
+
+											{var goods_price = new Currency_class(goods_item.price.value)}
+
+											{if goods_item.is_atp}
+	                                            <div class="price-block">
+	                                                <span>Цена:</span>
+	                                                <span class="price">${goods_price.get("html")}</span>
+	                                            </div>
+                                            {else}
+                                                <div class="g-l-i-status">${goods_item.sell_status.title}</div>
+                                            {/if}
+
+											<div class="g-info-l description">
+
+												{if goods_item.is_offer_selected}
+													{if goods_item.is_atp}
+	                                                <div class="g-l-i-content-i-wrap ${goods_item.sell_status.value}">
+	                                                    <div class="g-l-i-price btn-grey"
+	                                                        name="buy_catalog"
+	                                                        gtm-data='{ "eventLabel":"${goods_item.id}"}'
+	                                                    ></div>
+	                                                    <div class="hidden" name="price">${goods_price.get("html")}</div>
+	                                                </div>
+	                                                {/if}
+
+													<script>
+														GoodsCatalog.addEntity('Goods', { 'goods_id': ${goods_item.id}, 'added_to_cart_price': 'goods_price.get("raw")' });
+													</script>
+
+												/*{*Выбран конфигурируемый товар*}*/
+												{else}
+
+													{if goods_item.min_price}
+														<div class="g-l-i-content-i-wrap sku-content available">
+														<div class="g-l-i-price">
+															{if !goods_item.is_same_prices} от {/if}${goods_item.min_price}
+														</div>
+													{else}
+														<div class="g-l-i-content-i-wrap sku-content unavailable">
+															<div class="g-l-i-status">Нет в наличии</div>
+														</div>
+													{/if}
+
+												{/if}
+
+												<div class="g-compare-l clearfix">
+													<div id="show-hide-container${goods_item.id}">
+	                                                    <ul class="wishlist-btn-controls" name="categories_cut_block">
+
+	                                                        <li name="more_parent" class="wishlist-move-li wishlist-btn-controls-i">
+	                                                            <!--------------click---------------->
+	                                                            <a onclick="return false" class="wishlist-btn-controls-i-link novisited btn-move before" href="#" more_hide name="more_categories"
+	                                                                goods_id="${goods_item.id}"
+	                                                            >
+	                                                                <span class="underline" name="del">Переместить</span> ▼
+	                                                            </a>
+
+	                                                            <ul name="categories_cut" class="subnodes-l under-cut">
+
+	                                                                {for wishlist_item in wishlists}
+
+	                                                                {if wishlist_item == wishlist}
+	                                                                <li class="wishlist-more-links-l-i current before"><span class="wishlist-more-links-l-i-link novisited">${wishlist_item.title.stripScripts()}</span></li>
+	                                                                {else}
+	                                                                <li class="wishlist-more-links-l-i">
+	                                                                    <form class="wishlist-more-links-l-i-link novisited" action="?action=move&r=/*{$menu.my.href}*/wishlists/" method="post">
+	                                                                        <input type="hidden" name="goods_id" value="${goods_item.wishlist_goods_id}"/>
+	                                                                        <input type="hidden" name="wishlist_id" value="${wishlist_item.id}"/>
+	                                                                        <a onclick="this.parentNode.trySend({process : process_tpl});">${wishlist_item.title.stripScripts()}</a>
+	                                                                    </form>
+	                                                                </li>
+	                                                                {/if}
+
+	                                                                {/for}
+
+	                                                            </ul>
+
+	                                                        </li>
+	                                                        <!--------------show/hide element---------------->
+	                                                        <li class="wishlist-delete-li wishlist-btn-controls-i" id="wishlist_goods_delete_link_block_${goods_item.id}" style="height: 18px">
+
+	                                                            <a class="wishlist-btn-controls-i-link novisited btn-del before" href="#"
+	                                                               name="wishlist_goods_delete"
+	                                                               gtm-data='{"eventLabel":"${goods_item.id}"}'>
+
+	                                                                <span class="underline">Удалить</span>
+
+	                                                            </a>
+
+	                                                        </li>
+
+	                                                    </ul>
+	                                                </div>
+												</div>
+
+												{if goods_item.icons.length > 0}
+
+												{else if goods_item.details.length > 0}
+												<div class="goods-details-full">
+													<ul class="g-info-l">
+														{for detail in goods_item.details}
+														<li class="g-info-l-i">
+                                                            <span class="g-info-l-i-prop">${detail.title}:</span> ${detail.value}
+                                                        </li>
+                                                        {/for}
+													</ul>
+												</div>
+												{/if}
+
+											</div>
+
+										</div>
+
+										<script type="text/javascript">
+
+											var MoreBlock = new MoreBlock_class();
+
+											MoreBlock.setOptions({
+												more_hide_text: '<span class="underline">Переместить</span> &#9660;',
+												more_show_text: '<span class="underline">Переместить</span> &#9650;'
+											}).init('show-hide-container${goods_item.id}');
+
+										</script>
+
+									</div>
+								</div>
+							{/for}
+							{else}
+							<div>
+								<div class="empty-wishlist" >
+									<p class="epmty-wishlist-p">
+										Ваш список желаний пуст. Пожалуйста,
+										<a class="epmty-wishlist-p-link novisited" href="/*{$menu.www.href}*/">
+											добавьте товары
+										</a>
+									</p>
+								</div>
+							</div>
+							{/if}
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="wishlist-footer clearfix">
+				<div class="share-b float-lt">
+					<p class="share-b-title">Рассказать друзьям в соцсетях:</p>
+					<ul class="social-share-l" name="wishlist_share_buttons"></ul>
+				</div>
+				<div class="wishlist-buy-b float-rt">
+					{if wishlist.goods.length && wishlist.total_cost > 0}
+					<p class="wishlist-buy-title">В списке <span>${wishlist.goods.length}</span> товар${wishlist.goods.length|morphology} на сумму ${wishlist.total_cost} грн</p>
+						<span class="btn-link btn-link-green float-rt">
+							<a class="btn-link-i" href="#" name="buy_all_goods">Купить все товары</a>
+						</span>
+					{/if}
+				</div>
+			</div>
+		</div>
+
+	{/for}
+{else}
+<div id="no_wishlists">Вы еще ничего не добавляли в избранное</div>
+{/if}

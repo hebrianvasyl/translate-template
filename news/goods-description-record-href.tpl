@@ -1,0 +1,1 @@
+{if $record->news and $menu.www}{$menu.www->news.href}{if $record->news->parent && $record->news->parent->parent}{$record->news->parent->parent.name}/{/if}{if $record->news->parent}{$record->news->parent.name}/{/if}{$record->news.name}/{/if}

@@ -1,0 +1,1 @@
+{if $menu.www}{$menu.www->news.href}{$record.created|@date_format:"%Y"}/{$record.name}{$smarty.const.SITE_EXTENTION_DEFAULT}{/if}

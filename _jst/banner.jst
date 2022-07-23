@@ -1,0 +1,30 @@
+<div class="sidebar-i-banner-i">
+	<a href="${url}" target="_blank"
+		enhanced-gtm-data='{
+			"eventLabel": "${alt}",
+			"ecommerce": {
+				"promoClick": {
+					"promotions": [
+						{
+							"id": ${id},
+							"name": "${alt}"
+						}]
+				}
+			}
+		}'
+	>
+		{if price}
+        <div class="banner-price" style="top:${images_price_position_top}%;left:${images_price_position_left}%">
+            <span>${price}</span>
+        </div>
+        {/if}
+        {if src}
+		<img class="banners-i-link-img" src="${src}" width="${width}" height="${height}" alt="${alt}" />
+		{/if}
+		{if template}
+        <div class="banner-template banner-template-square">
+            ${template}
+        </div>
+        {/if}
+	</a>
+</div>

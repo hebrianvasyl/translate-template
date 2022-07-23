@@ -1,0 +1,22 @@
+<div class="variants-b">
+	<ul class="variants-l clearfix">
+		/*{foreach from=$goods_variants item="goods_variant"}*/
+			/*{if $goods_variant->$detail_name!=""}*/
+				<li class="variants-l-i">
+					<a class="variants-link variants-l-i-image" href="/*{$goods_variant.external_href}*/">
+						<img class="variants-link-img" src="/*{$goods_variant->attachments->images.medium.url}*/">
+					</a>
+					<a class="variants-link variants-l-i-name" href="/*{$goods_variant.external_href}*/">/*{$goods_variant->$detail_name}*/</a>
+					/*{if $goods_variant['sell_status'] == 'available'}*/
+					<p class="variants-link-price black variants-l-i-price">/*{$goods_variant->price nofilter}*/</p>
+					/*{else}*/
+					<p class="variants-link-price variants-l-i-status">/*{$goods_variant->getSellStatusTitle() nofilter}*/</p>
+					/*{/if}*/
+					<div class="main-details">
+					/*{$goods_variant->getVariantsCompareBlock() nofilter}*/
+					</div>
+				</li>
+			/*{/if}*/
+		/*{/foreach}*/
+	</ul>
+</div>

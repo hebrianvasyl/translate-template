@@ -1,0 +1,70 @@
+{if cart.purchases.length}
+<div id='cart_popup'>
+	{var purchases = Object.values(cart.purchases)}
+	{var new_goods = false}
+
+    <div class="cart-popup-header">
+	{if new_goods}
+		<h1 class="popup-title">Вы добавили в корзину товар</h1>
+        <div class="continue-order-btn">
+            <a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">Продолжить покупки</a>
+        </div>
+	{else}
+		<h1 class="popup-title">Корзина</h1>
+        <div class="continue-order-btn">
+            <a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">Продолжить покупки</a>
+        </div>
+	{/if}
+	</div>
+
+	<div name='app-message'></div>
+
+	<div class="cart-p-content">
+	{if new_goods}
+		{var last_purchase = purchases.pop()}
+		${last_purchase.getHTML(new_goods)}
+		{if purchases.length}
+			<h2 class="popup-subtitle">Другие товары в корзине</h2>
+		{/if}
+	{/if}
+	{if purchases.length}
+		<ul class="cart-g-l" id="cart">
+			{for purchase in purchases}
+				${purchase.getHTML()}
+			{/for}
+		</ul>
+	{/if}
+
+	</div>
+		<div class="cart-footer">
+			<div class="cart-total">
+				<span class="cart-total-title">Итого:</span>
+				<span class="cart-total-sum" id="cart_total">${cart.cost_with_discount}</span>
+			</div>
+			<div>
+				<button enhanced-gtm-data='{"eventAction":"checkout"}' class="btn-link-i" id="to_checkout" type="button" onclick="top.location='/*{$menu.my->checkout.href}*/'"{if !cart.cost_with_discount_raw.primary.raw} disabled{/if}>
+					Оформить заказ
+				</button>
+			</div>
+			<div>
+				<a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">Продолжить покупки</a>
+            </div>
+		</div>
+		<div id='cart-popup-accessories'></div>
+
+</div>
+
+{else}
+
+	<div class="popup-cart-empty" id="cart">
+		<div name="close" class="close">
+			<a href="#"></a>
+		</div>
+		<h1 class="popup-title">Корзина пуста</h1>
+		<div name='app-message'></div>
+		<span class="btn-link btn-link-transparent">
+			<a href="#" name="close" class="btn-link-i">&larr; <span class="underline">Продолжить покупки</span></a>
+		</span>
+	</div>
+
+{/if}

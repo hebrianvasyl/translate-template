@@ -1,0 +1,26 @@
+<div class="addresses clearfix">
+	/*{*<div class="checkout-fields-i">
+		/*{UsersSignUp->getCities assign="cities"}*/
+		<select class="input-field enter-field city-select" name="addresses[${i}][city_id]">
+			/*{foreach from=$cities item="city"}*/
+		<option value="/*{$city.id}*/"/*{if $city->is_default}*/ selected="selected"/*{/if}*/>/*{$city->title}*/</option>
+			/*{/foreach}*/
+		</select>&nbsp;
+	</div>*}*/
+	/*{*{if i>0}<a class="delete" href="#" name="remove"><i></i><span>Удалить</span></a>{/if}*}*/
+
+	<input type="hidden" class="addresses_city_id" name="addresses[${i}][city_id]" value="">
+
+	<div class="checkout-fields-i float-lt">
+		<input class="custom-field-error input-field enter-field check-form-input street" name="addresses[${i}][street]" type="text">
+		<span class="checkout-fields-i-options">Улица</span>
+	</div>
+	<div class="checkout-fields-i house-checkout-fields-i float-lt">
+		<input class="custom-field-error input-field enter-field check-form-input house" name="addresses[${i}][house]" type="text">
+		<span class="checkout-fields-i-options">Дом</span>
+	</div>
+	<div class="checkout-fields-i flat-checkout-fields-i float-lt">
+		<input class="input-field enter-field check-form-input flat" name="addresses[${i}][flat]" type="text">
+		<span class="checkout-fields-i-options">Квартира</span>
+	</div>
+</div>

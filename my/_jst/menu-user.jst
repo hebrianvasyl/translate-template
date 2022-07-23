@@ -1,0 +1,28 @@
+<div class="user-enter">
+{for node in nodes}
+	{if node.name=="signin"}
+	<a href="${node.href}" name="${node.name}" class="underline novisited"><i></i>${node.title}</a>
+	<span class="user-enter-choice">|</span>
+	<span class="user-enter-social-label">/*{'Вход через'|translate}*/</span>
+	<ul class="user-enter-social-l clearfix">
+		<li class="user-enter-social-l-i user-enter-social-l-i-link facebook float-lt">
+			<div name="social_button_auth" type="facebook"></div>
+		</li>
+		<li class="user-enter-social-l-i user-enter-social-l-i-link google float-lt">
+            <div name="social_button_auth" type="google"></div>
+        </li>
+		/*{*
+		<li class="user-enter-social-l-i user-enter-social-l-i-link vkontakte float-lt">
+			<div name="social_button_auth" type="vkontakte"></div>
+		</li>
+		*}*/
+	</ul>
+	{else}
+		{if isActive(node)}
+			<span name="${node.name}" class="user-enter-text"><i></i>${node.title}</span>
+		{else}
+			<a href="${node.href}" name="${node.name}" class="user-enter-link user-enter-link-exit float-rt novisited"><i></i>${node.title}</a>
+		{/if}
+	{/if}
+{/for}
+</div>

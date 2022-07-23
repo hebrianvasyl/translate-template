@@ -1,0 +1,58 @@
+{if cart.purchases.length}
+<div id='cart_popup'>
+
+    <div name="close" class="close">
+        <a href="#"></a>
+    </div>
+
+    {var purchases = Object.values(cart.purchases)}
+
+    {if new_goods}
+        <h1 class="popup-title">Вы добавили в корзину товар</h1>
+    {else}
+        <h1 class="popup-title">Корзина</h1>
+    {/if}
+
+    <div name='app-message'></div>
+
+    <div class="cart-p-content">
+    {if new_goods}
+        {var last_purchase = purchases.pop()}
+        ${last_purchase.getHTML(new_goods)}
+        {if purchases.length}
+            <h2 class="popup-subtitle">Другие товары в корзине</h2>
+        {/if}
+    {/if}
+    {if purchases.length}
+        <ul class="cart-g-l" id="cart">
+            {for purchase in purchases}
+                ${purchase.getHTML()}
+            {/for}
+        </ul>
+    {/if}
+
+    </div>
+    <div class="cart-footer" style="padding-bottom: 0;">
+        <div class="cart-total" style="margin-bottom: 0;">
+            <span class="cart-total-title">Итого:</span>
+            <span class="cart-total-sum" data-role="cart_total">${cart.cost_with_discount}</span>
+        </div>
+    </div>
+    <div id='cart-popup-accessories'></div>
+
+</div>
+
+{else}
+
+    <div class="popup-cart-empty" id="cart">
+        <div name="close" class="close">
+            <a href="#"></a>
+        </div>
+        <h1 class="popup-title">Корзина пуста</h1>
+        <div name='app-message'></div>
+        <span class="btn-link btn-link-transparent">
+            <a href="#" name="close" class="btn-link-i">&larr; <span class="underline">Продолжить покупки</span></a>
+        </span>
+    </div>
+
+{/if}

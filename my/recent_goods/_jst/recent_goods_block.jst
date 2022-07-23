@@ -1,0 +1,248 @@
+{if goods.length}
+<div name="app-message"></div>
+<div class="content" name="recent-goods-block">
+	<section class="g slider padding-in">
+		<header class="recent-viewed-head">
+			<div class="recent-viewed-title">Товары, которые вы смотрели</div>
+			<a id="recent_goods_save" class="underline recent-viewed-link" name="signin" href="#">Сохранить историю просмотра</a>
+		</header>
+		<div class="slider tab-content-scroll catalog" id="recent_goods_carousel">
+			<a href="#" class="btn btn-rt carousel_control_right" name="carousel_control_right"><img class="btn-img sprite" width="57" height="57" alt="" src="/*{$settings.path.design}*//_.gif"></a>
+			<a href="#" class="btn btn-lt carousel_control_left" name="carousel_control_left"><img class="btn-img sprite" width="57" height="57" alt="" src="/*{$settings.path.design}*//_.gif"></a>
+			<div class="scroll-block slider-i g hits g-tile">
+				<ul class="g-l catalog-l clearfix recent-carousel" name="carousel_container">
+
+					{for item in goods}
+						{var price = new Currency_class(item.price)}
+						{var old_price = new Currency_class(item.old_price)}
+						{var min_price = new Currency_class(item.min_price)}
+
+                        {var additional_class = ""}
+                        {if old_price.get("raw") > price.get("raw")}
+                        {var additional_class = "red-price"}
+                        {elseif "left_top_tags" in item}
+                            {if item.left_top_tags != null && item.left_top_tags.length > 0}
+                            {var additional_class = "blue-price"}
+                            {/if}
+                        {/if}
+
+						<li class="g-l-i float-lt recent-carousel-i ${additional_class}" name="carousel_element">
+							{if "left_top_tags" in item}
+								{if item.left_top_tags != null && item.left_top_tags.length > 0}
+	                            <div class="additional-tags left-top">
+	                                {for tag in item.left_top_tags}
+	                                <div class="tag tag-${tag.class}" {if tag.bg_color} style="background-color: #${tag.bg_color};"{/if}>
+	                                    {if tag.image}
+	                                    <img class="additional-tags-img" src="${tag.image}">
+	                                    {/if}
+	                                    <span{if tag.text_color} style="color: #${tag.text_color};"{/if}>${tag.title}</span>
+	                                </div>
+	                                {/for}
+	                            </div>
+	                            {/if}
+                            {/if}
+
+							<div class="g-l-i-content">
+								<div class="g-l-i-content-i" id="goods${item.to_purchase_id}">
+
+									<div class="g-img">
+										<a href="${item.href}" class="g-l-i-img-link">
+											<div class="g-img-link-i">
+											{if item.attachments && item.attachments.images && item.attachments.images.medium}
+											    <div class="pp-image-wrap">
+                                                    <img class="tips"
+                                                         alt="${item.title}"
+                                                         title="${item.title}"
+                                                         name="tips-${item.id}" src="${item.attachments.images.medium.url}"
+                                                         width="${item.attachments.images.medium.width}"
+                                                         height="${item.attachments.images.medium.height}"
+                                                    />
+												</div>
+											{elseif item.images && item.images.medium}
+											    <div class="pp-image-wrap">
+                                                    <img class="tips"
+                                                         alt="${item.title}"
+                                                         title="${item.title}"
+                                                         name="tips-${item.id}" src="${item.images.medium.url}"
+                                                         width="${item.images.medium.width}"
+                                                         height="${item.images.medium.height}"
+                                                    />
+												</div>
+											{/if}
+											</div>
+										</a>
+									</div>
+
+									<div class="goods-icons-wrap">
+                                        {if "goods_icons" in item}
+                                            {if item.goods_icons != null && item.goods_icons.length > 0}
+                                                <div class="goods-icons-b goods-icons-catalog-b">
+                                                    {for icon in item.goods_icons}
+                                                    {if icon && icon.image != null}
+													<div class="goods-icons-b-i">
+														<div class="goods-icons-b-i-wrap">
+															<div class="goods-icons-b-i-img">
+										                        <img alt="${icon.title}"
+	                                                                 title="${icon.title}"
+	                                                                 src="${icon.image}">
+										                    </div>
+										                    {if icon && icon.title != null}
+										                    <div class="goods-icons-b-i-title">
+										                        ${icon.title}
+										                    </div>
+										                    {/if}
+                                                        </div>
+                                                    </div>
+                                                    {/if}
+                                                    {/for}
+                                                </div>
+                                            {/if}
+                                        {/if}
+                                    </div>
+
+									<div class="g-l-i-details">
+										<a href="${item.href}">
+										    <div class="g-details-title">
+                                                {if item.sub_title_big}
+                                                    ${item.sub_title_big}
+                                                {/if}
+                                                </div>
+                                                <div class="g-details-sub-title-small">
+                                                    {if item.sub_title_small}
+                                                        ${item.sub_title_small}
+                                                    {else}
+                                                        ${item.title}
+                                                    {/if}
+                                                </div>
+                                            </a>
+									</div>
+
+									<div class="b-rating clearfix">
+                                        {if item.users_rating}
+										    {var rating = item.users_rating * 20}
+                                        {else}
+                                            {var rating = 0}
+                                        {/if}
+
+                                        <div class="rating float-lt">
+                                            <div class="rating-i" style="width:${rating}%"></div>
+                                        </div>
+
+										{if item.count_comments && item.count_comments != 0}
+											<div class="rating-content float-rt">
+												<a href="${item.href}#tab=comments">${item.count_comments} отзыв${item.count_comments|morphology}</a>
+											</div>
+										{else}
+											<div class="rating-content float-rt">
+												<a href="${item.href}#tab=comments">оставь отзыв</a>
+											</div>
+										{/if}
+
+									</div>
+
+									{if item.type == "configurable"}
+
+										{if min_price.get("raw")}
+										<div class="g-l-i-content-i-wrap sku-content available">
+											<div class="g-l-i-content-wrap">
+												<div class="price">
+													<div class="g-l-i-price">от ${min_price.get("html")}</div>
+												</div>
+											</div>
+										</div>
+										{else}
+											<div class="g-l-i-content-i-wrap sku-content unavailable">
+												<div class="g-l-i-status">Нет в наличии</div>
+											</div>
+										{/if}
+									{else}
+
+										{if item.sell_status == "unavailable"}
+
+											<div class="g-l-i-status recent-unavailable">Нет в наличии</div>
+											/*{*<div class="waitlist-btn-wrap small" name="waitlist_catalog"></div>*}*/
+
+										{elseif item.sell_status == "waiting_for_supply"}
+
+											<div class="g-l-i-status recent-waiting">Ожидается поставка</div>
+											/*{*<div class="waitlist-btn-wrap small" name="waitlist_catalog"></div>*}*/
+
+										{elseif item.sell_status == "call"}
+
+											<div class="g-l-i-status status-call before">Наличие уточняйте</div>
+
+                                            /*{*
+											{if (price.get("raw"))}
+												<div class="recent-call-price-b">
+													<div class="recent-call-price-old">${price.get("html")}</div>
+												</div>
+												<div class="g-l-i-price recent-call-price">
+													${price.get("html")}
+												</div>
+											{/if}
+											*}*/
+
+										{else}
+
+											{if (price.get("raw"))}
+											    <div class="price-block">
+                                                    <span>Цена:</span>
+                                                    {if old_price.get("raw") > price.get("raw")}
+                                                        <span class="old-price">${old_price.get("html")}</span>
+                                                    {/if}
+                                                    <span class="price" name="UAH">${price.get("html")}</span>
+                                                </div>
+											{/if}
+
+										{/if}
+									{/if}
+
+									<div class="g-info-l description">
+									    {if item.sell_status != "unavailable"}
+                                            <div class="g-l-i-price btn-grey" name="buy_catalog"></div>
+                                        {/if}
+                                        <div class="hidden" name="price">
+                                            ${price.get("string")}
+                                        </div>
+
+                                        {if item.goods_icons != null  && item.goods_icons.length > 0}
+                                            <div class="goods-icons-full">
+                                                <div class="goods-icons-b goods-icons-catalog-b">
+                                                    {for icon in item.goods_icons}
+                                                    {if icon && icon.image != null}
+                                                    <div class="goods-icons-b-i">
+                                                        <div class="goods-icons-b-i-wrap">
+                                                            <div class="goods-icons-b-i-img">
+                                                                <img alt="${icon.title}"
+                                                                     title="${icon.title}"
+                                                                     src="${icon.image}">
+                                                            </div>
+                                                            {if icon && icon.title != null}
+                                                            <div class="goods-icons-b-i-title">
+                                                                ${icon.title}
+                                                            </div>
+                                                            {/if}
+                                                        </div>
+                                                    </div>
+                                                    {/if}
+                                                    {/for}
+                                                </div>
+                                            </div>
+                                        {elseif item.details}
+	                                        <div class="goods-details-full">
+	                                            {var parser = new DOMParser();}
+	                                            {var htmlDoc = parser.parseFromString(item.details, "text/html");}
+	                                            <ul class="g-info-l">${htmlDoc}</ul>
+	                                        </div>
+                                        {/if}
+									</div>
+								</div>
+							</div>
+						</li>
+					{/for}
+				</ul>
+			</div>
+		</div>
+	</section>
+</div>
+{/if}

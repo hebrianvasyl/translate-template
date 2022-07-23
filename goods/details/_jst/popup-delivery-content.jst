@@ -1,0 +1,34 @@
+/*{Cities->getBigCities assign="cities"}*/
+/*{Cities->getRandomCity assign="random_city"}*/
+
+<h2 class="header-city-title">Выберите свой город</h2>
+<p class="header-city-delivery sprite-side">доставляем заказы по&nbsp;всей Украине!</p>
+<div class="header-city-box clearfix" name="xhr_container">
+	/*{foreach from=$cities item="city"}*/
+	<div class="header-city-i">
+        <a href="#" class="header-city-i-link novisited" data-city-id="/*{$city['id']}*/">/*{$city['title']}*/</a>
+    </div>
+	/*{/foreach}*/
+</div>
+<p>Или введите другой населенный пункт Украины</p>
+<div class="header-city-search">
+    <div class="f-i-field" id="new_user_locality">
+        <div id="countries"></div>
+        <div class="f-i-field-border">
+            <input type="text"
+                   id="delivery_cities_suggest"
+                   class="input-field search-text stw-popup-text custom-field-error search-text-default"
+                   _required="required"
+                   placeholder="Введите свой город"
+                   autocomplete="off" />
+            <button class="btn-field-list cities-show-default"></button>
+        </div>
+    </div>
+    <!--
+    <div style="position: absolute; margin-top: 37px;"></div>
+    <input id="popup_suggest_locality" autocomplete="off" name="suggest_locality" type="text" placeholder="Введите свой город" tabindex="6" value="" maxlength="200" class="input-text header-city-search-input-text">
+    <div id="tip_for_input"></div>
+    -->
+</div>
+<div class="header-city-search-example" name="xhr_container">  Например, <a href="#" class="novisited header-city-search-example-link" data-city-id="/*{$random_city['id']}*/">/*{$random_city['title']}*/</a>  </div>
+<p class="header-city-info">Выбор города поможет предоставить актуальную информацию о&nbsp;наличии товара, его цены и&nbsp;способов доставки в&nbsp;вашем городе! Это поможет сохранить больше свободного времени для вас!</p>

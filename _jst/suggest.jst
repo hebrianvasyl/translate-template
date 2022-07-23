@@ -1,0 +1,17 @@
+{if count}
+	<div class="popup light-popup">
+		<ul class="search-suggest-l">
+			{for record in records}
+				<li class="search-suggest-l-i suggest-${record.id}">
+					<a href="#"  class="search-suggest-l-i-link clearfix" name="${record_index}">
+						<div class="g-l-i-title">${record.title}</div>
+					</a>
+				</li>
+			{/for}
+		</ul>
+	</div>
+{elseif defined("on_empty_text")}
+	<div class="popup custom-suggest light-popup custom-suggest-empty">
+		${on_empty_text}
+	</div>
+{/if}

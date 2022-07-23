@@ -1,0 +1,30 @@
+{*<div class="site-content main">
+
+    <div class="clearfix">
+
+        <div class="intexpool-help">
+            <h4>Помощь от IntexPool</h4>
+            <div class="bg">
+                <div class="content">
+                    <div class="content-title">Полезная и необходимая информация</div>
+                    <p>О продукции Intex и Bestway</p>
+                </div>
+                <ul>
+                  <li><a href="{$menu.www->qa.href}">Вопросы и ответы</a></li>
+                  <li><a href="{$menu.www->articles.href}">Советы - Статьи</a></li>
+                  <li><a href="{$menu.www->videocontent.href}">Видеоинструкции</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mainpage-social-widgets clearfix">
+
+            {include file="main/social-widgets.tpl"}
+
+            {include file="main/body-banner-block-2.tpl"}
+
+        </div>
+
+    </div>
+
+</div>*}

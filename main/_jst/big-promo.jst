@@ -1,0 +1,42 @@
+{var count=0}
+<div class="b-promo-visuals clearfix">
+	<a class="btn btn-lt float-lt" id="navigator_left" href="#"><img class="btn-img sprite" src="/*{$settings.path.design}*//_.gif" ></a>
+	<a class="btn btn-rt float-rt active" id="navigator_right" href="#"><img class="btn-img sprite" src="/*{$settings.path.design}*//_.gif" ></a>
+	<div class="b-promo-visuals-i" name="parent_block">
+		<ul class="b-promo-visuals-content-l clearfix" name="images">
+			{for page in pages}
+				<li name="image_block" class="b-promo-visuals-content-l-i float-lt {if count==0} active{/if}"
+					enhanced-gtm-data='{
+						"eventLabel":"Главная. BigPromo - ${page.alt}",
+						"ecommerce": {
+							"promoClick": {
+								"promotions": [
+									{
+										"id": "${page.id}",
+										"name": "${page.alt}"
+									}]
+							}
+						}
+					}'
+				>
+					<a href="${page.url}" class="b-promo-visuals-content-l-i-link">
+						{if page.price}
+                        <div class="banner-price" style="top:${page.slider_price_position_top}%;left:${page.slider_price_position_left}%">
+                            <span>${page.price}</span>
+                        </div>
+                        {/if}
+                        {if page.src}
+						<img class="b-promo-visuals-img" width="${page.width}" height="${page.height}" alt="temp" src="${page.src}" alt="${page.alt}">
+						{/if}
+						{if page.template}
+                        <div class="banner-template banner-template-slider">
+                        ${page.template}
+                        </div>
+                        {/if}
+					</a>
+				</li>
+				{var count=count+1}
+			{/for}
+		</ul>
+	</div>
+</div>

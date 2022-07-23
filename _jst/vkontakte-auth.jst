@@ -1,0 +1,26 @@
+/*{SocialAccounts->getChildController assign="VKAuth" name="vkontakte"}*/
+/*{if !empty($VKAuth) and !empty($menu.my->signin->oauth->vkontakte.href)}*/
+{if App.get("User").isAuthInSocial("vkontakte")}
+	<div class="social-unbind vk-unbind">
+		<p>${title}</p>
+		<form class="social-unbind-f" action="/*{$menu.my.href}*/cgi-bin/form.php?r=/*{$menu.my->signin->oauth->vkontakte.href|@urlencode}*/&action=unbindAccount&type=vkontakte" method="post">
+			<input type="hidden" name="type" value="vkontakte" />
+			<span class="btn-link btn-grey">
+				<button type="submit" class="btn-link-i social-unbind-f-button" name="signin">разорвать связь</button>
+			</span>
+		</form>
+	</div>
+{else}
+	<a target="_blank"
+		href="/*{$VKAuth->getDialogUrl($menu.my->signin->oauth->vkontakte.href)}*/"
+		class="user-enter-social-l-i-link-icon"
+	>
+		<div class="social-big-btn-i clearfix">
+			<span class="social-enter-icon vk-btn float-lt">
+				<img class="social-enter-icon-img" alt="vk" src="/*{$settings.path.design}*//_.gif">
+			</span>
+			<span class="social-enter-text float-lt">Вконтакте</span>
+		</div>
+	</a>
+{/if}
+/*{/if}*/

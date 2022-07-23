@@ -1,0 +1,68 @@
+<div class="popup popup-img-viewer" name="popup-img-viewer">
+	<div name="close" class="close">
+		<a href="#" title="Закрыть"></a>
+	</div>
+	<div name="content" id="goods${goods_id}">
+		<h1 class="popup-title" name="title"></h1>
+
+		<div class="popup-img-viewer-body clearfix">
+
+			{if data.length>0}
+			<div class="b-img-viewer-scroll left float-lt">
+				<a href="#" class="img-viewer-scroll-link" name="scroll_left"></a>
+			</div>
+			<div class="b-img-viewer-scroll right float-rt">
+				<a href="#" class="img-viewer-scroll-link" name="scroll_right"></a>
+			</div>
+			{/if}
+
+			<div class="img-original" name="image"></div>
+		</div>
+
+		<div class="popup-img-viewer-content clearfix">
+			<div class="popup-img-viewer-content-i img-preview-wrap float-lt" name="controls">
+				{if data.length>0}
+                    {for img in data}
+                        <div class="img-preview-i" name="preview">
+                            <a href="${img.original.src}" class="img-preview-i-link" target="_blank"></a>
+                        </div>
+                    {/for}
+				{/if}
+				{if videos.length > 0}
+                    <div class="img-preview-b video-preview-b">
+                        {for video in videos}
+                            {if video.title2}
+                                {var title = video.title2}
+                            {else}
+                                {var title = video.title}
+                            {/if}
+                            <div class="img-preview-i video-preview-i" name="preview">
+                                <a
+                                    href="${video.embed_url}"
+                                    class="img-preview-i-link video-preview-i-link"
+                                    target="_blank"
+                                    title="${title}"
+                                >
+                                    <div class="icon-video-container">
+                                        {if video.image}
+                                        <div class="icon-video-container-img-wrap">
+	                                        <img alt="${title}"
+	                                             title="${title}"
+	                                             src="${video.image}"
+	                                             width="75">
+                                        </div>
+                                        {else}
+                                        <i class="icon-video"></i>
+                                        {/if}
+                                        <span class="video-review-text">${title}</span>
+                                    </div>
+                                </a>
+                            </div>
+                        {/for}
+                    </div>
+                {/if}
+			</div>
+
+		</div>
+	</div>
+</div>

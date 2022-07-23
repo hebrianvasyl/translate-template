@@ -1,0 +1,69 @@
+/*{App::getStoresFacade()->getCurrenciesStorage()->getPrimaryCurrency() assign='primary_currency'}*/
+
+{var old_price_object = new Currency_class(old_price)}
+{var price_uah_object = new Currency_class(price_uah)}
+
+{eval}
+	price_uah_object.setOptions({html_tpl: '/*{template_js_fetch file="_jst/price.jst" jst=1}*/'});
+{/eval}
+
+
+	<div class="pp-price-label ${sell_status}">
+		<div name="sell_status" class="status status-${sell_status} {if inCart()}status-in-cart after{/if} {if sell_status == "call"}before{/if}">
+		{if inCart()}
+			<div class="sell-status-title">
+				<span class="in-card-span after">Уже в корзине</span>
+			</div>
+		{else}
+			<div class="sell-status-title">
+				${sell_status_title}
+			</div>
+		{/if}
+	</div>
+	{if sell_status == "unavailable" || sell_status == "waiting_for_supply"}
+		<div class="let-me-know aligned-center" name="waitlist_details"></div>
+	{elseif sell_status == "archive"}
+		<div class="status sell-status-title status-archive">Снят с продаж</div>
+	{else}
+	{if old_price_object.get('raw') || price_uah_object.get('raw')}
+		<div class="pp-price-label-i coast-block">
+			<div class="pp-price-old-wrap">
+				{if old_price_object.get('raw')}
+					<div class="pp-price-cost pp-price-cost-old">
+						{if old_price_object.get('raw') > price_uah_object.get('raw')}${old_price_object.get('html')}{/if}
+					</div>
+				{/if}
+			</div>
+			<div class="pp-price-cur-wrap">
+                <div class="pp-price-cost uah pp-price-cost-cur" name="/*{$primary_currency.name}*/">${price_uah_object.get("html")}</div>
+            </div>
+		</div>
+	{/if}
+	<div class="pp-price-label-i">
+
+		{if sell_status == "call"}
+			<div class="contact-phones-b{if price_uah_object.get('raw')} no-priced{/if}">
+				/*{include file="content-header-requisites.tpl" position='product_page'}*/
+			</div>
+		{else}
+			<div class="pp-to-buy clearfix" name="buy_details">
+				<form method="post" action="/*{$menu.my.href}*/cgi-bin/form.php?r=/*{$menu.my->cart.href|@urlencode}*/&action=buy">
+					{if inCart()}
+						<div class="checkout-link-block">
+							<a class="checkout-link novisited fs-15" href="/*{$menu.my->checkout.href}*/">
+								Оформить заказ&nbsp;
+							</a>
+						</div>
+					{else}
+						<span class="btn-link g-l-i-price-buy">
+							<a class="btn-link-i g-buy" name="topurchases" class="make-order g-buy">
+								{if sell_status == "customized" }Заказать{else}Купить{/if}
+							</a>
+						</span>
+					{/if}
+				</form>
+			</div>
+		{/if}
+	</div>
+	{/if}
+</div>

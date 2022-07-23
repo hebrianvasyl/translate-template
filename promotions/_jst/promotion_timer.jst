@@ -1,0 +1,57 @@
+<p class="pp-a-capt">До конца акции:</p>
+<div class="pp-a-time" id="timer">
+    {var days = getCellText('days').toInt()}
+	{if promotion_days > 0}
+	    <span class="pp-a-timer-days">${promotion_days} ${promotion_days|morphology:["день","дня","дней"]}</span>
+	{else}
+		{if days > 0 && hide_counter == 0}
+		<span class="pp-a-timer-days">${days} ${days|morphology:["день","дня","дней"]}</span>
+		{/if}
+	{/if}
+	<div class="pp-a-timer-container">
+
+		<div class="pp-a-timer clearfix">
+
+			{var hours = getCellText('hours')}
+			<div class="pp-a-timer-i pp-a-timer-i-hrs float-lt" name="cell" data-bind="hours">
+				<div class="digit float-lt">
+					<div class="value">${hours[0]}</div>
+					<div class="value"></div>
+				</div>
+				<div class="digit float-lt">
+					<div class="value">${hours[1]}</div>
+					<div class="value"></div>
+				</div>
+			</div>
+
+			{var minutes = getCellText('minutes')}
+			<div class="pp-a-timer-i pp-a-timer-i-min float-lt" data-bind="minutes" name="cell">
+				<div class="digit float-lt">
+					<div class="value">${minutes[0]}</div>
+					<div class="value"></div>
+				</div>
+				<div class="digit float-lt">
+					<div class="value">${minutes[1]}</div>
+					<div class="value"></div>
+				</div>
+			</div>
+
+			{var seconds = getCellText('seconds')}
+			<div class="pp-a-timer-i pp-a-timer-i-sec float-lt" data-bind="seconds" name="cell">
+				<div class="digit float-lt">
+					<div class="value">${seconds[0]}</div>
+					<div class="value"></div>
+				</div>
+				<div class="digit float-lt">
+					<div class="value">${seconds[1]}</div>
+					<div class="value"></div>
+				</div>
+			</div>
+		</div>
+		<div class="pp-a-timer-capt-container">
+			<div class="pp-a-timer-capt">Час.</div>
+			<div class="pp-a-timer-capt">Мин.</div>
+			<div class="pp-a-timer-capt">Сек.</div>
+		</div>
+	</div>
+</div>

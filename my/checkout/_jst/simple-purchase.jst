@@ -1,0 +1,342 @@
+{var card_class = ""}
+{var is_customized = false}
+{if purchase.record.goods.sell_status == "customized"}
+{var is_customized = true}
+{var card_class = "customized"}
+{/if}
+{var has_analog = false}
+{if is_customized && purchase.record.analog}
+{var has_analog = true}
+{var card_class = "customized inactive"}
+{/if}
+<div id="cart_item${purchase.record.id}" name="simple-purchase-item"
+	gtm-data='{"eventLabel":"${purchase.record.goods.id}"}'
+	class="{if is_customized}card_2{else}card_1{/if} order-i cart-g-l-i clearfix{if !purchase.record.will_be_added_to_order} unchecked{/if}"
+>
+
+	<div id="purchase_${purchase.record.id}" class="clearfix card">
+
+		<input type="hidden" name="id" value="${purchase.record.id}">
+
+		{var added_to_cart_price = purchase.record.added_to_cart_price.primary}
+
+		{var current_price = purchase.record.price_raw.primary}
+
+		{if (added_to_cart_price.raw && current_price.raw)}
+
+			{var price_diff = current_price.decimals.replace(" ","").replace(",",".") - added_to_cart_price.decimals.replace(" ","").replace(",",".")}
+
+		{/if}
+
+        {if is_customized}
+        <div class="card__row">
+        <div class="card__status">Под заказ</div>
+        <div class="card__status">Ожидаю обратную связь</div>
+        </div>
+        {/if}
+
+        <div class="${card_class}">
+            <div class="card__row">
+                <div class="card__title">
+                    <a href="${purchase.record.goods.external_href}" target="_blank">
+                        ${purchase.record.goods.sub_title_big} ${purchase.record.goods.sub_title_small}
+                    </a>
+                </div>
+
+                <input type="checkbox" name="will_be_added_to_order" class="hidden" {if purchase.record.will_be_added_to_order} checked{/if}>
+
+                <label>
+                    <input type="hidden" name="real_delete" value="${purchase.record.id}">
+                    <div class="card__delete js-card-delete"></div>
+                </label>
+            </div>
+
+            <div class="card__row">
+                <div class="card__block">
+                    <div class="card__img">
+                        <a href="${purchase.record.goods.external_href}" target="_blank">
+                            <img
+                                src="${purchase.record.goods.attachments.images[0].medium.url}"
+                                width="${purchase.record.goods.attachments.images[0].medium.width}"
+                                height="${purchase.record.goods.attachments.images[0].medium.height}"
+                            >
+                        </a>
+                    </div>
+                    <div class="quantity">
+                        <div class="quantity__minus js-cart-quantity-decrease {if purchase.record.quantity <= 1}inactive{/if}">&minus;</div>
+                        <input name="quantity" data-purchase-id="${purchase.record.id}" value="${purchase.record.quantity}" class="quantity__number">
+                        <div class="quantity__plus js-cart-quantity-increase">&plus;</div>
+                    </div>
+                </div>
+                <div class="amount">
+                    {var old_price = purchase.record.goods.old_price.primary.raw}
+                    {var price = purchase.record.goods.price.primary.raw}
+                    {if old_price > price}
+                        {var old_cost_total = new Currency_class(old_price * purchase.record.quantity)}
+                        {var discount = Math.ceil(((price - old_price) / old_price) * 100)}
+                        <div class="amount__row">
+                            <div class="amount__discount">${discount}%</div>
+                            <div class="amount__old">${old_cost_total.get('html')}</div>
+                        </div>
+                    {/if}
+                    <div class="amount__new">
+                        {if purchase.record.cost_with_discount}
+                            {var purchase_cost = purchase.record.cost_with_discount}
+                        {else}
+                            {var purchase_cost = purchase.record.cost}
+                        {/if}
+                        ${purchase_cost}
+                    </div>
+
+                    {if App.get("User").getProperty("user_type") == "dealer"}
+                        {if purchase.record.price_with_discount.primary.raw}
+                            {var purchase_price = purchase.record.price_with_discount.primary.raw}
+                        {else}
+                            {var purchase_price = purchase.record.price.primary.raw}
+                        {/if}
+                    <div class="clearfix dealer_price_wrap">
+                        <label>Ваша цена за шт.</label>
+                        <input
+                            name="dealer_price"
+                            value=""
+                            data-good-id="${purchase.record.goods.id}"
+                            data-good-price="${purchase_price}"
+                            class="amount__input dealer-price-input input-field"
+                            placeholder="Укажите цену"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                        >
+                    </div>
+                    {/if}
+                </div>
+            </div>
+
+            {if purchase.record.upgrade_options}
+            <div class="cart-upgrade-options">
+                <div class="label">Комплектация:</div>
+                <div class="checkout-fields-i select">
+                    <select class="inner__item" name="purchase_upgrade" data-purchase-id="${purchase.record.id}">
+                        {for option in purchase.record.upgrade_options}
+                        <option value="${option.goods_id}">${option.title}</option>
+                        {/for}
+                    </select>
+                    <span class="select-icon"></span>
+                </div>
+            </div>
+            {/if}
+
+            <div class="cart-g-l-content hidden">
+                <h3 class="cart-g-l-i-title">
+                    <a class="cart-g-l-i-title-link novisited" href="${purchase.record.goods.external_href}"><span class="cart-g-l-i-title-link-text">${purchase.record.goods.title}</span></a>
+
+                    {if purchase.record.goods.sell_status == "customized"}
+                    <div class="goods_customized_status">Под заказ.</div>
+                    {/if}
+                </h3>
+
+                {if price_diff}
+                    {if price_diff < 0}
+                        <div class="checkout-cart-old-price-title smaller">
+                            Цена снизилась
+                        </div>
+                    {else}
+                        <div class="checkout-cart-old-price-title bigger">
+                            Цена изменилась
+                        </div>
+                    {/if}
+                {/if}
+                <table class="g-l-info simple-p">
+                    <tbody>
+                    <tr>
+                        <td class="g-l-info-i g-l-info-price{if price_diff} small{/if}">
+
+                        </td>
+                        <td class="g-l-info-i g-l-info-amount">
+                            <p class="f-i-field-border">
+
+                            </p>
+                        </td>
+                        <td class="g-l-info-i g-l-info-cost" name='cost'>
+                            {var cost_discount = new Currency_class(purchase.record.cost_discount)}
+                            {if cost_discount.get('raw') > 0}
+                                <div class="old-price-discount">
+                                    <div class="old-price-b">
+                                        <span class="g-l-i-price old-price crossed">
+                                            ${purchase.record.cost}
+                                        </span>
+                                    </div>
+                                </div>
+                            {/if}
+
+                            <div>
+                                {if purchase.record.cost_with_discount}
+                                    ${purchase.record.cost_with_discount}
+                                {else}
+                                    ${purchase.record.cost}
+                                {/if}
+
+                            </div>
+                        </td>
+                        <td class="g-l-info-i g-l-info-remove">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                {if purchase.record.goods.configurable_details}
+                    <div class="config-param">
+                        {for param in purchase.record.goods.configurable_details}
+                            {if param.value}
+                                <p class="config-param-line">${param.title}: ${param.value}</p>
+                            {/if}
+                        {/for}
+                    </div>
+                {/if}
+            </div>
+	    </div>
+	</div>
+
+    {if has_analog}
+	<div class="clearfix card card__analog">
+
+        <div class="id_row">
+            <div class="id">В наличии 100% аналог</div>
+            <div class="id">Отправим сегодня</div>
+        </div>
+
+        <div class="card__row">
+            <div class="card__title">
+                <a href="${purchase.record.analog.external_href}" target="_blank">
+                    ${purchase.record.analog.sub_title_big} ${purchase.record.analog.sub_title_small}
+                </a>
+            </div>
+
+            <button type="button"
+                    name="analog_action_decline"
+                    class="card__delete"
+                    data-purchase-id="${purchase.record.id}"
+            ></button>
+        </div>
+
+        <div class="card__row">
+            <div class="card__block">
+                <div class="card__img">
+                    <a href="${purchase.record.analog.external_href}" target="_blank">
+                        <img src="${purchase.record.analog.image}" />
+                    </a>
+                </div>
+            </div>
+            <div class="amount">
+                {var old_price = purchase.record.analog.old_price}
+                {var price = purchase.record.analog.price}
+                {if old_price > price}
+                    {var old_cost = new Currency_class(old_price * purchase.record.quantity)}
+                    {var discount = Math.ceil(((price - old_price) / old_price) * 100)}
+                    <div class="amount__row">
+                        <div class="amount__discount">${discount}%</div>
+                        <div class="amount__old">${old_cost.get('html')}</div>
+                    </div>
+                {/if}
+
+                {var cost = new Currency_class(price * purchase.record.quantity)}
+                <div class="amount__new">
+                    ${cost.get('html')}
+                </div>
+
+                <div class="analog-actions">
+                    <button type="button" class="amount__button amount__input analog-action-accept js-cart-analog-accept" data-purchase-id="${purchase.record.id}">
+                        <div class="amount__text text-nowrap">Подменить в заказе</div>
+                    </button>
+
+                    <button type="button"
+                            name="analog_action_decline"
+                            class="amount__button analog-action-decline"
+                            data-purchase-id="${purchase.record.id}"
+                    >
+                        <div class="amount__text">Отказатся</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {/if}
+
+        <div class="cart-g-l-content hidden">
+            <h3 class="cart-g-l-i-title">
+                <a class="cart-g-l-i-title-link novisited" href="${purchase.record.goods.external_href}"><span class="cart-g-l-i-title-link-text">${purchase.record.goods.title}</span></a>
+
+                {if purchase.record.goods.sell_status == "customized"}
+                <div class="goods_customized_status">Под заказ.</div>
+                {/if}
+            </h3>
+
+            {if price_diff}
+                {if price_diff < 0}
+                    <div class="checkout-cart-old-price-title smaller">
+                        Цена снизилась
+                    </div>
+                {else}
+                    <div class="checkout-cart-old-price-title bigger">
+                        Цена изменилась
+                    </div>
+                {/if}
+            {/if}
+            <table class="g-l-info simple-p">
+                <tbody>
+                <tr>
+                    <td class="g-l-info-i g-l-info-price{if price_diff} small{/if}">
+
+                    </td>
+                    <td class="g-l-info-i g-l-info-amount">
+                        <p class="f-i-field-border">
+
+                        </p>
+                    </td>
+                    <td class="g-l-info-i g-l-info-cost" name='cost'>
+                        {var cost_discount = new Currency_class(purchase.record.cost_discount)}
+                        {if cost_discount.get('raw') > 0}
+                            <div class="old-price-discount">
+                                <div class="old-price-b">
+                                    <span class="g-l-i-price old-price crossed">
+                                        ${purchase.record.cost}
+                                    </span>
+                                </div>
+                            </div>
+                        {/if}
+
+                        <div>
+                            {if purchase.record.cost_with_discount}
+                                ${purchase.record.cost_with_discount}
+                            {else}
+                                ${purchase.record.cost}
+                            {/if}
+
+                        </div>
+                    </td>
+                    <td class="g-l-info-i g-l-info-remove">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            {if purchase.record.goods.configurable_details}
+                <div class="config-param">
+                    {for param in purchase.record.goods.configurable_details}
+                        {if param.value}
+                            <p class="config-param-line">${param.title}: ${param.value}</p>
+                        {/if}
+                    {/for}
+                </div>
+            {/if}
+        </div>
+
+</div>

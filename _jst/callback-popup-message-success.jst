@@ -1,0 +1,15 @@
+<div class="popup callback-popup light-popup">
+	<div name="close" class="close">
+		Закрыть <a href="#" title="Закрыть"></a>
+	</div>
+	<div class="light-popup-success-msg callback-success">
+		<div name="msg">${content}</div>
+	</div>
+	<span class="btn-link btn-grey">
+		<a href="#" class="btn-link-i" name="close">Спасибо, жду звонка</a>
+	</span>
+	/*{*<div class="text-hint addition">Перезвоним в рабочие дни с 9:00 до 19:00</div>*}*/
+	/*{if $menu.www->contacts}*/
+	<h2 class="light-popup-subtitle"><a class="all-addresses novisited" href="/*{$menu.www->contacts.href}*/">Контактная информация интернет-магазина</a></h2>
+	/*{/if}*/
+</div>

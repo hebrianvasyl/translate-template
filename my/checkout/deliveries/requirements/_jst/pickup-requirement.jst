@@ -1,0 +1,35 @@
+<div id="pickpoint-method-requirement" class="checkout-yandex-map">
+	<div class="check-form-i delivery-address-b before after" name="place_form">
+		<div class="delivery-address-b-header">
+			<span class="check-form-i-text valigned-top adress-text hidden">Адрес отделения:</span>
+			<div class="checkout-fields valigned-top">
+				<div class="checkout-fields-i hidden">
+					<select class="text" name="place_city" _required="required"></select>
+				</div>
+				<div class="checkout-fields-i select" style="overflow: hidden;">
+					<select class="text inner__item" name="place_address" _required="required"></select>
+					<a href="#" class="show_map hidden" name="show_map_nova_poshta">на карте <i class="icon-map"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="checkout-address-info hidden" name="place_info"></div>
+	</div>
+</div>
+
+<div class="ymaps-popup active hidden">
+    <div class="popup-wrap" style="position: absolute; z-index: 1000; top: 0px; left: 0px;">
+        <div class="popup light-popup">
+            <div name="close" class="close"><a href="#"></a></div>
+            <div name="content">
+                <div class="b-static-node-l-i-content">
+                    <h5 class="b-static-header-title">Отделения вашего города на карте</h5>
+                    <div class="map-wrapper"><div class="checkout-address-map" name="place_map" id="pickpoint-map"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="opacity: 0.7; width: 100%; position: fixed; z-index: 50; top: 0px; left: 0px; visibility: hidden; background-color: rgb(0, 0, 0);"></div>
+    <div style="opacity: 0.7; width: 100%; position: fixed; z-index: 50; top: 0px; left: 0px; visibility: visible; height: 1213px; background-color: rgb(0, 0, 0);"></div
+    <div style="opacity: 0.7; width: 100%; position: fixed; z-index: 50; top: 0px; left: 0px; visibility: hidden; background-color: rgb(0, 0, 0);"></div>
+</div>

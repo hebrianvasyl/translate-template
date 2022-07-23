@@ -1,0 +1,173 @@
+<div id="cart_item${purchase.record.id}" name="kit-purchase-item"
+    gtm-data='{
+        "eventLabel":"${purchase.kit.kit_id}",
+        "ecommerce": {
+            "remove": {
+                "products": [{
+                        "name": "${purchase.record.goods.title}",
+                        "id": "${purchase.record.record_id}",
+                        "price": "${purchase.record.price_with_discount.primary.decimals.replace(' ', '')}",
+                        "brand": "${purchase.record.goods.producer}",
+                        "category": "${purchase.record.goods.parent}",
+                        "quantity": "${purchase.record.quantity}"
+                    }{for unit in purchase.units},
+                    {
+                        "name": "${unit.record.goods.title}",
+                        "id": "${unit.record.record_id}",
+                        "price": "${unit.record.price_with_discount.primary.decimals.replace(' ', '')}",
+                        "brand": "${unit.record.goods.producer}",
+                        "category": "${unit.record.goods.parent}",
+                        "quantity": "${unit.record.quantity}"
+                    }
+                {/for}]
+            }
+        }
+    }'
+	enhanced-gtm-data='{
+		"eventLabel":"${purchase.kit.kit_id}",
+		"ecommerce": {
+			"remove": {
+				"products": [{
+						"name": "${purchase.record.goods.title}",
+						"id": "${purchase.record.record_id}",
+						"price": "${purchase.record.price_with_discount.primary.decimals.replace(' ', '')}",
+						"brand": "${purchase.record.goods.producer}",
+						"category": "${purchase.record.goods.parent}",
+						"quantity": "${purchase.record.quantity}"
+					}{for unit in purchase.units},
+					{
+						"name": "${unit.record.goods.title}",
+						"id": "${unit.record.record_id}",
+						"price": "${unit.record.price_with_discount.primary.decimals.replace(' ', '')}",
+						"brand": "${unit.record.goods.producer}",
+						"category": "${unit.record.goods.parent}",
+						"quantity": "${unit.record.quantity}"
+					}
+				{/for}]
+			}
+		}
+	}'
+>
+
+{var is_atp = object_purchase.isATP()}
+{var is_customized = false}
+
+{if !is_atp}Этого комплекта уже нет в наличии{/if}
+
+	<div class="kit-wrap-red {if purchase.record.will_be_added_to_order == 1}checked{else}unchecked{/if}">
+		<div class="b-goods-kit" id="purchase_${purchase.record.id}">
+			<input type="hidden" name="id" value="${purchase.record.id}"/>
+			<input type="hidden" name="kit_id" value="${purchase.kit.kit_id}"/>
+			<div class="b-goods-kit-header">
+			{if is_atp}
+				<input type="checkbox" class="cart-i-check" name="will_be_added_to_order" {if purchase.record.will_be_added_to_order == 1} checked {/if}>
+			{/if}
+				<div class="b-goods-kit-title">Акционный комплект</div>
+			</div>
+
+			{if purchase.record.goods.sell_status == "customized"}
+			{var is_customized = true}
+			{/if}
+
+			<ul class="cart-g-l">
+
+				<li class="cart-g-l-i cart-g-l-i-popup clearfix">
+					<div class="cart-g-l-img float-lt">
+						<a href="${purchase.record.goods.external_href}" class="cart-g-l-img-link" name="goods-link" gtm-data='{"eventLabel":"${purchase.record.goods.id}"}'>
+							<img src="${purchase.record.goods.attachments.images[0].small.url}"
+								 width="${purchase.record.goods.attachments.images[0].small.width}"
+								 height="${purchase.record.goods.attachments.images[0].small.height}"
+								 alt="${purchase.record.goods.title|escape:'quotes'}"
+							>
+						</a>
+					</div>
+					<div class="cart-g-l-content">
+						<div class="cart-g-l-i-title" >
+							<a href="${purchase.record.goods.external_href}" name="goods-link" class="novisited" gtm-data='{"eventLabel":"${purchase.record.goods.id}"}'>${purchase.record.goods.title}</a>
+						</div>
+						<table class="g-l-info">
+							<tr>
+								<td class="g-l-info-price">
+									{if purchase.record.price.primary.raw > purchase.record.price_with_discount.primary.raw}
+										<span class="old-price">${purchase.record.price.primary.string}</span>
+									{/if}
+									<span class="g-l-info-price-cur">${purchase.record.price_with_discount.primary.string}</span>
+								</td>
+								<td class="g-l-info-amount"><span class="g-l-info-amount-content">1</span> шт</td>
+								<td class="g-l-info-cost">${purchase.record.price_with_discount.primary.string}</td>
+							</tr>
+						</table>
+					</div>
+
+					{for unit in purchase.units}
+						<input type="hidden" name="unit_ids[${unit.data.unit_id}]" value="${unit.record.goods.id}"/>
+					{/for}
+
+				</li>
+
+				{for unit in purchase.units}
+
+				{if unit.record.goods.sell_status == "customized"}
+                {var is_customized = true}
+                {/if}
+
+				<li class="cart-g-l-i cart-g-l-i-popup clearfix">
+					<div class="cart-g-l-img float-lt">
+						<a href="${unit.record.goods.external_href}" class="cart-g-l-img-link" name="goods-link" gtm-data='{"eventLabel":"${unit.record.goods.id}"}'>
+							<img src="${unit.record.goods.attachments.images[0].small.url}"
+								 width="${unit.record.goods.attachments.images[0].small.width}"
+								 height="${unit.record.goods.attachments.images[0].small.height}"
+								 alt="${unit.record.goods.title|escape:'quotes'}"
+							>
+						</a>
+					</div>
+					<div class="cart-g-l-content">
+						<div class="cart-g-l-i-title">
+							<a href="${unit.record.goods.external_href}" name="goods-link" class="novisited" gtm-data='{"eventLabel":"${unit.record.goods.id}"}'>${unit.record.goods.title}</a>
+						</div>
+						<table class="g-l-info">
+							<tr>
+								<td class="g-l-info-price">
+									{if unit.record.price.primary.raw > unit.record.price_with_discount.primary.raw}
+										<span class="old-price">${unit.record.price.primary.string}</span>
+									{/if}
+									<span class="g-l-info-price-cur">${unit.record.price_with_discount.primary.string}</span>
+								</td>
+								<td class="g-l-info-amount"><span class="g-l-info-amount-content">1</span> шт</td>
+								<td class="g-l-info-cost">${unit.record.price_with_discount.primary.string}</td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				{/for}
+
+			</ul>
+			<div class="b-goods-kit-footer">
+				<table class="b-goods-kit-info">
+					<tr>
+						<td class="b-goods-kit-price">Цена комплекта:
+							{if purchase.kit.kit_fixed_amount}
+								<span class="kit-without-discount-price">
+									${purchase.kit.single_kit_price_without_discount.primary.string}
+								</span>
+							{/if}
+							<span class="b-goods-kit-sum">
+								${purchase.kit.single_kit_price.primary.string}
+							</span>
+						</td>
+						<td class="b-goods-kit-amount"><input type="text" class="g-l-i-amount" value="${purchase.kit.quantity}" name="quantity"> ${purchase.kit.quantity|morphology:["комплект","комплекта","комплектов"]}</td>
+						<td class="b-goods-kit-cost b-goods-kit-summary">${purchase.kit.kit_cost.primary.string}</td>
+					</tr>
+				</table>
+			</div>
+
+			{if is_customized}
+            <div class="goods_customized_status">В комплекте присутствуют товары, которые оформляються под заказ.</div>
+            {/if}
+
+			<a class="delete g-i-delete" name="delete" href="#">
+				<img class="delete-img" width="18" height="20" alt="очистить" src="/*{$settings.path.design}*//_.gif">
+			</a>
+		</div>
+	</div>
+</div>

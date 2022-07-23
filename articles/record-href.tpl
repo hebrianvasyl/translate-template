@@ -1,0 +1,1 @@
+{if $menu.www}{$menu.www->articles.href}{if $record->parent && $record->parent->parent}{$record->parent->parent.name}/{/if}{if $record->parent}{$record->parent.name}/{/if}{$record.name}{$smarty.const.SITE_EXTENTION_DEFAULT}{/if}

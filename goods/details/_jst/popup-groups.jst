@@ -1,0 +1,20 @@
+<div class="variants-b">
+	<ul class="variants-l clearfix">
+		/*{foreach from=$group.records item="goods_variant"}*/
+			<li class="variants-l-i">
+                <a class="variants-link variants-l-i-image" href="/*{$goods_variant['href']}*/">
+                    <img class="variants-link-img lazyload" data-src="/*{$goods_variant['image']}*/">
+                </a>
+                <a class="variants-link variants-l-i-name" href="/*{$goods_variant['href']}*/">/*{$goods_variant[$group_id]}*/</a>
+                /*{if $goods_variant['sell_status'] == 'available'}*/
+                <p class="variants-link-price black variants-l-i-price">/*{$goods_variant['price'] nofilter}*/</p>
+                /*{else}*/
+                <p class="variants-link-price variants-l-i-status">/*{$goods_variant['sell_status_title'] nofilter}*/</p>
+                /*{/if}*/
+                <div class="main-details">
+                /*{$goods_variant['variants_compare_block'] nofilter}*/
+                </div>
+            </li>
+		/*{/foreach}*/
+	</ul>
+</div>

@@ -1,0 +1,24 @@
+/*{SocialAccounts->getChildController assign="GoogleAuth" name="google"}*/
+/*{if !empty($GoogleAuth) and !empty($menu.my->signin->oauth->google.href)}*/
+	{if User.isAuthInSocial("google")}
+		<div class="social-unbind sprite fb-unbind">
+			<i></i><span>${title}</span><br>
+			<form action="/*{$menu.my.href}*/cgi-bin/form.php?r=/*{$menu.my->signin->oauth->google.href|@urlencode}*/&action=unbindAccount&type=google" method="post">
+				<input type="hidden" name="type" value="google" />
+				<button type="submit">разорвать связь</button>
+			</form>
+		</div>
+	{else}
+		<a target="_blank"
+			href="/*{$GoogleAuth->getDialogUrl($menu.my->signin->oauth->google.href)}*/"
+			class="user-enter-social-l-i-link-icon"
+		>
+			<div class="social-big-btn-i clearfix">
+                <span class="social-enter-icon google-btn float-lt">
+                    <img class="social-enter-icon-img" alt="google" src="/*{$settings.path.design}*//_.gif">
+                </span>
+                <span class="social-enter-text float-lt">Google</span>
+            </div>
+		</a>
+	{/if}
+/*{/if}*/

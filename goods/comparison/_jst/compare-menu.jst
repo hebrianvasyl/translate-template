@@ -1,0 +1,13 @@
+<ul class="compare-view-l">
+	{for item in items}
+		{if item.active}
+			<li class="compare-view-l-i active">
+				<span>${item.title}</span>
+			</li>
+		{else}
+			<li class="compare-view-l-i">
+				<a class="xhr black" href="${item.href}">${item.title}</a>
+			</li>
+		{/if}
+	{/for}
+</ul>

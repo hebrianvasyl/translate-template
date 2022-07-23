@@ -1,0 +1,1 @@
+<script>window.location.href='{$menu.www->articles.href}'</script>

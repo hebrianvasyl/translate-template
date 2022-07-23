@@ -1,0 +1,28 @@
+{if phones}
+
+	{var count = 0}
+
+	<div class="check-form-i-text valigned-top field-text">Мобильны{if phones_count>1}е{else}й{/if} телефон{if phones_count>1}ы{/if}</div>
+		<div class="checkout-fields my-phone">
+
+		{for phone in phones}
+		    {if count == 0}
+			    {var count = count + 1}
+
+				<div class="collection-item">
+					<span class="number">{if phone.title}${phone.title}{else}${phone.phone}{/if}</span>
+
+						<!-- <a class="personal-information-phone-add-link" href="#" name="add_phone_link">Добавить еще один телефон</a> -->
+						<div class="new-phone hidden" name="add_phone_block">
+							<input class="custom-field-error input-field new-phone-input" name="new_phone" disabled="disabled" _required="required" _pattern="^\+\d{2} \(\d{3}\) \d{3}-\d{2}-\d{2}$" type="text">
+							<span class="btn-link btn-grey submit-btn">
+								<input class="btn-link-i" name="add_phone_button" type="submit" value="Сохранить">
+							</span>
+						</div>
+
+				</div>
+            {/if}
+		{/for}
+	</div>
+{/if}
+<div class="clear"></div>

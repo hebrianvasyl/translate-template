@@ -1,0 +1,205 @@
+<div id="cart_item${purchase.record.id}"
+	name="kit-purchase-item" class="order-i order-kit card_complect"
+	gtm-data='{"eventLabel":"${purchase.kit.kit_id}"}'
+>
+{var is_customized = false}
+
+	<div class="kit-wrap-red {if purchase.record.will_be_added_to_order == 1}checked{else}unchecked{/if}">
+		<div class="b-goods-kit" id="purchase_${purchase.record.id}">
+			<input type="hidden" name="id" value="${purchase.record.id}"/>
+			<input type="hidden" name="kit_id" value="${purchase.kit.kit_id}"/>
+
+			{if purchase.record.goods.sell_status == "customized"}
+            {var is_customized = true}
+            {/if}
+
+            <div class="card__row">
+                <div class="card__title">
+                    Акционный комплект
+                </div>
+
+                <input type="checkbox" class="cart-i-check hidden" name="will_be_added_to_order" {if purchase.record.will_be_added_to_order == 1} checked {/if}>
+
+                <label>
+                    <input type="hidden" name="real_delete" value="${purchase.record.id}">
+                    <div class="card__delete js-card-delete"></div>
+                </label>
+            </div>
+
+			<div class="b-goods-kit-footer hidden">
+				<table class="b-goods-kit-info">
+					<tr>
+						<td class="b-goods-kit-td b-goods-kit-price">Цена комплекта:</td>
+						<td class="b-goods-kit-td b-goods-kit-amount">
+
+						</td>
+						<td class="b-goods-kit-td b-goods-kit-cost">
+							{if purchase.kit.kit_fixed_amount}
+								<div class="kit-without-discount-price">${purchase.kit.kit_cost_without_discount.primary.string}</div>
+							{/if}
+							<div>${purchase.kit.single_kit_price.primary.string}</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			{if is_customized}
+            <div class="goods_customized_status">В комплекте присутствуют товары, которые оформляються под заказ.</div>
+            {/if}
+
+			<div class="card_complect__row">
+                <div class="cart-g-l card_complect__products">
+
+                    <div class="mini-card cart-g-l-i cart-g-l-i-popup clearfix">
+                        <input type="hidden" name="kit_units[${purchase.record.goods.id}]" value="${purchase.kit.kit_id}"/>
+
+                        <div class="mini-card__img cart-g-l-img float-lt">
+
+                            <a href="${purchase.record.goods.external_href}" class="cart-g-l-img-link" target="_blank">
+                                <img src="${purchase.record.goods.attachments.images[0].medium.url}"
+                                     width="${purchase.record.goods.attachments.images[0].medium.width}"
+                                     height="${purchase.record.goods.attachments.images[0].medium.height}"
+                                     alt="${purchase.record.goods.title|escape:'quotes'}"
+                                >
+                            </a>
+                        </div>
+
+                        <div class="mini-card__text">
+                            <a href="${purchase.record.goods.external_href}" target="_blank">
+                                ${purchase.record.goods.sub_title_big}
+                            </a>
+                        </div>
+
+                        <div class="cart-g-l-content hidden">
+                            <div class="cart-g-l-i-title">
+                                <a class="cart-g-l-i-title-link novisited" href="${purchase.record.goods.external_href}"><span class="cart-g-l-i-title-link-text">${purchase.record.goods.title}</span></a>
+                            </div>
+                            <table class="g-l-info">
+                                <tr>
+                                    <td class="g-l-info-i g-l-info-price">
+                                        <div class="old-price-wrap">
+                                            {if purchase.record.goods.old_price.primary.raw > purchase.record.goods.price.primary.raw}
+                                                <span class="old-price">${purchase.record.goods.old_price.primary.string}</span>
+                                            {/if}
+                                        </div>
+                                    </td>
+                                    <td class="g-l-info-i g-l-info-amount">
+                                        <span class="g-l-info-amount-content">1</span> шт
+                                    </td>
+                                    <td class="g-l-info-i g-l-info-price price-cur-b">
+                                        <span class="g-l-info-price-cur">${purchase.record.goods.price.primary.string}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        {for unit in purchase.units}
+                            <input type="hidden" name="unit_ids[${unit.data.unit_id}]" value="${unit.record.goods.id}"/>
+                        {/for}
+
+                    </div>
+
+                    {for unit in purchase.units}
+
+                        {if unit.record.goods.sell_status == "customized"}
+                        {var is_customized = true}
+                        {/if}
+
+                        <div class="mini-card cart-g-l-i cart-g-l-i-popup clearfix">
+                            <input type="hidden" name="kit_units[${unit.record.goods.id}]" value="${purchase.kit.kit_id}"/>
+
+                            <div class="mini-card__img cart-g-l-img float-lt">
+                                <a href="${unit.record.goods.external_href}" class="cart-g-l-img-link" target="_blank">
+                                    <img src="${unit.record.goods.attachments.images[0].medium.url}"
+                                         width="${unit.record.goods.attachments.images[0].medium.width}"
+                                         height="${unit.record.goods.attachments.images[0].medium.height}"
+                                         alt="${unit.record.goods.title|escape:'quotes'}"
+                                    >
+                                </a>
+                            </div>
+
+                            <div class="mini-card__text">
+                                <a href="${unit.record.goods.external_href}" target="_blank">
+                                    ${unit.record.goods.sub_title_big}
+                                </a>
+                            </div>
+                            <div class="cart-g-l-content hidden">
+                                <div class="cart-g-l-i-title">
+                                    <a class="cart-g-l-i-title-link novisited" href="${unit.record.goods.external_href}"><span class="cart-g-l-i-title-link-text">${unit.record.goods.title}</span></a>
+                                </div>
+                                <table class="g-l-info">
+                                    <tr>
+                                        <td class="g-l-info-i g-l-info-price">
+                                            <div class="old-price-wrap">
+                                                {if unit.record.goods.old_price.primary.raw > unit.record.goods.price.primary.raw}
+                                                    <span class="old-price">${unit.record.goods.old_price.primary.string}</span>
+                                                {/if}
+                                            </div>
+                                        </td>
+                                        <td class="g-l-info-i g-l-info-amount">
+                                            <span class="g-l-info-amount-content">1</span> шт
+                                        </td>
+                                        <td class="g-l-info-i g-l-info-price price-cur-b">
+                                            <span class="g-l-info-price-cur">${unit.record.goods.price.primary.string}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    {/for}
+
+                </div>
+
+                <div class="quantity__wrap">
+                    <div class="quantity__top-line"></div>
+                    <div class="quantity">
+                        <div class="quantity__minus js-cart-quantity-decrease {if purchase.record.quantity <= 1}inactive{/if}">&minus;</div>
+                        <input type="text" name="quantity" data-purchase-id="${purchase.record.id}" class="quantity__number" value="${purchase.kit.quantity}">
+                        <div class="quantity__plus js-cart-quantity-increase">&plus;</div>
+                    </div>
+                    <div class="quantity__bottom-line"></div>
+                </div>
+
+			    <div class="amount">
+			        {if purchase.kit.kit_cost_without_discount.primary.raw > purchase.kit.kit_cost.primary.raw}
+			        {var discount = Math.ceil(((purchase.kit.kit_cost.primary.raw - purchase.kit.kit_cost_without_discount.primary.raw) / purchase.kit.kit_cost_without_discount.primary.raw) * 100)}
+			        <div class="amount__row">
+                        <div class="amount__discount">${discount}%</div>
+                        <div class="amount__old">${purchase.kit.kit_cost_without_discount.primary.string}</div>
+                    </div>
+                    {/if}
+
+                    <div class="amount__new">
+                        ${purchase.kit.kit_cost.primary.string}
+                    </div>
+
+                    {if App.get("User").getProperty("user_type") == "dealer"}
+                    {var kit_price = Math.round(purchase.kit.single_kit_price.primary.raw)}
+                    <div class="clearfix dealer_price_wrap">
+                        <label class="hidden">Ваша цена (за шт.):</label>
+                        <input
+                            name="dealer_price"
+                            value=""
+                            data-good-id="${purchase.kit.kit_id}"
+                            data-good-price="${kit_price}"
+                            class="amount__input dealer-price-input input-field"
+                            placeholder="Ваша цена ${kit_price}" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                        >
+                    </div>
+                    {/if}
+                </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+{if data && data.is_available_campaigns}
+	{if !data.applied_coupon && error_message}
+		<p id="coupon_error_message" class="coupon-message light-red">${error_message}</p>
+	{/if}
+	{if data.applied_coupon}
+		<div class="coupon-success">
+			<div id="coupon_campaign_title" class="coupon-success-title">${data.applied_coupon.campaign_title}</div>
+			<div id="success_coupon_code" class="coupon-success-code">${data.applied_coupon.title}</div>
+			<a id="cancel_coupon" class="cancel-link underline novisited"
+				href="#"
+				gtm-data='{"eventLabel":"${data.applied_coupon.campaign_title}"}'
+			>Отменить промокод</a>
+		</div>
+	{else}
+		<div class="coupon-b">
+			<a class="more-link" href="#" id="show_input_block">
+				<span class="underline">Ввести промокод</span>
+			</a>
+			<div id="coupon_text_input_block" class="hidden coupon-b-i clearfix">
+				<form id="apply_coupon" action="/cgi-bin/form.php?r={$menu.my->cart.href}#applyCoupon" name="submit_by_ajax">
+					<div id="input_text_field" class="coupon-enter clearfix">
+						<input
+							id="coupon_code_item"
+							style="width:200px;"
+							class="float-lt aligned-center check-form-input"
+							type="text"
+							name="coupon_code_item"
+							pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+							data-meiomask="fixed"
+							data-meiomask-options="{mask:'9999-9999-9999-9999', placeholder: ' '}"
+							>
+					</div>
+					<span class="btn-link">
+						<input type="submit" class="btn-link-i" value="Применить" />
+					</span>
+				</form>
+			</div>
+		</div>
+	{/if}
+{/if}
