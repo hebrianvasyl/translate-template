@@ -9,11 +9,11 @@
 
 {capture name="tag_title"}
 {if $record->getFirstTag() == 'popularity'}
-Хит продаж
+	{'Хит продаж'|translate}
 {elseif $record->getFirstTag() == 'novelty'}
-Новинка
+{'Новинка'|translate}
 {elseif $record->getFirstTag() == 'recommended'}
-Акция
+	{'Акция'|translate}
 {/if}
 {/capture}
 
@@ -39,7 +39,7 @@
         {else}
         {$href = "#video_container_"|cat:$video.id}
         {/if}
-        <a class="video-review" href="{$href}" data-link-id="goods-link-{$record.id}"]>Видеообзор <i class="icon-video"></i></a>
+        <a class="video-review" href="{$href}" data-link-id="goods-link-{$record.id}"]>{'Видеообзор'|translate} <i class="icon-video"></i></a>
         {break}
         {/foreach}
     </div>
@@ -135,7 +135,7 @@
 		{include file="goods/item-tile-rating.tpl"}
 
 		<div class="price-block">
-			<span>Цена:</span>
+			<span>{'Цена'|translate}:</span>
 			{if !empty($record.old_price) && ($record.old_price > $record.price)}
 				<span class="old-price">{$record->old_price nofilter}</span>
 			{/if}

@@ -67,7 +67,7 @@
 								</ul>
 								{if (count($subnodes_source) > 5)}
 									<a class="link-more novisited" onclick="return false" name="more_categories" href="#" more_hide catalog_id='{$node.id}'>
-										<span class="underline">Еще</span> ▼
+										<span class="underline">{'Еще'|translate}</span> ▼
 									</a>
 								{/if}
 							</div>
@@ -101,34 +101,34 @@
 			<div class="tabs section-tabs">
 				<div class="nav">
                     {if count($popularity)}
-						<a href="#popularity">Популярные товары</a>
+						<a href="#popularity">{'Популярные товары'|translate}</a>
                     {/if}
                     {if count($novelty)}
-						<a href="#novelty">Новинки</a>
+						<a href="#novelty">{'Новинки'|translate}</a>
                     {/if}
                     {if count($recommended)}
-						<a href="#recommended">Акции</a>
+						<a href="#recommended">{'Акции'|translate}</a>
                     {/if}
 				</div>
 
 				<div class="content">
                     {if count($popularity)}
 						<div id="popularity" class="hidden">
-							<section class="g slider padding-in" name="popularity_carousel" gtm-data=' { "eventLabel": "Популярные товары" }'>
+							<section class="g slider padding-in" name="popularity_carousel" gtm-data=' { "eventLabel": "{'Популярные товары'|translate}" }'>
                                 {include file="goods-container.tpl" id="block_popularity" items=$popularity tab="popularity"}
 							</section>
 						</div>
                     {/if}
                     {if count($novelty)}
 						<div id="novelty" class="hidden">
-							<section class="g slider padding-in" name="novelty_carousel" gtm-data=' { "eventLabel": "Новинки" }'>
+							<section class="g slider padding-in" name="novelty_carousel" gtm-data=' { "eventLabel": "{'Новинки'|translate}" }'>
                                 {include file="goods-container.tpl" id="block_novelty" items=$novelty tab="novelty"}
 							</section>
 						</div>
                     {/if}
                     {if count($recommended)}
 						<div id="recommended" class="hidden">
-							<section class="g slider padding-in" name="recommended_carousel" gtm-data=' { "eventLabel": "Акции" }'>
+							<section class="g slider padding-in" name="recommended_carousel" gtm-data=' { "eventLabel": "{'Акции'|translate}" }'>
                                 {include file="goods-container.tpl" id="block_recommended" items=$recommended tab="promotions"}
 							</section>
 						</div>
@@ -188,14 +188,14 @@
 				<h4>Помощь от IntexPool</h4>
 				<div class="bg">
 					<div class="content">
-						<div class="content-title">ПОЛЕЗНАЯ и НЕОБХОДИМАЯ информация</div>
-						<p>О продукции Intex и Bestway</p>
+						<div class="content-title">{'ПОЛЕЗНАЯ и НЕОБХОДИМАЯ информация'|translate}</div>
+						<p>{'О продукции Intex и Bestway'|translate}</p>
 					</div>
 					<table>
 						<tr>
-							<td><a href="{$menu.www->qa.href}">Вопросы и ответы</a></td>
-							<td><a href="{$menu.www->articles.href}">Советы - Статьи</a></td>
-							<td><a href="{$menu.www->videocontent.href}">ВИДЕОинструкции</a></td>
+							<td><a href="{$menu.www->qa.href}">{'Вопросы и ответы'|translate}</a></td>
+							<td><a href="{$menu.www->articles.href}">{'Советы - Статьи'|translate}</a></td>
+							<td><a href="{$menu.www->videocontent.href}">{'ВИДЕОинструкции'|translate}</a></td>
 						</tr>
 					</table>
 				</div>

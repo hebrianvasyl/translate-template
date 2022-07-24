@@ -12,7 +12,7 @@
 	{if (!isset($has_atp) or $has_atp) and !empty($record_prices.min)}
 		<div class="g-l-i-content-i-wrap sku-content available">
 			{if $record_prices.min->getValue()}
-				<div class="g-l-i-price">{if empty($record_prices.is_same)} от {/if}{$record_prices.min nofilter}</div>
+				<div class="g-l-i-price">{if empty($record_prices.is_same)} {'от'|translate} {/if}{$record_prices.min nofilter}</div>
 			{/if}
 		</div>
 	{else}

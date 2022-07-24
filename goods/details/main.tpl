@@ -188,7 +188,7 @@
 
         <div>
             <div>
-                <span>Доставка в <a href="#">Киев</a></span>
+                <span>{'Доставка в'|translate} <a href="#">{'Киев'|translate}</a></span>
                 <a href="#">{'Подробности о доставке'|translate}</a>
             </div>
 
@@ -381,7 +381,7 @@
 
     {if count($characteristics)}
 
-    <div class="tabs-content-title">Технические характеристики <span class="pp-characteristics-tab-product-name">{$record_with_content.title|@mnemonics_convert nofilter}</span></div>
+    <div class="tabs-content-title">{'Технические характеристики'|translate} <span class="pp-characteristics-tab-product-name">{$record_with_content.title|@mnemonics_convert nofilter}</span></div>
 
     <div class="clearfix">
         <div class="characteristics-wrap">
