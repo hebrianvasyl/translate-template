@@ -33,7 +33,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <div class="catalog-item-menu-text">Каталог товаров</div>
+                        <div class="catalog-item-menu-text">{'Каталог товаров'|translate}</div>
                     </div>
 
                     <div class="banners">
@@ -52,7 +52,7 @@
             {if count($videos) > 0}
             <div id="mainpage-help-banners" class="mainpage-top-wrap">
                 <section class="m-filter">
-                    <div class="m-filter-title">Онлайн консультант</div>
+                    <div class="m-filter-title">{'Онлайн консультант'|translate}</div>
                     <nav>
                         <ul class="m-filter-l">
 
@@ -161,16 +161,16 @@
             <div class="clearfix">
 
                 <div class="intexpool-help">
-                    <h4>Помощь от IntexPool</h4>
+                    <h4>{'Помощь от IntexPool'|translate}</h4>
                     <div class="bg">
                         <div class="content">
-                          <div class="content-title">Полезная и необходимая информация</div>
-                          <p>О продукции Intex и Bestway</p>
+                          <div class="content-title">{'Полезная и необходимая информация'|translate}</div>
+                          <p>{'О продукции Intex и Bestway'|translate}</p>
                         </div>
                         <ul>
-                          <li><a href="{$menu.www->qa.href}">Вопросы и ответы</a></li>
-                          <li><a href="{$menu.www->articles.href}">Советы - Статьи</a></li>
-                          <li><a href="{$menu.www->videocontent.href}">Видеоинструкции</a></li>
+                          <li><a href="{$menu.www->qa.href}">{'Вопросы и ответы'|translate}</a></li>
+                          <li><a href="{$menu.www->articles.href}">{'Советы - Статьи'|translate}</a></li>
+                          <li><a href="{$menu.www->videocontent.href}">{'Видеоинструкции'|translate}</a></li>
                         </ul>
                     </div>
                 </div>

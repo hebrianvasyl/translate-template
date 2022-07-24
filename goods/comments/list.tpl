@@ -8,7 +8,8 @@
 
             <div itemprop="review" itemscope itemtype="http://schema.org/Review" class="b-comment" name="{$comment.id}">
                 <div class="b-comment-info b-comment-header">
-                    <div class="b-comment-info-i comment-author" itemprop="author">{if $comment.name}{$comment.name}{else}Анонимный пользователь{/if}</div>
+                    <div class="b-comment-info-i comment-author" itemprop="author">{if $comment.name}{$comment.name}{else}{'
+Анонимный пользователь'|translate}{/if}</div>
 
                     {if $comment.mark}
                         <div class="b-comment-info-i">
@@ -35,22 +36,22 @@
                     <div class="b-comment-content-i" id="pp-comments_text_{$comment.id}">{$comment.text}</div>
 
                     {if $comment.dignity}
-                        <div class="b-comment-content-i"><b>Достоинства:</b> {$comment.dignity}</div>
+                        <div class="b-comment-content-i"><b>{'Достоинства'|translate}:</b> {$comment.dignity}</div>
                     {/if}
 
                     {if $comment.shortcomings}
-                        <div class="b-comment-content-i"><b>Недостатки:</b> {$comment.shortcomings}</div>
+                        <div class="b-comment-content-i"><b>{'Недостатки'|translate}:</b> {$comment.shortcomings}</div>
                     {/if}
 
                 </div>
                 <div name="reply_form">
                     <div class="b-comment-info">
                         <div class="b-comment-info-i">
-                            <a href="#" class="xhr underline novisited" name="add"><i class="reply-icon"></i> Ответить</a>
+                            <a href="#" class="xhr underline novisited" name="add"><i class="reply-icon"></i> {'Ответить'|translate}</a>
                         </div>
                         <div class="b-comment-info-i voting" name="voting">
                             <div name="msg"></div>
-                            <span>Отзыв полезен?</span>
+                            <span>{'Отзыв полезен'|translate}?</span>
                             <span class="yes" name="positive_block">
                                 <a href="#" class="xhr underline" name="positive_vote" id="{$comment.id}">Да</a>
                                 <span name="count">{$comment.positive_vote_count}</span>
@@ -73,15 +74,15 @@
                             </div>
                             <div class="f-step user-data">
                                 <div class="b-username-wrap" name="user_name_block">
-                                    <label class="f-label" for="user-name-field">Представьтесь, пожалуйста:</label>
+                                    <label class="f-label" for="user-name-field">{'Представьтесь, пожалуйста'|translate}:</label>
                                     <input type="text" class="input-field" id="user-name-field" name="name" required>
                                 </div>
                                 <span class="btn-link btn-link-blue">
-                                    <button type="submit" class="btn-link-i">Ответить</button>
+                                    <button type="submit" class="btn-link-i">{'Ответить'|translate}</button>
                                 </span>
                             </div>
                             <div name="reply-close" class="close">
-                                Закрыть <a href="#" title="Закрыть"></a>
+                                Закрыть <a href="#" title="{'Закрыть'|translate}"></a>
                             </div>
                             <input type="hidden" name="goods_id" value="{$goods.id}">
                             <input type="hidden" name="parent_id" value="{$comment.id}">

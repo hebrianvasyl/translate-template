@@ -7,7 +7,7 @@
         <div class="b-static-content">
             <div class="promotions-actual">
 
-            <h1 class="promotions-actual-title b-static-title">Акции</h1>
+            <h1 class="promotions-actual-title b-static-title">{'Акции'|translate}</h1>
 
                 {if isset($catalog_records) && count($catalog_records)}
                     <ul class="promotions-l news-l tile">
@@ -16,7 +16,7 @@
                             <a href="{$record.external_href}" class="promotions-l-i-link news-l-i-link float-lt">
                                 <div class="hover_bg">
                                     <div class="additional-info-block">
-                                        <div class="inner">Дополнительная информация</div>
+                                        <div class="inner">{'Дополнительная информация'|translate}</div>
                                     </div>
                                 </div>
                                 {if !empty($record->attachments) && count($record->attachments->images_list_hover)}
@@ -57,7 +57,7 @@
 
                     {if count($menu.active->pages) > 1}
                         <div class="more">
-                            <div class="more-text">Страницы</div>
+                            <div class="more-text">{'Страницы'|translate}</div>
 
                             {smart_page_navigation pages=$menu.active->pages midpoint=8 maxpoint=15 var='pages'}
                             <ul class="more-pages-l clearfix">
@@ -77,7 +77,7 @@
                     {/if}
 
                 {else}
-                    <p>На данный момент {if $menu.active == 'active'}активных{else}завершенных{/if} акций нет</p>
+                    <p>{'На данный момент'|translate} {if $menu.active == 'active'}{'активных'|translate}{else}{'завершенных'|translate}{/if} {'акций нет'|translate}</p>
                 {/if}
             </div>
         </div>

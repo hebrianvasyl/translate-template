@@ -4,7 +4,7 @@
 			<a href="#{$record.id}" id="video-{$record.id}" data-role="popup-show" data-url="{$record.videolink}" class="news-l-i-link float-lt">
                 <div class="hover_bg">
                     <div class="additional-info-block">
-                        <div class="inner">Смотреть видео</div>
+                        <div class="inner">{'Смотреть видео'|translate}</div>
                     </div>
                 </div>
 				{if $record.image_hover}
@@ -32,5 +32,5 @@
 		</li>
 	{/foreach}
 {else}
-	На данный момент видео нет
+{'На данный момент видео нет'|translate}
 {/if}

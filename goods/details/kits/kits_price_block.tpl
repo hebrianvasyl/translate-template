@@ -12,7 +12,7 @@
             {/if}
 			<span class="kit-price-cost price">{$cost_with_discount nofilter}</span>
             {if $cost_with_discount->getValue() < $cost->getValue()}
-            <span class="kit-price-discount-price">Экономия {round($cost->getValue() - $cost_with_discount->getValue())} грн</span>
+            <span class="kit-price-discount-price">{'Экономия'|translate} {round($cost->getValue() - $cost_with_discount->getValue())} грн</span>
             {/if}
 			<div name="buy_kit_details"></div>
 		</div>

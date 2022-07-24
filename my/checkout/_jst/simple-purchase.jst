@@ -30,8 +30,8 @@
 
         {if is_customized}
         <div class="card__row">
-        <div class="card__status">Под заказ</div>
-        <div class="card__status">Ожидаю обратную связь</div>
+        <div class="card__status">/*{'Под заказ'|translate}*/</div>
+        <div class="card__status">/*{'Ожидаю обратную связь'|translate}*/</div>
         </div>
         {/if}
 
@@ -95,14 +95,14 @@
                             {var purchase_price = purchase.record.price.primary.raw}
                         {/if}
                     <div class="clearfix dealer_price_wrap">
-                        <label>Ваша цена за шт.</label>
+                        <label>/*{'Ваша цена за шт'|translate}*/.</label>
                         <input
                             name="dealer_price"
                             value=""
                             data-good-id="${purchase.record.goods.id}"
                             data-good-price="${purchase_price}"
                             class="amount__input dealer-price-input input-field"
-                            placeholder="Укажите цену"
+                            placeholder="/*{'Укажите цену'|translate}*/"
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                         >
                     </div>
@@ -112,7 +112,7 @@
 
             {if purchase.record.upgrade_options}
             <div class="cart-upgrade-options">
-                <div class="label">Комплектация:</div>
+                <div class="label">/*{'Комплектация'|translate}*/:</div>
                 <div class="checkout-fields-i select">
                     <select class="inner__item" name="purchase_upgrade" data-purchase-id="${purchase.record.id}">
                         {for option in purchase.record.upgrade_options}
@@ -129,18 +129,18 @@
                     <a class="cart-g-l-i-title-link novisited" href="${purchase.record.goods.external_href}"><span class="cart-g-l-i-title-link-text">${purchase.record.goods.title}</span></a>
 
                     {if purchase.record.goods.sell_status == "customized"}
-                    <div class="goods_customized_status">Под заказ.</div>
+                    <div class="goods_customized_status">/*{'Под заказ'|translate}*/.</div>
                     {/if}
                 </h3>
 
                 {if price_diff}
                     {if price_diff < 0}
                         <div class="checkout-cart-old-price-title smaller">
-                            Цена снизилась
+                            /*{'Цена снизилась'|translate}*/
                         </div>
                     {else}
                         <div class="checkout-cart-old-price-title bigger">
-                            Цена изменилась
+                            /*{'Цена изменилась'|translate}*/
                         </div>
                     {/if}
                 {/if}
@@ -204,8 +204,8 @@
 	<div class="clearfix card card__analog">
 
         <div class="id_row">
-            <div class="id">В наличии 100% аналог</div>
-            <div class="id">Отправим сегодня</div>
+            <div class="id">/*{'В наличии 100% аналог'|translate}*/</div>
+            <div class="id">/*{'Отправим сегодня'|translate}*/</div>
         </div>
 
         <div class="card__row">
@@ -249,7 +249,7 @@
 
                 <div class="analog-actions">
                     <button type="button" class="amount__button amount__input analog-action-accept js-cart-analog-accept" data-purchase-id="${purchase.record.id}">
-                        <div class="amount__text text-nowrap">Подменить в заказе</div>
+                        <div class="amount__text text-nowrap">/*{'Подменить в заказе'|translate}*/</div>
                     </button>
 
                     <button type="button"
@@ -270,18 +270,18 @@
                 <a class="cart-g-l-i-title-link novisited" href="${purchase.record.goods.external_href}"><span class="cart-g-l-i-title-link-text">${purchase.record.goods.title}</span></a>
 
                 {if purchase.record.goods.sell_status == "customized"}
-                <div class="goods_customized_status">Под заказ.</div>
+                <div class="goods_customized_status">/*{'Под заказ'|translate}*/.</div>
                 {/if}
             </h3>
 
             {if price_diff}
                 {if price_diff < 0}
                     <div class="checkout-cart-old-price-title smaller">
-                        Цена снизилась
+                        /*{'Цена снизилась'|translate}*/
                     </div>
                 {else}
                     <div class="checkout-cart-old-price-title bigger">
-                        Цена изменилась
+                        /*{'Цена изменилась'|translate}*/
                     </div>
                 {/if}
             {/if}

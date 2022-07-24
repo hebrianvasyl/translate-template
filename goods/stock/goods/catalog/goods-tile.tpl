@@ -133,7 +133,7 @@
                 {include file="goods/catalog/goods-tile-price-block.tpl"}
 
 				{if (!empty($record.defect_description))}
-					<span class="defect-title">Причина уценки:</span>
+					<span class="defect-title">{'Причина уценки'|translate}:</span>
 					<div class="g-info-l">
 						{$record.defect_description nofilter}
 					</div>

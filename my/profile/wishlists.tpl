@@ -9,7 +9,7 @@
 
 		<div class="wishlist-header clearfix">
 			<span class="btn-link btn-grey submit-btn add-more float-rt">
-				<a class="btn-link-i before" href="#" onclick="return false" name="add_more_wishlists">Список желаний</a>
+				<a class="btn-link-i before" href="#" onclick="return false" name="add_more_wishlists">{'Список желаний'|translate}</a>
 			</span>
 		</div>
 

@@ -14,12 +14,12 @@
 			<span class="more-link btn-link-blue" name="more_goods">
 				<a href="#" class="btn-link-i">
 					<i class="sprite"></i>
-					Показать больше отзывов
+					{'Показать больше отзывов'|translate}
 				</a>
 			</span>
 		{/if}
 
-		<div class="more-text">Страницы</div>
+		<div class="more-text">{'Страницы'|translate}</div>
 
 		<ul class="more-pages-l" name="paginator" id="paginator">
 			{smart_page_navigation pages=$menu.active->pages midpoint=6 maxpoint=1 var="pages"}

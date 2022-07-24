@@ -5,7 +5,7 @@
 <div class="content" name="recent-goods-block">
     <section class="g slider padding-in">
         <header class="recent-viewed-head">
-            <div class="recent-viewed-title">Товары, которые вы смотрели</div>
+            <div class="recent-viewed-title">{'Товары, которые вы смотрели'|translate}</div>
         </header>
         <div class="slider tab-content-scroll catalog" id="recent_goods_carousel">
             <a href="#" class="btn btn-rt carousel_control_right" name="carousel_control_right"><img class="btn-img sprite" width="57" height="57" alt="" src="{$settings.path.design}/_.gif"></a>

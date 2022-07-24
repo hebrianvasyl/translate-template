@@ -25,11 +25,11 @@
 							<div class="g-tile-i-img">
                                 {capture name="tag_title"}
                                     {if $record->getFirstTag() == 'popularity'}
-										Хит продаж
+										{'Хит продаж'|translate}
                                     {elseif $record->getFirstTag() == 'novelty'}
-										Новинка
+										{'Новинка'|translate}
                                     {elseif $record->getFirstTag() == 'recommended'}
-										Акция
+										{'Акция'|translate}
                                     {/if}
                                 {/capture}
 
@@ -41,7 +41,7 @@
 										</div>
 									</div>
 								{/if}
-								<a href="#" name="delete-from-comparison" goods_id="{$record.id}" class="delete"><img class="delete-img" width="18" height="20" alt="очистить" src="{$settings.path.design}/_.gif"></a>
+								<a href="#" name="delete-from-comparison" goods_id="{$record.id}" class="delete"><img class="delete-img" width="18" height="20" alt="{'очистить'|translate}" src="{$settings.path.design}/_.gif"></a>
 								<a href="{$record.external_href}" class="p-image">
 									{$record->attachments->images.medium nofilter}
 								</a>
@@ -70,7 +70,7 @@
 							<div class="g-l-i-status">{$record->sell_status->value.title}</div>
                         {else}
 							<div class="price-block">
-								<span>Цена:</span>
+								<span>{'Цена'|translate}:</span>
                                 {if !empty($record.old_price) && ($record.old_price > $record.price)}
 									<span class="old-price">{$record->old_price nofilter}</span>
                                 {/if}
@@ -153,7 +153,7 @@
 		<td>
 			<div>
 				<span class="submit-btn add-more {if count($goods_records) < 2}large{/if}">
-					<a href="{$menu.active->parent.href}">Добавить еще одну модель</a>
+					<a href="{$menu.active->parent.href}">{'Добавить еще одну модель'|translate}</a>
 				</span>
 			</div>
 		</td>

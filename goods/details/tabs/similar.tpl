@@ -7,7 +7,7 @@
                     <table class="similar-models-t">
                         <tr class="similar-models-t-head">
                             <th class="similar-models-t-sort-cell" colspan="2">
-                                <h2 class="detail-tab-i-title">Похожие модели <span class="pp-characteristics-tab-product-name">{$record.sub_title_big|@mnemonics_convert nofilter}</span></h2>
+                                <h2 class="detail-tab-i-title">{'Похожие модели'|translate} <span class="pp-characteristics-tab-product-name">{$record.sub_title_big|@mnemonics_convert nofilter}</span></h2>
                             </th>
                             {foreach from=$main_characteristics item='main_detail'}
                             <th class="similar-models-t-sort-cell similar-models-t-sort-cell-detail">
@@ -22,7 +22,7 @@
             <table class="similar-models-t similar-models-t-main" name="similar-models-table">
                 <tr class="similar-models-t-head" style="opacity: 0;">
                     <th class="similar-models-t-sort-cell" colspan="2">
-                        <h2 class="detail-tab-i-title">Похожие модели <span class="pp-characteristics-tab-product-name">{$record.sub_title_big|@mnemonics_convert nofilter}</span></h2>
+                        <h2 class="detail-tab-i-title">{'Похожие модели'|translate} <span class="pp-characteristics-tab-product-name">{$record.sub_title_big|@mnemonics_convert nofilter}</span></h2>
                     </th>
                     {foreach from=$main_characteristics item='main_detail'}
                     <th class="similar-models-t-sort-cell similar-models-t-sort-cell-detail">
@@ -97,7 +97,7 @@
 
                             {if $record->isATP()}
                             <div class="price-block">
-                                <span>Цена:</span>
+                                <span>{'Цена'|translate}:</span>
                                 {if !empty($record.old_price) && ($record.old_price > $record.price)}
                                 <span class="old-price">{$record->old_price nofilter}</span>
                                 {/if}
@@ -115,7 +115,7 @@
                                 {if $record->parent.hide_oneclick_catalog != "1" and $record->isATP()}
                                 <div class="btn-one-click-order">
                                     <input type="hidden" name="oneclick_product_id" value="{$purchase_goods_id}">
-                                    <a href="#" id="open-one-click-order-{$purchase_goods_id}">Заказать<br>в 1 клик</a>
+                                    <a href="#" id="open-one-click-order-{$purchase_goods_id}">{'Заказать<br>в 1 клик'|translate}</a>
                                 </div>
                                 <script>
                                     var User = App.get('User');
@@ -201,7 +201,7 @@
                                                                 if(data.message) {
                                                                     message = data.message;
                                                                 } else {
-                                                                    message = 'Произошла ошибка, свяжитесь с нами по телефону';
+                                                                    message = '{'Произошла ошибка, свяжитесь с нами по телефону'|translate}';
                                                                 }
                                                                 oneclick_popup_{$purchase_goods_id}.getElement('.oneclick_error').set('html', '<div class="code"><span class="message-content">'+message+'</span></div>');
                                                             }
@@ -366,7 +366,7 @@
                                 {if $similar_model->parent.hide_oneclick_catalog != "1" and $similar_model->isATP()}
                                 <div class="btn-one-click-order">
                                     <input type="hidden" name="oneclick_product_id" value="{$purchase_goods_id}">
-                                    <a href="#" id="open-one-click-order-{$purchase_goods_id}">Заказать<br>в 1 клик</a>
+                                    <a href="#" id="open-one-click-order-{$purchase_goods_id}">{'Заказать<br>в 1 клик'|translate}</a>
                                 </div>
                                 <script>
                                     var User = App.get('User');
@@ -452,7 +452,7 @@
                                                                 if(data.message) {
                                                                     message = data.message;
                                                                 } else {
-                                                                    message = 'Произошла ошибка, свяжитесь с нами по телефону';
+                                                                    message = '{'Произошла ошибка, свяжитесь с нами по телефону'|translate}';
                                                                 }
                                                                 oneclick_popup_{$purchase_goods_id}.getElement('.oneclick_error').set('html', '<div class="code"><span class="message-content">'+message+'</span></div>');
                                                             }

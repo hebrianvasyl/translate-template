@@ -1,6 +1,6 @@
 <div class="check-form-i-delivery-requirement">
 	<div class="check-form-i f-i address-select {if !App.get("User").isAuth()}hidden{/if}">
-		<span class="check-form-i-text valigned-middle">Адрес доставки:</span>
+		<span class="check-form-i-text valigned-middle">/*{'Адрес доставки'|translate}*/:</span>
 		<div class="checkout-fields valigned-middle checkout-fields-i select" id="delivery_addresses">
 			<select name="address_id" class="text inner__item"></select>
 		</div>
@@ -8,7 +8,7 @@
 	<div id="new-address-block" class="check-form-i-delivery-requirement">
 		<div class="check-form-i check-form-i-new-address-block clearfix hidden">
 		    <div class="f-i-text">
-        	    <span class="check-form-i-text valigned-middle">Город:</span>
+        	    <span class="check-form-i-text valigned-middle">/*{'Город'|translate}*/:</span>
              </div>
 			<div class="checkout-fields valigned-middle" id="city_switcher">
 				<div id="countries" class="select-country-tabs"></div>
@@ -17,7 +17,7 @@
                             id="cities-suggest" type="text"
                             name="cities-suggest-input"
                             class="input-field search-text stw-popup-text search-text-default"
-                            placeholder="Выберите город"
+                            placeholder="/*{'Выберите город'|translate}*/"
                             _required="required"
                             autocomplete="off"
                     ></div>
@@ -27,28 +27,28 @@
 			</div>
 		</div>
 		<div class="check-form-i new-user-address-line">
-			<span class="check-form-i-text valigned-top adress-text hidden">Адрес получателя:</span>
+			<span class="check-form-i-text valigned-top adress-text hidden">/*{'Адрес получателя'|translate}*/:</span>
 			<div class="checkout-fields checkout-fields-adress">
 				<div class="checkout-fields-i float-lt checkout-fields-i-street">
 				    <div class="f-i-field-border">
-					    <input name="street" gtm-data='{ "eventLabel":"street"}' class="input-field inner__item check-form-input street" type="text" _required="required" _pattern=".+" placeholder="Улица" />
+					    <input name="street" gtm-data='{ "eventLabel":"street"}' class="input-field inner__item check-form-input street" type="text" _required="required" _pattern=".+" placeholder="/*{'Улица'|translate}*/" />
 					    <div name="message" id="street_error"></div>
 					</div>
-					<span class="checkout-fields-i-options">Улица</span>
+					<span class="checkout-fields-i-options">/*{'Улица'|translate}*/</span>
 					<div id="address-suggest"></div>
 				</div>
 				<div class="checkout-fields-i float-lt m-l-10 m-r-10 checkout-fields-i-house">
 				    <div class="f-i-field-border">
-					    <input name="house" gtm-data='{ "eventLabel":"house"}' class="input-field check-form-input house inner__item" _required="required" _pattern=".+" placeholder="Дом" />
+					    <input name="house" gtm-data='{ "eventLabel":"house"}' class="input-field check-form-input house inner__item" _required="required" _pattern=".+" placeholder="/*{'Дом'|translate}*/" />
 					    <div name="message" id="house_error"></div>
 					</div>
-					<span class="checkout-fields-i-options">Дом</span>
+					<span class="checkout-fields-i-options">/*{'Дом'|translate}*/</span>
 				</div>
 				<div class="checkout-fields-i float-lt checkout-fields-i-flat">
 				    <div class="f-i-field-border">
-					    <input name="flat" gtm-data='{ "eventLabel":"flat"}' class="input-field check-form-input flat inner__item small" type="text" placeholder="Квартира" />
+					    <input name="flat" gtm-data='{ "eventLabel":"flat"}' class="input-field check-form-input flat inner__item small" type="text" placeholder="/*{'Квартира'|translate}*/" />
                     </div>
-					<span class="checkout-fields-i-options">Квартира</span>
+					<span class="checkout-fields-i-options">/*{'Квартира'|translate}*/</span>
 				</div>
 				<input type="hidden" id="meest_express_address_id" name="meest_express_address_id" value="">
 			</div>

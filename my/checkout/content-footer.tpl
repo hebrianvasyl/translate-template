@@ -110,15 +110,15 @@
 				<nav>
 					<ul id="footer_links" class="footer-links">
 						{if $menu.www->articles}
-							<li><a href="{$menu.www->articles.href}" class="novisited">Помощь</a></li>
+							<li><a href="{$menu.www->articles.href}" class="novisited">{'Помощь'|translate}</a></li>
 						{/if}
 						{if $menu.www->dostavka_i_oplata}
-							<li><a href="{$menu.www->dostavka_i_oplata.href}" class="novisited">Оплата и доставка</a></li>
+							<li><a href="{$menu.www->dostavka_i_oplata.href}" class="novisited">{'Оплата и доставка'|translate}</a></li>
 						{/if}
 						{if $menu.www->contacts}
-							<li><a href="{$menu.www->contacts.href}" class="novisited">Контакты</a></li>
+							<li><a href="{$menu.www->contacts.href}" class="novisited">{'Контакты'|translate}</a></li>
 						{/if}
-                        <li><a href="https://drive.google.com/file/d/1i5V8uYQ9XgS3gXFRfpzNU1ijms1JUy1J/view?usp=sharing" class="novisited" target="_blank">Договор оферты</a></li>
+                        <li><a href="https://drive.google.com/file/d/1i5V8uYQ9XgS3gXFRfpzNU1ijms1JUy1J/view?usp=sharing" class="novisited" target="_blank">{'Договор оферты'|translate}</a></li>
 					</ul>
 				</nav>
 				<div class="h-line"></div>
@@ -211,8 +211,8 @@
 		{/if}
 	</div>
 	<div class="copyright">
-		<p>Мы работаем по всей Украине. Быстрая доставка в Киев, Львов, Харьков, Одесса, Винница, Запорожье, Днепропетровск и др. города.</p>
-		<p>&copy;&nbsp;{$settings.Contacts.copyright_year_start|copyright_years_range nofilter} Интернет-магазин IntexPool.ua. Все права защищены.</p>
+		<p>{'Мы работаем по всей Украине. Быстрая доставка в Киев, Львов, Харьков, Одесса, Винница, Запорожье, Днепропетровск и др. города'|translate}</p>
+		<p>&copy;&nbsp;{$settings.Contacts.copyright_year_start|copyright_years_range nofilter} {'Интернет-магазин IntexPool.ua. Все права защищены'|translate}.</p>
 	</div>
 </footer>
 

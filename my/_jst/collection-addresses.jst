@@ -7,20 +7,22 @@
 			/*{/foreach}*/
 		</select>&nbsp;
 	</div>*}*/
-	/*{*{if i>0}<a class="delete" href="#" name="remove"><i></i><span>Удалить</span></a>{/if}*}*/
+	/*{*{if i>0}<a class="delete" href="#" name="remove"><i></i><span>/*{'Удалить'|translate}*/
+</span></a>{/if}*}*/
 
 	<input type="hidden" class="addresses_city_id" name="addresses[${i}][city_id]" value="">
 
 	<div class="checkout-fields-i float-lt">
 		<input class="custom-field-error input-field enter-field check-form-input street" name="addresses[${i}][street]" type="text">
-		<span class="checkout-fields-i-options">Улица</span>
+		<span class="checkout-fields-i-options">/*{'Улица'|translate}*/
+</span>
 	</div>
 	<div class="checkout-fields-i house-checkout-fields-i float-lt">
 		<input class="custom-field-error input-field enter-field check-form-input house" name="addresses[${i}][house]" type="text">
-		<span class="checkout-fields-i-options">Дом</span>
+		<span class="checkout-fields-i-options">/*{'Дом'|translate}*/</span>
 	</div>
 	<div class="checkout-fields-i flat-checkout-fields-i float-lt">
 		<input class="input-field enter-field check-form-input flat" name="addresses[${i}][flat]" type="text">
-		<span class="checkout-fields-i-options">Квартира</span>
+		<span class="checkout-fields-i-options">/*{'Квартира'|translate}*/</span>
 	</div>
 </div>

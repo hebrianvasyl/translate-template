@@ -1,11 +1,11 @@
-<p class="pp-a-capt">До конца акции:</p>
+<p class="pp-a-capt">/*{'До конца акции'|translate}*/:</p>
 <div class="pp-a-time" id="timer">
     {var days = getCellText('days').toInt()}
 	{if promotion_days > 0}
-	    <span class="pp-a-timer-days">${promotion_days} ${promotion_days|morphology:["день","дня","дней"]}</span>
+	    <span class="pp-a-timer-days">${promotion_days} ${promotion_days|morphology:["/*{'день'|translate}*/","/*{'дня'|translate}*/","/*{'дней'|translate}*/"]}</span>
 	{else}
 		{if days > 0 && hide_counter == 0}
-		<span class="pp-a-timer-days">${days} ${days|morphology:["день","дня","дней"]}</span>
+		<span class="pp-a-timer-days">${days} ${days|morphology:["/*{'день'|translate}*/","/*{'дня'|translate}*/","/*{'дней'|translate}*/"]}</span>
 		{/if}
 	{/if}
 	<div class="pp-a-timer-container">
@@ -49,9 +49,9 @@
 			</div>
 		</div>
 		<div class="pp-a-timer-capt-container">
-			<div class="pp-a-timer-capt">Час.</div>
-			<div class="pp-a-timer-capt">Мин.</div>
-			<div class="pp-a-timer-capt">Сек.</div>
+			<div class="pp-a-timer-capt">/*{'Час'|translate}*/.</div>
+			<div class="pp-a-timer-capt">/*{'Мин'|translate}*/.</div>
+			<div class="pp-a-timer-capt">/*{'Сек'|translate}*/.</div>
 		</div>
 	</div>
 </div>

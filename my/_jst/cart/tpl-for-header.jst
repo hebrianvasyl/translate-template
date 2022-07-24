@@ -1,9 +1,9 @@
 {if empty() !== null}
 	<div class="cart float-rt" name="cart_in_header">
 		{if !empty()}
-			<a href="/*{$menu.my->cart.href}*/" class="btn-grey cart-i-link before after"><div class="cart-i-link-count"><span class="cart-i-link-count-text">${S.quantity}</span></div>Корзина</a>
+			<a href="/*{$menu.my->cart.href}*/" class="btn-grey cart-i-link before after"><div class="cart-i-link-count"><span class="cart-i-link-count-text">${S.quantity}</span></div>/*{'Корзина'|translate}*/</a>
 		{else}
-			<div class="btn-grey cart-i-link cart-i-empty before after"><span class="cart-i-link-count">0</span>Корзина</div>
+			<div class="btn-grey cart-i-link cart-i-empty before after"><span class="cart-i-link-count">0</span>/*{'Корзина'|translate}*/</div>
 		{/if}
 	</div>
 {/if}

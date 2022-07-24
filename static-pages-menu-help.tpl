@@ -95,11 +95,11 @@
 									<ul class="static-page-sub-categories">
                                         {if ($menu.active != $menu.www->articles)}
 											<li>
-												<a href="{$menu.www->articles.href}">Все</a>
+												<a href="{$menu.www->articles.href}">{'Все'|translate}</a>
 											</li>
                                         {else}
 											<li class="active">
-												<span>Все</span>
+												<span>{'Все'|translate}</span>
 											</li>
                                         {/if}
 
@@ -131,11 +131,11 @@
 									<ul class="static-page-sub-categories">
 										{if ($menu.active != $menu.www->videocontent)}
 											<li>
-												<a href="{$menu.www->videocontent.href}">Все</a>
+												<a href="{$menu.www->videocontent.href}">{'Все'|translate}</a>
 											</li>
 										{else}
 											<li class="active">
-												<span>Все</span>
+												<span>{'Все'|translate}</span>
 											</li>
                                         {/if}
 

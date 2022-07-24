@@ -3,8 +3,8 @@
 <div class="content" name="recent-goods-block">
 	<section class="g slider padding-in">
 		<header class="recent-viewed-head">
-			<div class="recent-viewed-title">Товары, которые вы смотрели</div>
-			<a id="recent_goods_save" class="underline recent-viewed-link" name="signin" href="#">Сохранить историю просмотра</a>
+			<div class="recent-viewed-title">/*{'Товары, которые вы смотрели'|translate}*/</div>
+			<a id="recent_goods_save" class="underline recent-viewed-link" name="signin" href="#">/*{'Сохранить историю просмотра'|translate}*/</a>
 		</header>
 		<div class="slider tab-content-scroll catalog" id="recent_goods_carousel">
 			<a href="#" class="btn btn-rt carousel_control_right" name="carousel_control_right"><img class="btn-img sprite" width="57" height="57" alt="" src="/*{$settings.path.design}*//_.gif"></a>
@@ -152,24 +152,24 @@
 										</div>
 										{else}
 											<div class="g-l-i-content-i-wrap sku-content unavailable">
-												<div class="g-l-i-status">Нет в наличии</div>
+												<div class="g-l-i-status">/*{'Нет в наличии'|translate}*/</div>
 											</div>
 										{/if}
 									{else}
 
 										{if item.sell_status == "unavailable"}
 
-											<div class="g-l-i-status recent-unavailable">Нет в наличии</div>
+											<div class="g-l-i-status recent-unavailable">/*{'Нет в наличии'|translate}*/</div>
 											/*{*<div class="waitlist-btn-wrap small" name="waitlist_catalog"></div>*}*/
 
 										{elseif item.sell_status == "waiting_for_supply"}
 
-											<div class="g-l-i-status recent-waiting">Ожидается поставка</div>
+											<div class="g-l-i-status recent-waiting">/*{'Ожидается поставка'|translate}*/</div>
 											/*{*<div class="waitlist-btn-wrap small" name="waitlist_catalog"></div>*}*/
 
 										{elseif item.sell_status == "call"}
 
-											<div class="g-l-i-status status-call before">Наличие уточняйте</div>
+											<div class="g-l-i-status status-call before">/*{'Наличие уточняйте'|translate}*/</div>
 
                                             /*{*
 											{if (price.get("raw"))}

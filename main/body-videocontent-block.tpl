@@ -2,7 +2,7 @@
 {if count($video)}
 	<div class="sidebar-i sidebar-i-content news">
 		<h2 class="sidebar-i-content-title clearfix">
-			<a class="sidebar-i-content-title-link" href="{$menu->videocontent.href}">Видео</a>
+			<a class="sidebar-i-content-title-link" href="{$menu->videocontent.href}">{'Видео'|translate}</a>
 		</h2>
 		<ul class="sidebar-i-content-l">
 			{foreach $video as $video_record}
@@ -16,6 +16,6 @@
 				</li>
 			{/foreach}
 		</ul>
-		<a class="show-more-link" href="{$menu->videocontent.href}"><span>Все видео</span> &#8594;</a>
+		<a class="show-more-link" href="{$menu->videocontent.href}"><span>{'Все видео'|translate}</span> &#8594;</a>
 	</div>
 {/if}

@@ -102,20 +102,20 @@
                 </div>
                 <div>
                     {if $record.group_priority == '1'}
-                    ПРИОРИТЕТ
+{'ПРИОРИТЕТ'|translate}
                     {else}
-                    НЕ приоритет
+                    {'НЕ приоритет'|translate}
                     {/if}
                 </div>
                 <div>
                     {if $menu.active.id == $record.parent}
-                    НЕ дубль
+{'НЕ дубль'|translate}
                     {else}
-                    ДУБЛЬ
+                    {'ДУБЛЬ'|translate}
                     {/if}
                 </div>
                 <div>
-                    Порядок: {$record.order}
+{'Порядок'|translate}: {$record.order}
                 </div>
             </div>
 
@@ -167,7 +167,7 @@
 
 			{if $record->isATP()}
             <div class="price-block">
-                <span>Цена:</span>
+                <span>{'Цена'|translate}:</span>
                 {if !empty($record.old_price) && ($record.old_price > $record.price)}
                 <span class="old-price notranslate">{$record->old_price nofilter}</span>
                 {/if}

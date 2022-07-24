@@ -35,7 +35,7 @@
 
 	{if !empty($filter_reset)}
 
-		<a href="{$filter_reset}" id="reset-silter" class="novisited">Сбросить фильтр</a>
+		<a href="{$filter_reset}" id="reset-silter" class="novisited">{'Сбросить фильтр'|translate}</a>
 
 	{/if}
 

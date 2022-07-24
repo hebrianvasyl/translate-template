@@ -20,7 +20,7 @@
     {if $record->parent.hide_oneclick_catalog != "1" and ($record->sell_status.value == "available" or $record->sell_status.value == "limited" or $record->sell_status.value == "customized")}
     <div class="btn-one-click-order">
         <input type="hidden" name="oneclick_product_id" value="{$purchase_goods_id}">
-        <a href="#" id="open-one-click-order-{$purchase_goods_id}">Заказать<br>в 1 клик</a>
+        <a href="#" id="open-one-click-order-{$purchase_goods_id}">{'Заказать<br>в 1 клик'|translate}</a>
     </div>
     <script>
         var User = App.get('User');
@@ -106,7 +106,7 @@
                                     if(data.message) {
                                         message = data.message;
                                     } else {
-                                        message = 'Произошла ошибка, свяжитесь с нами по телефону';
+                                        message = '{'Произошла ошибка, свяжитесь с нами по телефону'|translate}';
                                     }
                                     oneclick_popup_{$purchase_goods_id}.getElement('.oneclick_error').set('html', '<div class="code"><span class="message-content">'+message+'</span></div>');
                                 }

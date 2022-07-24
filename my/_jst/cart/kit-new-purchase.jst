@@ -57,7 +57,7 @@
 			<input type="hidden" name="kit_id" value="${purchase.kit.kit_id}"/>
 			<div class="b-goods-kit-header">
 				<input type="checkbox" class="cart-i-check" name="will_be_added_to_order" {if purchase.record.will_be_added_to_order == 1} checked {/if}>
-				<div class="b-goods-kit-title">Акционный комплект</div>
+				<div class="b-goods-kit-title">/*{'Акционный комплект'|translate}*/</div>
 			</div>
 
 			{if purchase.record.goods.sell_status == "customized"}
@@ -141,7 +141,7 @@
 				<table class="b-goods-kit-info">
 					<tr>
 
-						<td class="b-goods-kit-price">Цена комплекта:
+						<td class="b-goods-kit-price">/*{'Цена комплекта'|translate}*/:
 							{if purchase.kit.kit_fixed_amount}
 								<span class="kit-without-discount-price">
 									${purchase.kit.single_kit_price_without_discount.primary.string}
@@ -151,18 +151,19 @@
 								${purchase.kit.single_kit_price.primary.string}
 							</span>
 						</td>
-						<td class="b-goods-kit-amount"><input type="text" class="g-l-i-amount" value="${purchase.kit.quantity}" name="quantity"> ${purchase.kit.quantity|morphology:["комплект","комплекта","комплектов"]}</td>
+						<td class="b-goods-kit-amount"><input type="text" class="g-l-i-amount" value="${purchase.kit.quantity}" name="quantity"> ${purchase.kit.quantity|morphology:["/*{'комплект'|translate}*/
+","/*{'комплекта'|translate}*/","/*{'комплектов'|translate}*/"]}</td>
 						<td class="b-goods-kit-cost b-goods-kit-summary">${purchase.kit.kit_cost.primary.string}</td>
 					</tr>
 				</table>
 			</div>
 
 			{if is_customized}
-            <div class="goods_customized_status">В комплекте присутствуют товары, которые оформляються под заказ.</div>
+            <div class="goods_customized_status">/*{'В комплекте присутствуют товары, которые оформляються под заказ'|translate}*/.</div>
             {/if}
 
 			<a class="delete g-i-delete" name="delete" href="#">
-				<img class="delete-img" width="18" height="20" alt="очистить" src="/*{$settings.path.design}*//_.gif">
+				<img class="delete-img" width="18" height="20" alt="/*{'очистить'|translate}*/" src="/*{$settings.path.design}*//_.gif">
 			</a>
 		</div>
 	</div>

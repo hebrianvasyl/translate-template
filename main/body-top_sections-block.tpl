@@ -3,7 +3,7 @@
 {if count($categories)}
 
 <section class="m-filter">
-	<div class="m-filter-title">Популярные категории</div>
+	<div class="m-filter-title">{'Популярные категории'|translate}</div>
 	<nav>
 		<ul class="m-filter-l">
 			{foreach $categories as $category}

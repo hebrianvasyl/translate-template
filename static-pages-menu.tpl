@@ -63,11 +63,11 @@
             <ul class="multi-menu-l">
                 {if ($menu.active != $menu.www->catalogs)}
                 <li class="multi-menu-l-i">
-                    <a href="{$menu.www->catalogs.href}">Все</a>
+                    <a href="{$menu.www->catalogs.href}">{'Все'|translate}</a>
                 </li>
                 {else}
                 <li class="multi-menu-l-i active">
-                    <span>Все</span>
+                    <span>{'Все'|translate}</span>
                 </li>
                 {/if}
 

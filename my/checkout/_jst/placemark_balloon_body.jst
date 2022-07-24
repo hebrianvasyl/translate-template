@@ -1,4 +1,4 @@
 ${place.city}, ${place.address}<br>
 {if place.info}${place.info}<br>{/if}
-{if place.max_weight > 0}Грузоподьемность до ${place.max_weight} кг<br>{/if}
+{if place.max_weight > 0}/*{'Грузоподьемность до'|translate}*/ ${place.max_weight} /*{'кг'|translate}*/<br>{/if}
 ${place.phones}

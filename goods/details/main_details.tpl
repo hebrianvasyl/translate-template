@@ -1,9 +1,9 @@
 {if !empty($goods_icons)}
 <div class="clearfix hidden">
     {*if isset($exclusive) and $exclusive == '1'*}
-    {*<h4 class="goods-icons-title">ЭКСКЛЮЗИВНАЯ КОМПЛЕКТАЦИЯ:</h4>*}
+    {*<h4 class="goods-icons-title">{'ЭКСКЛЮЗИВНАЯ КОМПЛЕКТАЦИЯ'|translate}:</h4>*}
     {*else*}
-    <h4 class="goods-icons-title">КОМПЛЕКТАЦИЯ:</h4>
+    <h4 class="goods-icons-title">{'КОМПЛЕКТАЦИЯ'|translate}:</h4>
     {*/if*}
 </div>
 

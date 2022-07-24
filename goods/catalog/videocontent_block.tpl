@@ -4,7 +4,7 @@
 {if !empty($video)}
 	<div class="sidebar-i sidebar-i-content">
 		<h2 class="sidebar-i-content-title clearfix">
-			<a class="sidebar-i-content-title-link" href="{$menu->videocontent.href}">Видео</a>
+			<a class="sidebar-i-content-title-link" href="{$menu->videocontent.href}">{'Видео'|translate}</a>
 		</h2>
 		<ul class="sidebar-i-content-l">
 			{foreach $video as $video_record}

@@ -12,7 +12,7 @@
 			<div class="kit-wrap-red">
 				<div class="b-goods-kit">
 					<div class="b-goods-kit-header">
-						<h4 class="b-goods-kit-title">Акционный комплект</h4>
+						<h4 class="b-goods-kit-title">{'Акционный комплект'|translate}</h4>
 					</div>
 					<ul class="cart-g-l">
 						{$kit_cost_without_discount = 0}
@@ -120,7 +120,7 @@
 		<p class="order-i-text left-column-text valigned-bottom">{$delivery->method.title}</p>
 		<p class="order-i-text right-column-text valigned-bottom g-l-info-cost float-rt">
 			{if in_array($delivery->method.name, ['nova-poshta', 'courier-service']) && $delivery->cost->getValue() == 0}
-				Уточнить у менеджера
+				{'Уточнить у менеджера'|translate}
 			{else}
 				{$delivery->cost nofilter}
 			{/if}
@@ -128,7 +128,7 @@
 	</li>
 
 	<li class="order-i cart-g-l-i total">
-		<div class="order-i-text left-column-text valigned-bottom">Итого к оплате:</div>
+		<div class="order-i-text left-column-text valigned-bottom">{'Итого к оплате'|translate}:</div>
 		<div class="order-i-text right-column-text valigned-bottom g-l-info-cost">
 			{if $order->cost_with_discount}
 				{$order->cost_with_discount nofilter}

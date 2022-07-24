@@ -3,7 +3,7 @@
 {assign var='delivery' value=$order->deliveries->getLast()}
 
 {if $delivery->method.name == 'nova-poshta'}
-{assign var='delivery_name' value='Новой Почты'}
+{assign var='delivery_name' value='{'Новой Почты'|translate}'}
 {assign var='delivery_link' value='https://novaposhta.ua/'}
 {assign var='delivery_img' value='checkout-delivery-np'}
 {else}

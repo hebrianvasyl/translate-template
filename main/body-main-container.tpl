@@ -63,7 +63,7 @@
 								if(active_tab_segment == 'promotions') {
                                     active_tab_segment = 'all-promotions';
                                 }
-                                $('goods-tabs-content-all-link').set('html', '<a href="/'+active_tab_segment+'/">Посмотреть все</a>');
+                                $('goods-tabs-content-all-link').set('html', '<a href="/'+active_tab_segment+'/">{'Посмотреть все'|translate}</a>');
 
 								return active_tab_switchers.length
 										? active_tab_switchers[0].get('html')

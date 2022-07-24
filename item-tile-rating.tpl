@@ -16,11 +16,11 @@
 	{/if}
 	{if $record->users_rating.count_comments}
 	<div class="rating-content float-rt">
-		<a name="switch_to_comments" class="novisited" href="{$comments_url}">{$record->users_rating.count_comments} отзыв{$record->users_rating.count_comments|@morphology}</a>
+		<a name="switch_to_comments" class="novisited" href="{$comments_url}">{$record->users_rating.count_comments} {'отзыв'|translate}{$record->users_rating.count_comments|@morphology}</a>
 	</div>
 	{else}
 	<div class="rating-content float-rt">
-		<a name="switch_to_comments" class="novisited" href="{$comments_url}">оставь отзыв</a>
+		<a name="switch_to_comments" class="novisited" href="{$comments_url}">{'оставь отзыв'|translate}</a>
 	</div>
 	{/if}
 </div>

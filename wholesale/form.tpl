@@ -5,19 +5,19 @@
     <div class="content">
         <div class="inner">
             {if $user}
-            <p>Ваши данные:</p>
+            <p>{'Ваши данные'|translate}:</p>
             <input type="text" name="title" value="{$user.title}" disabled>
             <input type="text" name="login" value="{$user.login}" disabled>
             <input type="text" name="email" value="{$user.email}" disabled>
             <p>
-                <small>Вы можете изменить их<br>в <a href="{$menu.my.href}">личном кабинете</a></small>
+                <small>{'Вы можете изменить их<br>в'|translate} <a href="{$menu.my.href}">{'личном кабинете'|translate}</a></small>
             </p>
             {else}
-            <input type="text" name="title" placeholder="ФИО">
-            <input type="text" name="login" placeholder="Телефон">
+            <input type="text" name="title" placeholder="{'ФИО'|translate}">
+            <input type="text" name="login" placeholder="{'Телефон'|translate}">
             <input type="text" name="email" placeholder="E-mail">
             {/if}
-            <button type="submit">Зарегистрироваться</button>
+            <button type="submit">{'Зарегистрироваться'|translate}</button>
         </div>
 
         <div class="result hidden" name="message"></div>
@@ -79,7 +79,7 @@
 
                 resultBlock.addClass('exception');
 
-                resultBlock.set('html', 'Ошибка на сервере');
+                resultBlock.set('html', "{'Ошибка на сервере'|translate}");
                 resultBlock.show();
             }.bind(this)
         }).send();

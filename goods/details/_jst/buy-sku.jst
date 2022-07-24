@@ -47,13 +47,13 @@ if(old_price_object.get('raw') > price_uah_object.get('raw')) {
 		</div>
 		<div class="let-me-know aligned-center" name="waitlist_details"></div>
 	{elseif sell_status == "archive"}
-		<div class="status sell-status-title status-archive">Снят с продаж</div>
+		<div class="status sell-status-title status-archive">/*{'Снят с продаж'|translate}*/</div>
 	{else}
 
 	<div name="sell_status" class="status status-${sell_status} {if inCart()}status-in-cart{/if} {if sell_status == "call"}before{/if}">
 		{if inCart()}
 			<div class="sell-status-title">
-				<span class="in-card-span after">Уже в корзине</span>
+				<span class="in-card-span after">/*{'Уже в корзине'|translate}*/</span>
 			</div>
 		{else}
 			<div class="sell-status-title">
@@ -82,7 +82,7 @@ if(old_price_object.get('raw') > price_uah_object.get('raw')) {
 						${source_data.same_price}
 					{elseif price_uah_object.get('raw') != null}
 						{if !is_ready_to_buy}
-							<span>от</span>
+							<span>/*{'от'|translate}*/</span>
 						{/if}
 						${price_uah_object.get('html')}
 					{/if}
@@ -102,17 +102,17 @@ if(old_price_object.get('raw') > price_uah_object.get('raw')) {
 					{if inCart()}
 						<span class="g-l-i-price-buy">
                             <a class="btn-link-i g-buy g-buy-in-cart" name="showcart" class="make-order g-buy">
-                                Оформить заказ&nbsp;
+                                /*{'Оформить заказ'|translate}*/&nbsp;
                             </a>
                         </span>
 					{elseif is_ready_to_buy}
 						<span class="g-l-i-price-buy">
 							<a class="btn-link-i g-buy" name="topurchases" class="make-order g-buy">
-								{if sell_status == "customized" }Под заказ{else}Купить{/if}
+								{if sell_status == "customized" }/*{'Под заказ'|translate}*/{else}/*{'Купить'|translate}*/{/if}
 							</a>
 						</span>
 					{elseif !is_all_details_values_selected}
-						<div class="buy-grey">Купить</div>
+						<div class="buy-grey">/*{'Купить'|translate}*/</div>
 					{/if}
 				</form>
 			</div>

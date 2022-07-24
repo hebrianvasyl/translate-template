@@ -3,19 +3,19 @@
 
 	{if $cart->show_in_stock_bar}
 	<div class="id_row">
-		<div class="id">В наличии</div>
+		<div class="id">{'В наличии'|translate}</div>
 		<div id="delivery-deadline" class="id">
 			{if date('H') < $settings.Contacts.delivery_today_deadline}
-				Отправим сегодня
+				{'Отправим сегодня'|translate}
 			{else}
-				Отправим завтра
+				{'Отправим завтра'|translate}
 			{/if}
 		</div>
 		<div id="delivery-uzh-pickup-deadline" class="id hidden">
 			{if date('H') < $settings.Contacts.pickup_today_deadline}
-				Выдача сегодня
+				{'Выдача сегодня'|translate}
 			{else}
-				Выдача завтра
+				{'Выдача завтра'|translate}
 			{/if}
 		</div>
 	</div>
@@ -33,7 +33,7 @@
 		<div class="count">
 			{if $user.user_type == 'dealer'}
 			<div class="count__row">
-				<div class="count__col">Ваш баланс:</div>
+				<div class="count__col">{'Ваш баланс'|translate}:</div>
 				<div class="count__col">
 					{if $user.balance < 0}
 						<span style="color: red;">{$user.balance|number_format:2:".":" "} грн</span>
@@ -44,24 +44,24 @@
 			</div>
 			{/if}
 			<div id="cart-sub-total" class="count__row hidden">
-				<div class="count__col">Всего:</div>
+				<div class="count__col">{'Всего'|translate}:</div>
 				<div class="count__col" data-role="cart_sub_total"></div>
 			</div>
 			<div id="cart-discount" class="count__row hidden">
-				<div class="count__col">Скидка:</div>
+				<div class="count__col">{'Скидка'|translate}:</div>
 				<div class="count__col" data-role="cart_discount"></div>
 			</div>
 			<div class="count__row">
-				<div class="count__col bold">Итого: </div>
+				<div class="count__col bold">{'Итого'|translate}: </div>
 				<div class="count__col bold" data-role="cart_total">{$cart->cost nofilter}</div>
 			</div>
 			<div class="count__row hidden">
-				<div class="count__col bold">Итого с доставкой: </div>
-				<div id="total-cost-with-delivery" class="count__col bold">по тарифам перевозчика</div>
+				<div class="count__col bold">{'Итого с доставкой'|translate}: </div>
+				<div id="total-cost-with-delivery" class="count__col bold">{'по тарифам перевозчика'|translate}</div>
 			</div>
 			{if $user.user_type == 'dealer'}
 			<div class="count__row dealer-total-cost">
-				<div class="count__col bold text-nowrap">Итого (для покупателя):</div>
+				<div class="count__col bold text-nowrap">{'Итого (для покупателя)'|translate}:</div>
 				<div class="count__col bold g-l-info-cost" data-role="cart_total">{$cart->cost nofilter}</div>
 			</div>
 			{/if}
@@ -71,7 +71,7 @@
 		<div class="order-i cart-g-l-i totals hidden">
             {if $user.user_type == 'dealer'}
             <div class="clearfix dealer-balance order-i-total">
-                <div class="order-i-text ">Ваш баланс:</div>
+                <div class="order-i-text ">{'Ваш баланс'|translate}:</div>
                 <div class="valigned-bottom g-l-info-cost" >
                     <div style="font-size: 16px;">
                         {if $user.balance < 0}
@@ -86,7 +86,7 @@
 
 			{* TOTAL *}
 			<div class="clearfix order-i-total">
-				<div class="order-i-text ">Итого:</div>
+				<div class="order-i-text ">{'Итого'|translate}:</div>
 				<div class="hidden" id="delivery_cost_raw"></div>
 				<div class="valigned-bottom g-l-info-cost" >
 					<div class="old-price-discount">
@@ -98,20 +98,20 @@
 				</div>
 			</div>
             <div class="clearfix hidden dealer-total-cost order-i-total">
-                <div class="order-i-text ">Итого (для покупателя):</div>
+                <div class="order-i-text ">{'Итого (для покупателя)'|translate}:</div>
                 <div class="valigned-bottom g-l-info-cost" >
                     <div></div>
                 </div>
             </div>
 			{* WEIGHT *}
 			<div class="clearfix hidden" id="weight_container">
-				<p class="order-i-text left-column-text valigned-bottom">Вес:</p>
+				<p class="order-i-text left-column-text valigned-bottom">{'Вес'|translate}:</p>
 				<p class="order-i-text right-column-text valigned-bottom g-l-info-cost" id="weight_value"></p>
 			</div>
 
 			{* VOLUME *}
 			<div class="clearfix hidden" id="volume_container">
-				<p class="order-i-text left-column-text valigned-bottom">Объем:</p>
+				<p class="order-i-text left-column-text valigned-bottom">{'Объем'|translate}:</p>
 				<p class="order-i-text right-column-text valigned-bottom g-l-info-cost" id="volume_value"></p>
 			</div>
 			<div id="cart-delivery-info" class="hidden">
@@ -123,7 +123,7 @@
 
 				{* COMISSION *}
 				<div class="clearfix" id="commission_container">
-					<p class="order-i-text left-column-text valigned-bottom">Комиссия за платеж:</p>
+					<p class="order-i-text left-column-text valigned-bottom">{'Комиссия за платеж'|translate}:</p>
 					<p class="order-i-text right-column-text valigned-bottom g-l-info-cost" id="commission_value"></p>
 				</div>
 			</div>
@@ -132,7 +132,7 @@
 
 			{* EDIT ORDER *}
 			<div class="aligned-center hidden">
-				<a href="#" id="checkout-show-cart-popup" class="order-link">Редактировать заказ</a>
+				<a href="#" id="checkout-show-cart-popup" class="order-link">{'Редактировать заказ'|translate}</a>
 			</div>
 		</div>
 	</div>

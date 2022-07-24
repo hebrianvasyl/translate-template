@@ -9,12 +9,12 @@
 			<a id="cancel_coupon" class="cancel-link underline novisited"
 				href="#"
 				gtm-data='{"eventLabel":"${data.applied_coupon.campaign_title}"}'
-			>Отменить промокод</a>
+			>/*{'Отменить промокод'|translate}*/</a>
 		</div>
 	{else}
 		<div class="coupon-b">
 			<a class="more-link" href="#" id="show_input_block">
-				<span class="underline">Ввести промокод</span>
+				<span class="underline">/*{'Ввести промокод'|translate}*/</span>
 			</a>
 			<div id="coupon_text_input_block" class="hidden coupon-b-i clearfix">
 				<form id="apply_coupon" action="/cgi-bin/form.php?r={$menu.my->cart.href}#applyCoupon" name="submit_by_ajax">
@@ -31,7 +31,7 @@
 							>
 					</div>
 					<span class="btn-link">
-						<input type="submit" class="btn-link-i" value="Применить" />
+						<input type="submit" class="btn-link-i" value="/*{'Применить'|translate}*/" />
 					</span>
 				</form>
 			</div>

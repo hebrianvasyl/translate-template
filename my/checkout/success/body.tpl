@@ -30,7 +30,7 @@
 
                 App.showMessage(new Message_class({
                     code: 1,
-                    content: "Спасибо за покупку"
+                    content: "{'Спасибо за покупку'|translate}"
                 }));
 
             }
@@ -40,7 +40,7 @@
         </script>
     {/literal}
 
-    <h2 class="check-title padding-lt for-print border-btm hidden">Номер заказа: №{$order->getId()}
+    <h2 class="check-title padding-lt for-print border-btm hidden">{'Номер заказа'|translate}: №{$order->getId()}
         <p class="order-title-date">{$order->created->nice_date}, {"H:i"|date:$order->created->getTimeStamp()}</p>
     </h2>
 
@@ -49,48 +49,48 @@
             {assign var='delivery' value=$order->deliveries->getLast()}
             {if !empty($delivery)}
             <tr class="order-t-i">
-                <td class="order-t-i-lt grey">Доставка:</td>
+                <td class="order-t-i-lt grey">{'Доставка'|translate}:</td>
                 <td class="order-t-i-rt">{$delivery->method.title}</td>
             </tr>
             {/if}
             {if !empty($order->invoices[0])}
             <tr class="order-t-i">
-                <td class="order-t-i-lt grey">Оплата:</td>
+                <td class="order-t-i-lt grey">{'Оплата'|translate}:</td>
                 <td class="order-t-i-rt">{$order->invoices[0]->payment_method}</td>
             </tr>
             {/if}
             {if !is_numeric($order->user.title)}
             <tr class="order-t-i">
-                <td class="order-t-i-lt grey">Имя получателя:</td>
+                <td class="order-t-i-lt grey">{'Имя получателя'|translate}:</td>
                 <td class="order-t-i-rt">{$order->user.title}</td>
             </tr>
             {else}
             <tr class="order-t-i">
-                <td class="order-t-i-lt grey">Телефон:</td>
+                <td class="order-t-i-lt grey">{'Телефон'|translate}:</td>
                 <td class="order-t-i-rt">{$order->user.title}</td>
             </tr>
             {/if}
             {if !empty($order->deliveries[0])}
             <tr class="order-t-i">
-                <td class="order-t-i-lt grey">Телефон:</td>
+                <td class="order-t-i-lt grey">{'Телефон'|translate}:</td>
                 <td class="order-t-i-rt">{$order->deliveries[0]->phone|@phone_format}</td>
             </tr>
             {/if}
             {if !empty($order->deliveries.0->address)}
                 <tr class="order-t-i">
-                    <td class="order-t-i-lt grey">Адрес получателя:</td>
+                    <td class="order-t-i-lt grey">{'Адрес получателя'|translate}:</td>
                     <td class="order-t-i-rt">{$order->deliveries.0->address}</td>
                 </tr>
             {/if}
             {if !empty($order->user.email)}
                 <tr class="order-t-i">
-                    <td class="order-t-i-ltv grey">Эл почта:</td>
+                    <td class="order-t-i-ltv grey">{'Эл почта'|translate}:</td>
                     <td class="order-t-i-rt">{$order->user.email}</td>
                 </tr>
             {/if}
             {if !empty($order.comment)}
                 <tr class="order-t-i">
-                    <td class="order-t-i-lt grey">Комментарий:</td>
+                    <td class="order-t-i-lt grey">{'Комментарий'|translate}:</td>
                     <td class="order-t-i-rt">{$order.comment}</td>
                 </tr>
             {/if}
@@ -100,19 +100,19 @@
     <div class="check-lt padding-lt not-for-print">
         <table class="order-t">
             <tr class="order-t-i">
-                <td class="order-t-i-lt">Номер заказ: <b>№{$order->getId()}</b></td>
+                <td class="order-t-i-lt">{'Номер заказ'|translate}: <b>№{$order->getId()}</b></td>
             </tr>
             <tr class="order-t-i">
-                <td class="order-t-i-lt">Сумма заказа: <b>{$order->cost_with_discount nofilter}</b></td>
+                <td class="order-t-i-lt">{'Сумма заказа'|translate}: <b>{$order->cost_with_discount nofilter}</b></td>
             </tr>
             <tr class="order-t-i">
                 <td class="order-t-i-lt">
                     <div>
-                        Оформление заказа {"H:i"|date:$order->created->getTimeStamp()}, {"d.m.Y"|date:$order->created->getTimeStamp()}:
+                            {'Оформление заказа'|translate} {"H:i"|date:$order->created->getTimeStamp()}, {"d.m.Y"|date:$order->created->getTimeStamp()}:
                         {if date('H') < $settings.Contacts.delivery_today_deadline}
-                            <b>Отправим сегодня</b>
+                            <b>{'Отправим сегодня'|translate}</b>
                         {else}
-                            <b>Отправим завтра</b>
+                            <b>{'Отправим завтра'|translate}</b>
                         {/if}
                     </div>
                 </td>
@@ -151,7 +151,7 @@
                         <li class="pay-l-i cards"><img class="pay-l-i-img" src="{$settings.path.design}/checkout-visa.png"></li>
                         <li class="pay-l-i cards"><img class="pay-l-i-img" src="{$settings.path.design}/checkout-master.png"></li>
                     </ul>
-                    <p class="pb-text">Для оплаты заказа вы&nbsp;будете переадресованны на&nbsp;страницу процессингового центра <span class="pb-text-processing after">ПриватБанка</span></p>
+                    <p class="pb-text">{'Для оплаты заказа вы&nbsp;будете переадресованны на&nbsp;страницу процессингового центра'|translate} <span class="pb-text-processing after">{'ПриватБанка'|translate}</span></p>
                 </div>
             </div>
             {/if}
@@ -160,7 +160,7 @@
         {if $user.user_type == 'dealer'}
         <div style="padding: 10px;">
             <a href="{$menu.my.href}" class="btn-primary">
-                Перейти в свой кабинет
+                {'Перейти в свой кабинет'|translate}
             </a>
         </div>
         {/if}

@@ -10,11 +10,11 @@
         <section>
             <p><br></p>
             <p>
-                <a href="https://www.intexpool.ua/wholesale/">Открыть условия сотрудничества</a>
+                <a href="https://www.intexpool.ua/wholesale/">{'Открыть условия сотрудничества'|translate}</a>
             </p>
             <p><br></p>
             <p><br></p>
-            <h3>Список изминений в условия сотрудничества</h3>
+            <h3>{'Список изминений в условия сотрудничества'|translate}</h3>
             <ol>
                 {foreach $agreements as $agreement}
                 <li>

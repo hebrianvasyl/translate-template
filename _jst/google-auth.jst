@@ -5,7 +5,7 @@
 			<i></i><span>${title}</span><br>
 			<form action="/*{$menu.my.href}*/cgi-bin/form.php?r=/*{$menu.my->signin->oauth->google.href|@urlencode}*/&action=unbindAccount&type=google" method="post">
 				<input type="hidden" name="type" value="google" />
-				<button type="submit">разорвать связь</button>
+				<button type="submit">/*{'разорвать связь'|translate}*/</button>
 			</form>
 		</div>
 	{else}

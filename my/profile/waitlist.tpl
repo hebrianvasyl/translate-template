@@ -11,7 +11,7 @@
 
 		{if empty($waitlist)}
 			<div class="user-message in-page before code6">
-				<div class="user-message-content">Заявок в листе ожидания нет</div>
+				<div class="user-message-content">{'Заявок в листе ожидания нет'|translate}</div>
 			</div>
 		{else}
         <div class="site-content catalog stock-catalog">

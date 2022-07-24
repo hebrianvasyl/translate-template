@@ -5,7 +5,7 @@
 			<a href="{$record.link}" class="news-l-i-link float-lt" target="_blank">
 					<div class="hover_bg">
 						<div class="additional-info-block">
-							<div class="inner">Скачать каталог</div>
+							<div class="inner">{'Скачать каталог'|translate}</div>
 						</div>
 					</div>
 				{if !empty($record->attachments) && count($record->attachments->icon_hover)}
@@ -26,5 +26,5 @@
         {/if}
 	{/foreach}
 {else}
-	На данный момент каталогов нет
+{'На данный момент каталогов нет'|translate}
 {/if}

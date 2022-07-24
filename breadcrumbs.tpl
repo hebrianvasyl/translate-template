@@ -4,7 +4,7 @@
 			<li class="breadcrumbs-l-i float-lt">
 				<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 					<a href="{$menu.www.href}" itemprop="url" class="novisited">
-						<span itemprop="title">Интернет магазин IntexPool</span>
+						<span itemprop="title">{'Интернет магазин IntexPool'|translate}</span>
 					</a>
 				</span>
 			</li>

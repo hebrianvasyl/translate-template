@@ -1,7 +1,7 @@
 
 
 {if $main_details}
-	<h2 class="tabs-content-title">Основные характеристики</h2>
+	<h2 class="tabs-content-title">{'Основные характеристики'|translate}</h2>
 
 	<table class="characteristics-t">
 		{foreach from=$main_details item='detail'}
@@ -22,7 +22,7 @@
 			</tr>
 		{/foreach}
 	</table>
-	<a href="#" class="tabs-content-link underline novisited" name="switch_to_characteristics">Все характеристики</a>
+	<a href="#" class="tabs-content-link underline novisited" name="switch_to_characteristics">{'Все характеристики'|translate}</a>
 	<script>
 		$$("a[name=switch_to_characteristics]").addEvent('click',function(e){
 			var event = new DOMEvent(e);

@@ -18,10 +18,10 @@
     }
 </style>
 <div id="agreements_block">
-    <h3><b>Внимание! Изменения на сайте! Пожалуйста, чтоб продолжить работу (оформить заказ), ознакомьтесь с информацией:</b></h3>
+    <h3><b>{'Внимание! Изменения на сайте! Пожалуйста, чтоб продолжить работу (оформить заказ), ознакомьтесь с информацией'|translate}:</b></h3>
     {foreach from=$agreements item=item name=agreements}
     <div style="font-size: 15px; margin-bottom: 8px;">
-        <a href="{$menu.my->profile->agreements.href}?id={$item.id}">{$item.title}</a>&nbsp;&mdash;&nbsp;Ожидаем Ваше подтверждение, кнопка "Я ознакомился"
+        <a href="{$menu.my->profile->agreements.href}?id={$item.id}">{$item.title}</a>&nbsp;&mdash;&nbsp;{'Ожидаем Ваше подтверждение, кнопка "Я ознакомился"'|translate}
     </div>
     {/foreach}
 </div>

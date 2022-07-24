@@ -6,7 +6,7 @@
 		<form class="social-unbind-f" action="/*{$menu.my.href}*/cgi-bin/form.php?r=/*{$menu.my->signin->oauth->vkontakte.href|@urlencode}*/&action=unbindAccount&type=vkontakte" method="post">
 			<input type="hidden" name="type" value="vkontakte" />
 			<span class="btn-link btn-grey">
-				<button type="submit" class="btn-link-i social-unbind-f-button" name="signin">разорвать связь</button>
+				<button type="submit" class="btn-link-i social-unbind-f-button" name="signin">/*{'разорвать связь'|translate}*/</button>
 			</span>
 		</form>
 	</div>
@@ -19,7 +19,7 @@
 			<span class="social-enter-icon vk-btn float-lt">
 				<img class="social-enter-icon-img" alt="vk" src="/*{$settings.path.design}*//_.gif">
 			</span>
-			<span class="social-enter-text float-lt">Вконтакте</span>
+			<span class="social-enter-text float-lt">/*{'Вконтакте'|translate}*/</span>
 		</div>
 	</a>
 {/if}

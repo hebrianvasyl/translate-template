@@ -6,13 +6,13 @@
             <h4>Помощь от IntexPool</h4>
             <div class="bg">
                 <div class="content">
-                    <div class="content-title">Полезная и необходимая информация</div>
+                    <div class="content-title">{'Полезная и необходимая информация'|translate}</div>
                     <p>О продукции Intex и Bestway</p>
                 </div>
                 <ul>
-                  <li><a href="{$menu.www->qa.href}">Вопросы и ответы</a></li>
-                  <li><a href="{$menu.www->articles.href}">Советы - Статьи</a></li>
-                  <li><a href="{$menu.www->videocontent.href}">Видеоинструкции</a></li>
+                  <li><a href="{$menu.www->qa.href}">{'Вопросы и ответы'|translate}</a></li>
+                  <li><a href="{$menu.www->articles.href}">{'Советы - Статьи'|translate}</a></li>
+                  <li><a href="{$menu.www->videocontent.href}">{'Видеоинструкции'|translate}</a></li>
                 </ul>
             </div>
         </div>

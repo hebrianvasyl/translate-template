@@ -8,15 +8,15 @@
 
         if(b2.length == 1) {
             var banner = b2.getRandom();
-            banner['alt'] = 'Главная. №2 - ' + banner['alt'].replace(/<br>/g, ' ');
+            banner['alt'] = '{'Главная'|translate}. №2 - ' + banner['alt'].replace(/<br>/g, ' ');
 
             html += App.getHTML("{template_js_fetch file='_jst/banner.jst'}", banner);
             $('main2').addClass('banners-i-link banners-i-link-img').set('html', html);
         } else if(b2.length == 2) {
             var html = '';
 
-            b2[0]['alt'] = 'Главная. №2 - ' + b2[0]['alt'].replace(/<br>/g, ' ');
-            b2[1]['alt'] = 'Главная. №2 - ' + b2[1]['alt'].replace(/<br>/g, ' ');
+            b2[0]['alt'] = '{'Главная'|translate}. №2 - ' + b2[0]['alt'].replace(/<br>/g, ' ');
+            b2[1]['alt'] = '{'Главная'|translate}. №2 - ' + b2[1]['alt'].replace(/<br>/g, ' ');
 
             html += App.getHTML("{template_js_fetch file='_jst/banner.jst'}", b2[0]);
             html += App.getHTML("{template_js_fetch file='_jst/banner.jst'}", b2[1]);
@@ -35,11 +35,11 @@
 
                 var index1 = generateRandom(0, length, -1);
                 var banner1 = b2[index1];
-                banner1['alt'] = 'Главная. №2 - ' + banner1['alt'].replace(/<br>/g, ' ');
+                banner1['alt'] = '{'Главная'|translate}. №2 - ' + banner1['alt'].replace(/<br>/g, ' ');
 
                 var index2 = generateRandom(0, length, index1);
                 var banner2 = b2[index2];
-                banner2['alt'] = 'Главная. №2 - ' + banner2['alt'].replace(/<br>/g, ' ');
+                banner2['alt'] = '{'Главная'|translate}. №2 - ' + banner2['alt'].replace(/<br>/g, ' ');
 
                 html += App.getHTML("{template_js_fetch file='_jst/banner.jst'}",banner1);
                 html += App.getHTML("{template_js_fetch file='_jst/banner.jst'}",banner2);

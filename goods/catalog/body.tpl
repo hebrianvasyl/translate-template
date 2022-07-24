@@ -73,7 +73,7 @@
 			{Goods->getGoodsByTag tag="bestsellers" limit="5" order="order" parent=$section only_with_tags="1" assign="items"}
 			{if count($items)}
 				<div class="category-popular-block">
-					<div class="title">ТОП - {count($items)}</div>
+					<div class="title">{'ТОП'|translate} - {count($items)}</div>
 					<ul>
 					{foreach $items as $item}
 						<li>
@@ -119,7 +119,7 @@
 			<div class="social-widgets">
 				<div class="container">
 					<div class="item" id="youtube_widget">
-						<div class="title"><span>Наш канал</span><img src="{$settings.path.design}/youtube_widget.png"></div>
+						<div class="title"><span>{'Наш канал'|translate}</span><img src="{$settings.path.design}/youtube_widget.png"></div>
 						<div class="g-ytsubscribe" data-channelid="UC0rzaRCiZVosKaFLkgckTtg" data-layout="full" data-count="default"></div>
 					</div>
 					<div class="item" id="fb_widget"></div>
@@ -178,7 +178,7 @@
 
 				{else}
 
-					<p>Товаров с указанными характеристиками не найдено, повторите запрос с другими параметрами</p>
+					<p>{'Товаров с указанными характеристиками не найдено, повторите запрос с другими параметрами'|translate}</p>
 
 				{/if}
 
@@ -223,7 +223,7 @@
 <script src="https://apis.google.com/js/platform.js"></script>
 <script>
 	if($$('.body-layout .site-content.catalog .sidebar .sort-box .sort-box-l .sort-box-l-i input[type="checkbox"]:checked').length > 0) {
-		$('filter-selected').set('html', '<span>Вы выбрали: </span>');
+		$('filter-selected').set('html', '<span>{'Вы выбрали'|translate}: </span>');
 		$$('.body-layout .site-content.catalog .sidebar .sort-box .sort-box-l .sort-box-l-i input[type="checkbox"]:checked').each(function (el) {
 			var label = el.getParent('label');
 			var id = label.get('id');
@@ -248,7 +248,7 @@
 		var resetFilter = new Element('a', {
 			href: '#reset-filter',
 			'class': 'reset-filter',
-			html: 'Сбросить фильтры',
+			html: '{'Сбросить фильтры'|translate}',
 			events: {
 				click: function(){
 					$('reset-silter').click();

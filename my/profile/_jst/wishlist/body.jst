@@ -3,15 +3,15 @@
 
 		<div class="float-lt">
 			<input type="hidden" name="action" value="create" />
-			<label>Название списка</label>
+			<label>/*{'Название списка'|translate}*/</label>
 			<input class="input-field" type="text" required="1" value="Мой список" name="wishlist_title" onFocus="this.selectionStart = this.value.length">
 			<span class="btn-link btn-link-blue">
-				<button type="submit" class="btn-link-i">Сохранить</button>
+				<button type="submit" class="btn-link-i">/*{'Сохранить'|translate}*/</button>
 			</span>
 		</div>
 
 		<a href="#" onclick="return false" class="wishlist-status float-rt novisited" name="is_default">
-			<span>Сделать по-умолчанию</span>
+			<span>/*{'Сделать по-умолчанию'|translate}*/</span>
 		</a>
 	</form>
 </div>
@@ -28,20 +28,20 @@
 					<form class="wishlist-edit-b hidden" name="wishlist_rename_form">
 						<input class="input-field" type="text" required="1" name="wishlist_title" value="${wishlist.title.stripScripts()}" onFocus="this.selectionStart = this.value.length">
 						<span class="btn-link btn-link-blue btn-link-save">
-							<button type="submit" class="btn-link-i">Сохранить</button>
+							<button type="submit" class="btn-link-i">/*{'Сохранить'|translate}*/</button>
 						</span>
 						<span class="btn-link btn-grey submit-btn btn-link-abort" name="wishlist_abort">
-							<a href="#" class="btn-link-i">Отменить</a>
+							<a href="#" class="btn-link-i">/*{'Отменить'|translate}*/</a>
 						</span>
 						<input type="hidden" name="wishlist_id" value="${wishlist.id}" />
 						<input type="hidden" name="action" value="rename" />
 					</form>
 					<div class="wishlist-btn-controls float-lt" name="links_hint">
-						<a class="wishlist-btn-controls-i btn-rename float-lt hint-link" href="#" data-title="Переименовать список" name="rename_wishlist">
-							<img class="wishlist-btn-controls-img" height="15" width="15" src="/*{$settings.path.design}*//icon-pencil.png" alt="Переименовать" />
+						<a class="wishlist-btn-controls-i btn-rename float-lt hint-link" href="#" data-title="/*{'Переименовать список'|translate}*/" name="rename_wishlist">
+							<img class="wishlist-btn-controls-img" height="15" width="15" src="/*{$settings.path.design}*//icon-pencil.png" alt="/*{'Переименовать'|translate}*/" />
 						</a>
-						<a class="wishlist-btn-controls-i btn-del float-lt hint-link" data-title="Удалить список" href="#" name="delete_wishlist">
-							<img class="wishlist-btn-controls-img" height="16" width="13" src="/*{$settings.path.design}*//icon-remove.png" alt="Удалить" />
+						<a class="wishlist-btn-controls-i btn-del float-lt hint-link" data-title="/*{'Удалить список'|translate}*/" href="#" name="delete_wishlist">
+							<img class="wishlist-btn-controls-img" height="16" width="13" src="/*{$settings.path.design}*//icon-remove.png" alt="/*{'Удалить'|translate}*/" />
 						</a>
 					</div>
 				</div>
@@ -49,10 +49,10 @@
 				{if Object.getLength(wishlists)>1}
 					<div class="wishlist-status float-rt" name="is_wishlist_default">
 						{if wishlist.is_default != 0}
-							<span class="wishlist-status-default before">Список по-умолчанию</span>
+							<span class="wishlist-status-default before">/*{'Список по-умолчанию'|translate}*/</span>
 						{else}
 							<a href="#" onclick="return false" class="wishlist-status float-rt novisited" name="make_default">
-								<span>Сделать по-умолчанию</span>
+								<span>/*{'Сделать по-умолчанию'|translate}*/</span>
 							</a>
 						{/if}
 					</div>
@@ -104,7 +104,7 @@
 
 											{if goods_item.is_atp}
 	                                            <div class="price-block">
-	                                                <span>Цена:</span>
+	                                                <span>/*{'Цена'|translate}*/:</span>
 	                                                <span class="price">${goods_price.get("html")}</span>
 	                                            </div>
                                             {else}
@@ -184,7 +184,7 @@
 	                                                               name="wishlist_goods_delete"
 	                                                               gtm-data='{"eventLabel":"${goods_item.id}"}'>
 
-	                                                                <span class="underline">Удалить</span>
+	                                                                <span class="underline">/*{'Удалить'|translate}*/</span>
 
 	                                                            </a>
 
@@ -217,8 +217,8 @@
 											var MoreBlock = new MoreBlock_class();
 
 											MoreBlock.setOptions({
-												more_hide_text: '<span class="underline">Переместить</span> &#9660;',
-												more_show_text: '<span class="underline">Переместить</span> &#9650;'
+												more_hide_text: '<span class="underline">/*{'Переместить'|translate}*/</span> &#9660;',
+												more_show_text: '<span class="underline">/*{'Переместить'|translate}*/</span> &#9650;'
 											}).init('show-hide-container${goods_item.id}');
 
 										</script>
@@ -230,9 +230,9 @@
 							<div>
 								<div class="empty-wishlist" >
 									<p class="epmty-wishlist-p">
-										Ваш список желаний пуст. Пожалуйста,
+										/*{'Ваш список желаний пуст. Пожалуйста,'|translate}*/
 										<a class="epmty-wishlist-p-link novisited" href="/*{$menu.www.href}*/">
-											добавьте товары
+											/*{'добавьте товары'|translate}*/
 										</a>
 									</p>
 								</div>
@@ -246,14 +246,14 @@
 
 			<div class="wishlist-footer clearfix">
 				<div class="share-b float-lt">
-					<p class="share-b-title">Рассказать друзьям в соцсетях:</p>
+					<p class="share-b-title">/*{'Рассказать друзьям в соцсетях'|translate}*/:</p>
 					<ul class="social-share-l" name="wishlist_share_buttons"></ul>
 				</div>
 				<div class="wishlist-buy-b float-rt">
 					{if wishlist.goods.length && wishlist.total_cost > 0}
-					<p class="wishlist-buy-title">В списке <span>${wishlist.goods.length}</span> товар${wishlist.goods.length|morphology} на сумму ${wishlist.total_cost} грн</p>
+					<p class="wishlist-buy-title">/*{'В списке'|translate}*/ <span>${wishlist.goods.length}</span> товар${wishlist.goods.length|morphology} /*{'на сумму'|translate}*/ ${wishlist.total_cost} грн</p>
 						<span class="btn-link btn-link-green float-rt">
-							<a class="btn-link-i" href="#" name="buy_all_goods">Купить все товары</a>
+							<a class="btn-link-i" href="#" name="buy_all_goods">/*{'Купить все товары'|translate}*/</a>
 						</span>
 					{/if}
 				</div>
@@ -262,5 +262,5 @@
 
 	{/for}
 {else}
-<div id="no_wishlists">Вы еще ничего не добавляли в избранное</div>
+<div id="no_wishlists">/*{'Вы еще ничего не добавляли в избранное'|translate}*/</div>
 {/if}

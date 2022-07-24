@@ -4,7 +4,7 @@
 
 			{include file="breadcrumbs.tpl"}
 
-			<header><h1>Сравниваем {$menu.active->parent.title}</h1></header>
+			<header><h1>{'Сравниваем'|translate} {$menu.active->parent.title}</h1></header>
 
 			<div class="compare-box">
 
@@ -184,10 +184,10 @@ var message_code = {$smarty.const.OWOX_MESSAGE_NOTIFY};
 			}
 
 			if (goods_count) {
-				App.showMessage(new Message_class({ content:'Недостаточно товаров для сравнения', code:message_code}));
+				App.showMessage(new Message_class({ content:'{'Недостаточно товаров для сравнения'|translate}', code:message_code}));
 			} else {
 				$$('[name=table-compare]').dispose();
-				App.showMessage(new Message_class({ content:'Не добавлено ни одного товара для сравнения', code:message_code}));
+				App.showMessage(new Message_class({ content:'{'Не добавлено ни одного товара для сравнения'|translate}', code:message_code}));
 			}
 		}
 		var width = $$('.compare-main').getWidth();

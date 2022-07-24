@@ -4,7 +4,7 @@
     <div class="clearfix">
         <h1 class="segment-page-title">{$menu.active.title}</h1>
         {if isset($offers_records) && !empty($offers_records)}
-            <div class="segment-page-title-count">{$offers_records|count} товар{$offers_records|count|@morphology:'':'а':'ов'}</div>
+            <div class="segment-page-title-count">{$offers_records|count} товар{$offers_records|count|@morphology:'':"{'а'|translate}":"{'ов'|translate}"}</div>
         {/if}
     </div>
 
@@ -35,16 +35,16 @@
 
 <div class="clearfix">
     <div class="intexpool-help">
-        <h4>Помощь от IntexPool</h4>
+        <h4>{'Помощь от IntexPool'|translate}</h4>
         <div class="bg">
             <div class="content">
-                <div class="content-title">Полезная и необходимая информация</div>
-                <p>О продукции Intex и Bestway</p>
+                <div class="content-title">{'Полезная и необходимая информация'|translate}</div>
+                <p>{'О продукции Intex и Bestway'|translate}</p>
             </div>
             <ul>
-              <li><a href="{$menu.www->qa.href}">Вопросы и ответы</a></li>
-              <li><a href="{$menu.www->articles.href}">Советы - Статьи</a></li>
-              <li><a href="{$menu.www->videocontent.href}">Видеоинструкции</a></li>
+              <li><a href="{$menu.www->qa.href}">{'Вопросы и ответы'|translate}</a></li>
+              <li><a href="{$menu.www->articles.href}">{'Советы - Статьи'|translate}</a></li>
+              <li><a href="{$menu.www->videocontent.href}">{'Видеоинструкции'|translate}</a></li>
             </ul>
         </div>
     </div>

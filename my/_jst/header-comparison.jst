@@ -11,12 +11,12 @@
 
 		{for section in S.sections}
 			{if location.href != section.href && Comparison.quantity > 1}
-				<a class="compare-link compare-box-l-i-link after novisited" href="${section.href}"><span class="compare-box-l-i-link-text">Сравнение товаров</span><span class="comparison-quantity">${Comparison.quantity}</span></a>
+				<a class="compare-link compare-box-l-i-link after novisited" href="${section.href}"><span class="compare-box-l-i-link-text">/*{'Сравнение товаров'|translate}*/</span><span class="comparison-quantity">${Comparison.quantity}</span></a>
 			{elseif location.href == section.href}
-				<a class="compare-link compare-box-l-i-link after novisited" href="${section.href}"><span class="compare-box-l-i-link-text">Сравнение товаров</span><span class="comparison-quantity">${Comparison.quantity}</span></a>
+				<a class="compare-link compare-box-l-i-link after novisited" href="${section.href}"><span class="compare-box-l-i-link-text">/*{'Сравнение товаров'|translate}*/</span><span class="comparison-quantity">${Comparison.quantity}</span></a>
 			{else}
-				/*{*<div class="compare-box-l-i-link-text">Список сравнения&nbsp;<span>${Comparison.quantity}</span></div>*}*/
-				<a class="compare-link compare-box-l-i-link after novisited" href="${section.href}"><span class="compare-box-l-i-link-text">Сравнение товаров</span><span class="comparison-quantity">${Comparison.quantity}</span></a>
+				/*{*<div class="compare-box-l-i-link-text">/*{'Список сравнения'|translate}*/&nbsp;<span>${Comparison.quantity}</span></div>*}*/
+				<a class="compare-link compare-box-l-i-link after novisited" href="${section.href}"><span class="compare-box-l-i-link-text">/*{'Сравнение товаров'|translate}*/</span><span class="comparison-quantity">${Comparison.quantity}</span></a>
 			{/if}
 		{/for}
 
@@ -24,9 +24,9 @@
 
 		<div class="c-list-head" name="list_head">
 			{if location.href != "/*{$menu.www->comparison.href}*/"}
-				<a class="compare-link compare-box-l-i-link after novisited" href="${section.href}"><span class="compare-box-l-i-link-text underline">Сравнение товаров</span><span class="comparison-quantity">${Comparison.quantity}</span></a>
+				<a class="compare-link compare-box-l-i-link after novisited" href="${section.href}"><span class="compare-box-l-i-link-text underline">/*{'Сравнение товаров'|translate}*/</span><span class="comparison-quantity">${Comparison.quantity}</span></a>
 			{else}
-				<b><a href="#" class="xhr">Список сравнения<span>${Comparison.quantity}</span></a></b>
+				<b><a href="#" class="xhr">/*{'Список сравнения'|translate}*/<span>${Comparison.quantity}</span></a></b>
 			{/if}
 		</div>
 

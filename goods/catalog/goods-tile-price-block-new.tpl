@@ -8,7 +8,7 @@
 					<td>
 						<div class="g-l-i-price">
 							<div class="g-list-main-price">
-								<span>Цена: </span><span name="UAH">{$record->price nofilter}</span>
+								<span>{'Цена'|translate}: </span><span name="UAH">{$record->price nofilter}</span>
 							</div>
 						</div>
 					</td>

@@ -37,7 +37,7 @@
             {$parents = $section.0->getParentsRecords()}
 
             <h2 class="detail-tab-i-title accessories-tab-i-title">
-                Из раздела
+				{'Из раздела'|translate}
                 {foreach from=$parents item=parent name=parents}
                 <a href="{$parent.href}" target="_blank">{$parent.title}</a>
                 {if !$smarty.foreach.parents.last}<small>/</small>{/if}

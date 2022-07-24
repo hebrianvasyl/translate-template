@@ -20,7 +20,7 @@
 
             {if count($related_articles) > 0}
             <div class="related-articles-block">
-                <h3>Вместе с <strong>{$menu.active.record.title}</strong> часто ищут:</h3>
+                <h3>{'Вместе с'|translate} <strong>{$menu.active.record.title}</strong> {'часто ищут'|translate}:</h3>
                 <ul>
                 {foreach from=$related_articles item=related_article}
                     <li><a href="{$related_article.external_href}">{$related_article.title}</a></li>
@@ -32,7 +32,7 @@
             <div class="clearfix pt-30">
                 <div class="return-to-list float-rt">
                 <span class="btn-link btn-link-blue">
-                    <a class="btn-link-i" href="{$menu.www->articles.href}">Вернуться к списку</a>
+                    <a class="btn-link-i" href="{$menu.www->articles.href}">{'Вернуться к списку'|translate}</a>
                 </span>
                 </div>
 

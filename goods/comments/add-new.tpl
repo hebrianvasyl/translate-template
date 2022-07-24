@@ -3,15 +3,15 @@
 <form method="post" class="f-new-comment{if !empty($comments)} hidden{/if}" id="new_comment">
 
 	<div class="comments-tabs">
-		<a href="#" name="review" class="active">Оставить отзыв</a>
-		<a href="#" name="question">Задать вопрос</a>
+		<a href="#" name="review" class="active">{'Оставить отзыв'|translate}</a>
+		<a href="#" name="question">{'Задать вопрос'|translate}</a>
 	</div>
 
 	<div class="close" {if empty($comments)}hidden{/if} id="close">
-		<a href="#" title="Закрыть"></a>
+		<a href="#" title="{'Закрыть'|translate}"></a>
 	</div>
 
-	<p class="field-for-review {if !empty($comments)} hidden{/if}" name="new_comment_title" style="font-size: 16px;">Ваша оценка этого товара</p>
+	<p class="field-for-review {if !empty($comments)} hidden{/if}" name="new_comment_title" style="font-size: 16px;">{'Ваша оценка этого товара'|translate}</p>
 
 	<div class="b-rating user-mark x-large field-for-review" id="rating" name="rating">
 		<div name="points" class="rating clearfix">
@@ -21,34 +21,34 @@
 			<div class="rating-i float-lt" name="4"></div>
 			<div class="rating-i float-lt" name="5"></div>
 		</div>
-		<div class="rating-content" name="rating_value">Нажмите, чтобы оценить товар</div>
+		<div class="rating-content" name="rating_value">{'Нажмите, чтобы оценить товар'|translate}</div>
 		<input type="hidden" name="goods_id" value="{$goods.id}">
 		<input type="hidden" name="mark" value="">
 	</div>
 
 	<div class="f-step user-text field-for-review">
-		<label class="f-label" for="dignity-field">Достоинства:</label>
+		<label class="f-label" for="dignity-field">{'Достоинства'|translate}:</label>
 		<textarea class="input-field" id="dignity-field" name="dignity" tabindex="3"></textarea>
 	</div>
 
 	<div class="f-step user-text field-for-review">
-		<label class="f-label" for="shortcomings-field">Недостатки:</label>
+		<label class="f-label" for="shortcomings-field">{'Недостатки'|translate}:</label>
 		<textarea class="input-field" id="shortcomings-field" name="shortcomings" tabindex="4"></textarea>
 	</div>
 
 	<div class="f-step user-text">
-		<label class="f-label" for="text-field">Комментарий:</label>
+		<label class="f-label" for="text-field">{'Комментарий'|translate}:</label>
 		<textarea class="input-field custom-field-error" id="text-field" name="text" _required="required"  tabindex="5"></textarea>
 	</div>
 
 	<div class="f-step user-data" id="user_name_block">
-		<label class="f-label" for="name-field">Представьтесь, пожалуйста:</label>
+		<label class="f-label" for="name-field">{'Представьтесь, пожалуйста'|translate}:</label>
 		<input type="text" class="input-field custom-field-error" id="name-field" name="name"
 			   pattern="{$user->first_name.pattern}" _required="required" tabindex="6">
 	</div>
 
 	<div class="f-step user-data hidden" id="user_mail_block">
-		<label class="f-label" for="email-field">Электронная почта:</label>
+		<label class="f-label" for="email-field">{'Электронная почта'|translate}:</label>
 		<input type="text" class="input-field custom-field-error" id="email-field"
 			   name="email" pattern="{$user->email.pattern}" tabindex="7">
 	</div>
@@ -56,11 +56,11 @@
 	<div class="f-step f-last-step">
 		<div id="user_subscribe_wrap">
 			<input type="checkbox" class="subscribe-check" id="subscribe" name="subscribed_on_replies" tabindex="8">
-			<label class="f-label" for="subscribe">уведомлять об ответах по электронной почте</label>
+			<label class="f-label" for="subscribe">{'уведомлять об ответах по электронной почте'|translate}</label>
 		</div>
 		<div class="submit-btn-wrap">
 			<span class="btn-link btn-link-blue">
-				<button type="submit" class="btn-link-i" tabindex="9">Оставить отзыв</button>
+				<button type="submit" class="btn-link-i" tabindex="9">{'Оставить отзыв'|translate}</button>
 			</span>
 		</div>
 	</div>

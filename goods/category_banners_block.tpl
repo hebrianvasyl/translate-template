@@ -3,7 +3,7 @@
 {if count($banners) > 0}
 	<div class="catalog-banners-wrap">
 		<div class="content body-layout wrap clearfix">
-			<div class="title">Также Вам понадобится</div>
+			<div class="title">{'Также Вам понадобится'|translate}</div>
 
 			<div class="catalog-banners clearfix" id="banners_carousel">
 				<a href="#" class="btn btn-lt carousel_control_left pp-videos-left-btn" name="carousel_control_left"><img class="btn-img" alt="" src="{$settings.path.design}/_.gif"></a>
@@ -18,7 +18,7 @@
                                     target="_blank"
                                     enhanced-gtm-data='{
                                         "eventLabel": "{$banner.alt|replace:'/*br*/':' '|escape:'quotes' nofilter}",
-                                        "eventLabel": "Категория. Футер. №2 - {$banner.alt|replace:'/*br*/':' '|replace:'<br>':' '|escape:'quotes' nofilter}",
+                                        "eventLabel": "{'Категория. Футер'|translate}. №2 - {$banner.alt|replace:'/*br*/':' '|replace:'<br>':' '|escape:'quotes' nofilter}",
                                         "ecommerce": {
                                             "promoClick": {
                                                 "promotions": [

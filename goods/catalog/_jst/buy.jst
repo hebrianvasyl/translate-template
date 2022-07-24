@@ -2,22 +2,22 @@
 
 {if inCart()}
 	<div name="showcart">
-		/*{*<div class="g-list-main-price" name="/*{$primary_currency.name}*/"><span>Цена: </span>${elem.getElement("[name=price]").get("html")}</div>*}*/
+		/*{*<div class="g-list-main-price" name="/*{$primary_currency.name}*/"><span>/*{'Цена'|translate}*/: </span>${elem.getElement("[name=price]").get("html")}</div>*}*/
 		<div class="g-l-i-price-buy">
 			{var quantity = getQuantityInPurchase()}
 			<div name="showcart">
-			<div class="g-buy in-cart">Оформить<br>заказ</div>
+			<div class="g-buy in-cart">/*{'Оформить<br>заказ'|translate}*/</div>
 		</div>
 	</div>
 {else}
 	<div name="topurchases">
-		/*{*<div class="g-list-main-price" name="/*{$primary_currency.name}*/"><span>Цена: </span>${elem.getElement("[name=price]").get("html")}</div>*}*/
+		/*{*<div class="g-list-main-price" name="/*{$primary_currency.name}*/"><span>/*{'Цена'|translate}*/: </span>${elem.getElement("[name=price]").get("html")}</div>*}*/
 		<div class="g-l-i-price-buy">
 			<a class="g-buy" href="#">
 				{if elem.getElement(".g-l-i-content-i-wrap") && elem.getElement(".g-l-i-content-i-wrap").hasClass("customized")}
-                Под заказ
+                /*{'Под заказ'|translate}*/
                 {else}
-                Купить
+                /*{'Купить'|translate}*/
                 {/if}
 			</a>
 		</div>

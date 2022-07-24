@@ -5,14 +5,14 @@
 
     <div class="cart-popup-header">
 	{if new_goods}
-		<h1 class="popup-title">Вы добавили в корзину товар</h1>
+		<h1 class="popup-title">/*{'Вы добавили в корзину товар'|translate}*/</h1>
         <div class="continue-order-btn">
-            <a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">Продолжить покупки</a>
+            <a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">/*{'Продолжить покупки'|translate}*/</a>
         </div>
 	{else}
 		<h1 class="popup-title">Корзина</h1>
         <div class="continue-order-btn">
-            <a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">Продолжить покупки</a>
+            <a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">/*{'Продолжить покупки'|translate}*/</a>
         </div>
 	{/if}
 	</div>
@@ -24,7 +24,7 @@
 		{var last_purchase = purchases.pop()}
 		${last_purchase.getHTML(new_goods)}
 		{if purchases.length}
-			<h2 class="popup-subtitle">Другие товары в корзине</h2>
+			<h2 class="popup-subtitle">/*{'Другие товары в корзине'|translate}*/</h2>
 		{/if}
 	{/if}
 	{if purchases.length}
@@ -38,16 +38,16 @@
 	</div>
 		<div class="cart-footer">
 			<div class="cart-total">
-				<span class="cart-total-title">Итого:</span>
+				<span class="cart-total-title">/*{'Итого'|translate}*/:</span>
 				<span class="cart-total-sum" id="cart_total">${cart.cost_with_discount}</span>
 			</div>
 			<div>
 				<button enhanced-gtm-data='{"eventAction":"checkout"}' class="btn-link-i" id="to_checkout" type="button" onclick="top.location='/*{$menu.my->checkout.href}*/'"{if !cart.cost_with_discount_raw.primary.raw} disabled{/if}>
-					Оформить заказ
+					/*{'Оформить заказ'|translate}*/
 				</button>
 			</div>
 			<div>
-				<a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">Продолжить покупки</a>
+				<a gtm-data='{"eventAction":"continueShopping"}' href="#" name="close" class="btn-link-i" id="continue-shopping">/*{'Продолжить покупки'|translate}*/</a>
             </div>
 		</div>
 		<div id='cart-popup-accessories'></div>
@@ -60,10 +60,10 @@
 		<div name="close" class="close">
 			<a href="#"></a>
 		</div>
-		<h1 class="popup-title">Корзина пуста</h1>
+		<h1 class="popup-title">/*{'Корзина пуста'|translate}*/</h1>
 		<div name='app-message'></div>
 		<span class="btn-link btn-link-transparent">
-			<a href="#" name="close" class="btn-link-i">&larr; <span class="underline">Продолжить покупки</span></a>
+			<a href="#" name="close" class="btn-link-i">&larr; <span class="underline">/*{'Продолжить покупки'|translate}*/</span></a>
 		</span>
 	</div>
 

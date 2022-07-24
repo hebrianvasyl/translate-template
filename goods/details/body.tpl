@@ -48,7 +48,7 @@
 
             <div>
                 <span>
-                    Код товара: <span id="record-ext-id">{if !empty($record.ext_id)}{$record->ext_id}{else}{$record->id}{/if}</span>
+                    {'Код товара'|translate}: <span id="record-ext-id">{if !empty($record.ext_id)}{$record->ext_id}{else}{$record->id}{/if}</span>
                 </span>
             </div>
         </div>

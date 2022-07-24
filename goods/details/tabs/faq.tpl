@@ -1,6 +1,6 @@
 <div class="tabs-content-wrap">
     <div class="articles">
-        <h2 class="detail-tab-i-title">Вопросы и ответы к товару <span class="pp-characteristics-tab-product-name">{$record.title}</span></h2>
+        <h2 class="detail-tab-i-title">{'Вопросы и ответы к товару'|translate} <span class="pp-characteristics-tab-product-name">{$record.title}</span></h2>
 
         <ul class="news-l tile" name="articles_list">
             {foreach $record->getGoods()->getFaqArticles() as $description}
@@ -8,7 +8,7 @@
                 <a href="{$description->article.external_href}" class="news-l-i-link float-lt" target="_blank">
                     <div class="hover_bg">
                         <div class="additional-info-block">
-                            <div class="inner">Дополнительная информация</div>
+                            <div class="inner">{'Дополнительная информация'|translate}</div>
                         </div>
                     </div>
                     {if !empty($description->attachments) && count($description->attachments->icon_hover)}

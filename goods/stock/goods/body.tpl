@@ -42,7 +42,7 @@
 
 				<div class="sale-categories-b" name="fixed_block">
 					{if !empty($smarty.capture.categories_list)}
-					<b class="sale-categories-title">Категории</b>
+					<b class="sale-categories-title">{'Категории'|translate}</b>
 					<ul class="sale-categories-l">
 						{$smarty.capture.categories_list nofilter}
 					</ul>
@@ -80,7 +80,7 @@
 
 							{else}
 
-								Нет уцененных товаров
+								{'Нет уцененных товаров'|translate}
 
 							{/if}
 

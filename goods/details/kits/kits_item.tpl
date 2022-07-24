@@ -21,7 +21,7 @@
 
             {if $kit.kit.is_show_full_discount and ($price > $price_with_discount or $old_price > $price) and $discount > 0}
                 <div class="tag">
-                    АКЦИЯ -{round($discount)}%
+{'АКЦИЯ'|translate} -{round($discount)}%
                 </div>
             {/if}
 

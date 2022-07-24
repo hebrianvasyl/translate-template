@@ -11,7 +11,7 @@
 		{$record_prices = $record -> sku -> getATPPricesForGroup()}
 		{if !empty($record_prices.min)}
 			<div class="btn-grey small submit-btn accsesories-btn ab-configurable">
-				<div>{if empty($record_prices.is_same)} от {/if}{$record_prices.min nofilter}</div>
+				<div>{if empty($record_prices.is_same)} {'от'|translate} {/if}{$record_prices.min nofilter}</div>
 				<div class="g-l-i-price-buy">
 					<span class="g-buy"></span>
 				</div>

@@ -16,10 +16,10 @@
 
 		{if $current_page < count($menu.active->pages)}
 			<span class="more-link btn-link-blue" name="more_news">
-				<a href="#" class="btn-link-i"><i class="sprite"></i>Показать больше новостей</a>
+				<a href="#" class="btn-link-i"><i class="sprite"></i>{'Показать больше новостей'|translate}</a>
 			</span>
 		{/if}
-			<div class="more-text">Страницы</div>
+			<div class="more-text">{'Страницы'|translate}</div>
 
 			<ul class="more-pages-l clearfix" name="paginator">
 				{foreach from=$pages item=page}
@@ -63,10 +63,10 @@
 
 		{if $current_page < count($menu.active->pages)}
 			<span class="more-link btn-link-blue" name="more_articles">
-				<a href="#" class="btn-link-i"><i class="sprite"></i>Показать больше статей</a>
+				<a href="#" class="btn-link-i"><i class="sprite"></i>{'Показать больше статей'|translate}</a>
 			</span>
 		{/if}
-			<div class="more-text">Страницы</div>
+			<div class="more-text">{'Страницы'|translate}</div>
 
 			<ul class="more-pages-l clearfix" name="paginator">
 				{foreach from=$pages item=page}
@@ -109,7 +109,7 @@
 
 	{if $current_page < count($menu.active->pages)}
 		<span class="more-link btn-link-blue" name="more_goods">
-			<a href="#" class="btn-link-i"><i class="sprite"></i>Показать больше товаров</a>
+			<a href="#" class="btn-link-i"><i class="sprite"></i>{'Показать больше товаров'|translate}</a>
 		</span>
 	{/if}
 		<ul class="more-pages-l clearfix" name="paginator">
@@ -157,10 +157,10 @@
 
 		{if $current_page < count($menu.active->pages)}
 			<span class="more-link btn-link-blue" name="more_goods">
-				<a href="#" class="btn-link-i"><i class="sprite"></i>Показать больше товаров</a>
+				<a href="#" class="btn-link-i"><i class="sprite"></i>{'Показать больше товаров'|translate}</a>
 			</span>
 		{/if}
-		<div class="more-text">Страницы</div>
+		<div class="more-text">{'Страницы'|translate}</div>
 
 		<ul class="more-pages-l clearfix" name="paginator">
 			{foreach from=$pages item=page}
@@ -208,7 +208,7 @@
 			{/if}
 		{/foreach}
 
-		<div class="more-text">Страницы</div>
+		<div class="more-text">{'Страницы'|translate}</div>
 
 		<ul class="more-pages-l clearfix" name="paginator">
 			{foreach from=$pages item=page}

@@ -1,11 +1,11 @@
 {if typeof IsMarkDown == "undefined" || !IsMarkDown}
 	{if inWaitlist() && App.get("User").isAuth()}
 		<span class="btn-link">
-			<button class="btn-link-i" name="fromwaitlist">Не&nbsp;сообщать, когда появится</button>
+			<button class="btn-link-i" name="fromwaitlist">/*{'Не&nbsp;сообщать, когда появится'|translate}*/</button>
 		</span>
 	{else}
 		<span class="btn-link">
-			<button class="btn-link-i" name="towaitlist">Сообщить, когда появится</button>
+			<button class="btn-link-i" name="towaitlist">/*{'Сообщить, когда появится'|translate}*/</button>
 		</span>
 	{/if}
 {/if}

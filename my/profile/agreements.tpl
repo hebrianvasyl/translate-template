@@ -39,7 +39,7 @@
         <section>
             {if $agreement_record}
                 <p><br></p>
-                <p style="margin-bottom: 20px;"><a href="{$menu.my->profile->agreements.href}">Вернутся к списку</a></p>
+                <p style="margin-bottom: 20px;"><a href="{$menu.my->profile->agreements.href}">{'Вернутся к списку'|translate}</a></p>
                 <h3>{$agreement_record.title}</h3>
 
                 <div>
@@ -50,13 +50,13 @@
                     {if isset($applied[$agreement_record.id])}
                     {$applied[$agreement_record.id]}
                     {else}
-                    <button id="agreement_btn" type="button" data-id="{$agreement_record.id}">Я ознакомился</button>
+                    <button id="agreement_btn" type="button" data-id="{$agreement_record.id}">{'Я ознакомился'|translate}</button>
                     {/if}
                 </div>
             {else}
             <p><br></p>
             {if $agreements}
-            <h3>Список изменений на сайте в условиях сотрудничества</h3>
+            <h3>{'Список изменений на сайте в условиях сотрудничества'|translate}</h3>
             <ol class="agreements-list">
                 {foreach $agreements as $agreement}
                 <li>
@@ -70,11 +70,11 @@
             {elseif $newbie}
             {$agreement_newbie nofilter}
             <div id="result" style="margin: 50px 0 0 0; font-size: 14px;">
-                <button id="agreement_btn" type="button" data-id="0">Я ознакомился</button>
+                <button id="agreement_btn" type="button" data-id="0">{'Я ознакомился'|translate}</button>
             </div>
             {else}
-            Вы ознакомлены со всеми условиями сотрудничества.<br>
-            Нововведений нет.
+{'Вы ознакомлены со всеми условиями сотрудничества.<br>
+            Нововведений нет.'|translate}
             {/if}
             {/if}
         </section>
@@ -111,7 +111,7 @@
                 button.set('disabled', false);
                 button.removeClass('disabled');
 
-                alert('Ошибка на сервере');
+                alert('{'Ошибка на сервере'|translate}');
             }.bind(this)
         }).send();
     });

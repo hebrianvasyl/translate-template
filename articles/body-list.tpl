@@ -4,7 +4,7 @@
 			<a href="{$record.external_href}" class="news-l-i-link float-lt">
                 <div class="hover_bg">
                     <div class="additional-info-block">
-                        <div class="inner">Дополнительная информация</div>
+                        <div class="inner">{'Дополнительная информация'|translate}</div>
                     </div>
                 </div>
 				{if $record->goods_description and !empty($record->goods_description->attachments) && count($record->goods_description->attachments->icon_hover)}
@@ -36,5 +36,5 @@
 		</li>
 	{/foreach}
 {else}
-	На данный момент статей и обзоров нет
+	{'На данный момент статей и обзоров нет'|translate}
 {/if}

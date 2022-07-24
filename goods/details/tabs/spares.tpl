@@ -36,7 +36,7 @@
         {foreach $record->getGoods()->getSpares() as $spare}
         <div class="spare-item">
 
-            <h2 class="detail-tab-i-title">Запчасти к товару <span class="pp-characteristics-tab-product-name">{$spare.title}</span></h2>
+            <h2 class="detail-tab-i-title">{'Запчасти к товару'|translate} <span class="pp-characteristics-tab-product-name">{$spare.title}</span></h2>
 
             {if count($spare->attachments->downloads)}
             <div class="spare-downloads">
@@ -44,7 +44,7 @@
                 <div class="spare-download-item">
                     <a href="{$download.url}" target="_blank">
                         <span>
-                            Скачать руководство <small class="filename">({$download.name})</small>
+                            {'Скачать руководство'|translate} <small class="filename">({$download.name})</small>
                         </span>
                     </a>
                 </div>
@@ -91,6 +91,6 @@
         {/foreach}
     </div>
     {else}
-    <p>На данный момент данных по запчастям нет.</p>
+    <p>{'На данный момент данных по запчастям нет'|translate}.</p>
     {/if}
 </div>

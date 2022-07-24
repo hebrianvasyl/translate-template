@@ -1,7 +1,7 @@
 <div class="social-widgets">
     <div class="container">
         <div class="item" id="youtube_widget">
-            <div class="title"><span>Наш канал</span><img src="{$settings.path.design}/youtube_widget.png"></div>
+            <div class="title"><span>{'Наш канал'|translate}</span><img src="{$settings.path.design}/youtube_widget.png"></div>
             <div class="g-ytsubscribe" data-channelid="UC0rzaRCiZVosKaFLkgckTtg" data-layout="full" data-count="default"></div>
         </div>
         <div class="item" id="vk_widget"></div>

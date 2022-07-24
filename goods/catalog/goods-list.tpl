@@ -65,7 +65,7 @@ g-l-i-list-promotion-record
 						{if count($promotion_record)}
 							<div class="tag tag-action small">
 								<img src="{$settings.path.design}/_.gif">
-								<span>Акция</span>
+								<span>{'Акция'|translate}</span>
 							</div>
 						{elseif $record->getFirstTag()}
 							<div class="tag tag-{$record->getFirstTag()} small">
@@ -85,7 +85,7 @@ g-l-i-list-promotion-record
 									{else}
 										{$href = "#video_container_"|cat:$video.id}
 									{/if}
-									<a class="video-review" href="{$href} data-link-id="goods-link-{$record.id}"]">Видеообзор <i class="icon-video"></i></a>
+									<a class="video-review" href="{$href} data-link-id="goods-link-{$record.id}"]">{'Видеообзор'|translate} <i class="icon-video"></i></a>
 									{break}
 								{/foreach}
 							</div>
@@ -146,7 +146,7 @@ g-l-i-list-promotion-record
 							<div class="g-l-i-status">{$record->sell_status->value.title}</div>
 						{else}
 							<div class="price-block">
-								<span>Цена:</span>
+								<span>{'Цена'|translate}:</span>
 								<span class="price" name="UAH">{$record->price nofilter}</span>
 								{if !empty($record.old_price) && ($record.old_price > $record.price)}
 									<span class="old-price">{$record->old_price nofilter}</span>

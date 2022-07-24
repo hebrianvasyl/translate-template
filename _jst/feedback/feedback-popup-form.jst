@@ -4,17 +4,17 @@
 	</div>
 
 	<form class="f-feedback" method="post">
-		<h4 class="f-feedback-tile">Обратная связь</h4>
+		<h4 class="f-feedback-tile">/*{'Обратная связь'|translate}*/</h4>
 
 		/*{Feedback->getCausesOfTreatments assign="causes"}*/
 
 		/*{if count($causes)}*/
 			<div class="f-step /*{if count($causes) == 1}*/hidden/*{/if}*/">
-				<label class="f-label reason-text f-label-select" for="title-field">Причина обращения:</label>
+				<label class="f-label reason-text f-label-select" for="title-field">/*{'Причина обращения:'|translate}*/</label>
 				<select id="feedback_causes" class="custom-field-error field-select feedback_causes" _required="required" name="cause" required>
 
 					/*{if count($causes) != 1}*/
-					<option value="" disabled selected>Выберите причину обращения</option>
+					<option value="" disabled selected>/*{'Выберите причину обращения'|translate}*/</option>
 					/*{/if}*/
 
 					/*{foreach from=$causes item="cause"}*/
@@ -25,20 +25,20 @@
 		/*{/if}*/
 
 		<div class="f-step hidden" name="order_id_field">
-			<label class="f-label reason-text f-label-select" for="order-field">Номер вашего заказа:</label>
+			<label class="f-label reason-text f-label-select" for="order-field">/*{'Номер вашего заказа:'|translate}*/</label>
 			<input type="text" class="custom-field-error input-field name order-num" id="order-field" name="order_id" _required="required" />
 		</div>
 
-		<label class="f-label reason-text f-label-select" for="order-field">Сообщение:</label>
+		<label class="f-label reason-text f-label-select" for="order-field">/*{'Сообщение:'|translate}*/</label>
 		<textarea class="custom-field-error input-field message" name="message" _required="required" tabindex="1" autofocus></textarea>
 
 		<div class="f-step">
-			<label class="f-label reason-text small" for="title-field">Ваше имя:</label>
+			<label class="f-label reason-text small" for="title-field">/*{'Ваше имя:'|translate}*/</label>
 			<input type="text" class="custom-field-error input-field name" id="title-field" name="name" _required="required" tabindex="2" />
 		</div>
 
 		<div class="f-step f-step-for-mail">
-			<label class="f-label reason-text small" for="email-field">Эл. почта для ответа:</label>
+			<label class="f-label reason-text small" for="email-field">/*{'Эл. почта для ответа'|translate}*/:</label>
 			<input type="text" class="custom-field-error input-field" id="email-field" name="contact" _required="required" _pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z0-9]{2,4})$" tabindex="3" />
 		</div>
 
@@ -46,7 +46,7 @@
 
 		<div class="f-step f-last-step">
 			<span class="btn-link">
-				<button type="submit" class="btn-link-i" tabindex="4">Отправить</button>
+				<button type="submit" class="btn-link-i" tabindex="4">/*{'Отправить'|translate}*/</button>
 			</span>
 		</div>
 

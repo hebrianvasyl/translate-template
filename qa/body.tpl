@@ -42,19 +42,19 @@
 
 		<form class="quest" action="/cgi-bin/form.php?r={$menu.www->qa.href}" method="post" name="submit-by-ajax" id="faq_form">
 			<div name="app-message"></div>
-			<h3>Не нашли ответ на свой вопрос?</h3>
+			<h3>{'Не нашли ответ на свой вопрос'|translate}?</h3>
 
 			<div class="item">
-				<div class="title">Задать вопрос</div>
+				<div class="title">{'Задать вопрос'|translate}</div>
 				<textarea class="input-textarea" name="question" _required="required"></textarea>
 			</div>
 
 			<div class="item">
 				<div class="title">
-					Эл. почта
+{'Эл. почта'|translate}
 					<div class="popup_wrap">
 						<a class="info popup" href="#" id="checkout_email_popup" name="info-link"></a>
-						<div class="popup_body checkout_email_popup_body">Вы можете задать свой вопрос и получить ответ по электронной почте</div>
+						<div class="popup_body checkout_email_popup_body">{'Вы можете задать свой вопрос и получить ответ по электронной почте'|translate}</div>
 					</div>
 				</div>
 				<input type="text" class="input-text" name="email" _required="required" _pattern="^.+@.+\..+$">
@@ -62,7 +62,7 @@
 
 			<div class="item submit">
 				<span class="btn-link btn-link-blue faq-submit-button">
-					<button type="submit" class="btn-link-i">Оставить вопрос</button>
+					<button type="submit" class="btn-link-i">{'Оставить вопрос'|translate}</button>
 				</span>
 			</div>
 		</form>

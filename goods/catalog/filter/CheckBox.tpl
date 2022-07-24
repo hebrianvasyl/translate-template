@@ -23,7 +23,7 @@
 							{if $field.status !== 'configurable'}
 								<span class="sort-box-text-count">({$field.count})</span>
 							{/if}
-							<a href="{$field.href}" class="sort-box-link">Есть</a>
+							<a href="{$field.href}" class="sort-box-link">{'Есть'|translate}</a>
 						</div>
 					</label>
 				</li>
@@ -38,7 +38,7 @@
 							{if $field.status !== 'configurable'}
 								<span class="sort-box-text-count">(0)</span>
 							{/if}
-							<label class="sort-box-text">Есть</label>
+							<label class="sort-box-text">{'Есть'|translate}</label>
 						</div>
 					</label>
 				</li>
@@ -57,7 +57,7 @@
 								{if $field.status !== 'configurable'}
 									<span class="sort-box-text-count">({$field.count})</span>
 								{/if}
-								<label class="sort-box-text">Есть</label>
+								<label class="sort-box-text">{'Есть'|translate}</label>
 							</div>
 						</span>
 					</div>

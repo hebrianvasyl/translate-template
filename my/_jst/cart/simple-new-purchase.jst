@@ -50,7 +50,7 @@
 							<div class="g-cart-added-title">${purchase.record.goods.title}</div>
 
 							{if purchase.record.goods.sell_status == "customized"}
-                            <div class="goods_customized_status">Под заказ!</div>
+                            <div class="goods_customized_status">/*{'Под заказ'|translate}*/!</div>
                             {/if}
 
 						</td>
@@ -74,7 +74,7 @@
 						</div>
 					{/if}
 			{else}
-				<p class="ended-status">Товар закончился</p>
+				<p class="ended-status">/*{'Товар закончился'|translate}*/</p>
 
 				{var like_href = purchase.record.parent_href}
 
@@ -84,7 +84,7 @@
 
 				<ul class="cart-variants-links-l clearfix">
 					<li class="cart-variants-links-l-i float-lt">
-						<a class="cart-variants-links-l-i-link" href="${like_href}">Выбрать похожую модель</a>
+						<a class="cart-variants-links-l-i-link" href="${like_href}">/*{'Выбрать похожую модель'|translate}*/</a>
 					</li>
 				</ul>
 			{/if}

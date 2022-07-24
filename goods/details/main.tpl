@@ -23,13 +23,13 @@
 
         <div class="goods-details__consultation">
             <a href="#">
-                Онлайн консультант
+                {'Онлайн консультант'|translate}
             </a>
             <a href="#">
-                Условия гарантии
+                {'Условия гарантии'|translate}
             </a>
             <a href="#">
-                Быстрый заказ
+                {'Быстрый заказ'|translate}
             </a>
         </div>
     </div>
@@ -94,7 +94,7 @@
                     </ul>
 
                     <div class="all-variants-link-wrap">
-                        <a href="#" id="groups_{$group.id}_popup" class="novisited all-variants-link underline">Сравнить все варианты</a>
+                        <a href="#" id="groups_{$group.id}_popup" class="novisited all-variants-link underline">{'Сравнить все варианты'|translate}</a>
                     </div>
 
                     {*groups popup*}
@@ -136,12 +136,12 @@
             {$analog = $record->getSuggestRecord('kupit-analog')}
             {if $analog && $analog.sell_status == 'available' && $analog.price > 0}
             <div>
-                <a href="{$analog.external_href}" id="buy-analog-btn" class="additional-btn">Купить аналог<br>за {$analog->price nofilter}</a>
+                <a href="{$analog.external_href}" id="buy-analog-btn" class="additional-btn">{'Купить аналог<br>за'|translate} {$analog->price nofilter}</a>
             </div>
             {elseif $record->parent.hide_oneclick_details != "1" and ($record->sell_status.value == "available" or $record->sell_status.value == "call" or $record->sell_status.value == "limited")}
             <div>
                 <input type="hidden" name="oneclick_product_id" value="{$purchase_goods_id}">
-                <a href="#" id="open-one-click-order" class="additional-btn">Заказать в 1 клик</a>
+                <a href="#" id="open-one-click-order" class="additional-btn">{'Заказать в 1 клик'|translate}</a>
             </div>
             {/if}
         </div>
@@ -149,11 +149,11 @@
         {if $record.defect_description}
         <div class="reason">
             <p class="reason-title light-red">
-                Причина уценки: <span class="reason-title-text">{$record.defect_description}</span>
+                {'Причина уценки'|translate}: <span class="reason-title-text">{$record.defect_description}</span>
             </p>
             <span class="reason-title-text">
                 <span class="light-red">*</span>
-                Уцененный товар возврату не подлежит
+                {'Уцененный товар возврату не подлежит'|translate}
             </span>
         </div>
         {/if}
@@ -161,7 +161,7 @@
         {if $is_mark_down}
         <div class="pp-new-good">
             <section class="goods-l horizontal small">
-                <h4 class="green">Есть новый, без уценки</h4>
+                <h4 class="green">{'Есть новый, без уценки'|translate}</h4>
                 {include file='details/sidebar-item-tile.tpl' record=$record_with_content}
             </section>
         </div>
@@ -171,7 +171,7 @@
 
         {if count($stock_goods_records)}
         <section class="goods-l horizontal small g-stock-l clear">
-            <h4 class="red">Есть такой же товар с уценкой</h4>
+            <h4 class="red">{'Есть такой же товар с уценкой'|translate}</h4>
             {foreach from=$stock_goods_records item='stock_goods_record'}
             {include file='details/sidebar-item-tile.tpl' record=$stock_goods_record}
             {/foreach}
@@ -189,27 +189,27 @@
         <div>
             <div>
                 <span>Доставка в <a href="#">Киев</a></span>
-                <a href="#">Подробности о доставке</a>
+                <a href="#">{'Подробности о доставке'|translate}</a>
             </div>
 
             <table>
                 <thead>
                 <tr>
                     <th>
-                        <span>Отправим сегодня</span>
+                        <span>{'Отправим сегодня'|translate}</span>
                     </th>
                     <th>
-                        <span>Наложенным</span>
+                        <span>{'Наложенным'|translate}</span>
                     </th>
                     <th>
-                        <span>Передплата</span>
+                        <span>{'Передплата'|translate}</span>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td>
-                        Самовывоз из Новой почты
+                        {'Самовывоз из Новой почты'|translate}
                     </td>
                     <td>
                         25 грн
@@ -220,7 +220,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Курьером НП по вашему адресу
+                        {'Курьером НП по вашему адресу'|translate}
                     </td>
                     <td>
                         45 грн
@@ -252,7 +252,7 @@
 
     {if count($characteristics)}
 
-    <div class="tabs-content-title">Технические характеристики <span class="pp-characteristics-tab-product-name">{$record_with_content.title|@mnemonics_convert nofilter}</span></div>
+    <div class="tabs-content-title">{'Технические характеристики'|translate} <span class="pp-characteristics-tab-product-name">{$record_with_content.title|@mnemonics_convert nofilter}</span></div>
 
     <div class="clearfix">
         <div class="characteristics-wrap">
@@ -261,7 +261,7 @@
                 {if $fieldset.section !== NULL}
                 <caption class="characteristics-t-title">{$fieldset.section.title}</caption>
                 {elseif ($characteristics.0.section !== NULL)}
-                <caption class="characteristics-t-title">Другие характеристики</caption>
+                <caption class="characteristics-t-title">{'Другие характеристики'|translate}</caption>
                 {/if}
 
                 {foreach from=$fieldset.details item="detail"}
@@ -292,7 +292,7 @@
                 </tr>
                 {/foreach}
             </table>
-            {if $fieldset.section.title == "Комплектация"}
+            {if $fieldset.section.title == "{'Комплектация'|translate}"}
             {foreach from=$fieldset.details item="detail"}
             {if $detail.type == 'Suggest' and !empty($detail.record_ref)}
             {$characteristicsShownInParent = $detail->ref_record->getCharacteristicsShownInParent()}
@@ -349,7 +349,7 @@
         {/if}
         <div id="product-description">
             {if $record.show_characteristics != '1'}
-            <h4>Описание к товару <span class="pp-characteristics-tab-product-name">{$record_with_content.title|@mnemonics_convert nofilter}</span></h4>
+            <h4>{'Описание к товару'|translate} <span class="pp-characteristics-tab-product-name">{$record_with_content.title|@mnemonics_convert nofilter}</span></h4>
             {/if}
 
             {$goods_description nofilter}
@@ -390,7 +390,7 @@
                 {if $fieldset.section !== NULL}
                 <caption class="characteristics-t-title">{$fieldset.section.title}</caption>
                 {elseif ($characteristics.0.section !== NULL)}
-                <caption class="characteristics-t-title">Другие характеристики</caption>
+                <caption class="characteristics-t-title">{'Другие характеристики'|translate}</caption>
                 {/if}
 
                 {foreach from=$fieldset.details item="detail"}
@@ -421,7 +421,7 @@
                 </tr>
                 {/foreach}
             </table>
-            {if $fieldset.section.title == "Комплектация"}
+            {if $fieldset.section.title == "{'Комплектация'|translate}"}
             {foreach from=$fieldset.details item="detail"}
             {if $detail.type == 'Suggest' and !empty($detail.record_ref)}
             {$characteristicsShownInParent = $detail->ref_record->getCharacteristicsShownInParent()}
@@ -559,7 +559,7 @@
                                 if(data.message) {
                                     message = data.message;
                                 } else {
-                                    message = 'Произошла ошибка, свяжитесь с нами по телефону';
+                                    message = '{'Произошла ошибка, свяжитесь с нами по телефону'|translate}';
                                 }
                                 $$('#oneclick_error').set('html', '<div class="code"><span class="message-content">'+message+'</span></div>');
                             }

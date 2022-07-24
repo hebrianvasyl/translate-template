@@ -8,9 +8,9 @@
     {var purchases = Object.values(cart.purchases)}
 
     {if new_goods}
-        <h1 class="popup-title">Вы добавили в корзину товар</h1>
+        <h1 class="popup-title">/*{'Вы добавили в корзину товар'|translate}*/</h1>
     {else}
-        <h1 class="popup-title">Корзина</h1>
+        <h1 class="popup-title">/*{'Корзина'|translate}*/</h1>
     {/if}
 
     <div name='app-message'></div>
@@ -20,7 +20,7 @@
         {var last_purchase = purchases.pop()}
         ${last_purchase.getHTML(new_goods)}
         {if purchases.length}
-            <h2 class="popup-subtitle">Другие товары в корзине</h2>
+            <h2 class="popup-subtitle">/*{'Другие товары в корзине'|translate}*/</h2>
         {/if}
     {/if}
     {if purchases.length}
@@ -34,7 +34,7 @@
     </div>
     <div class="cart-footer" style="padding-bottom: 0;">
         <div class="cart-total" style="margin-bottom: 0;">
-            <span class="cart-total-title">Итого:</span>
+            <span class="cart-total-title">/*{'Итого'|translate}*:</span>
             <span class="cart-total-sum" data-role="cart_total">${cart.cost_with_discount}</span>
         </div>
     </div>
@@ -48,10 +48,10 @@
         <div name="close" class="close">
             <a href="#"></a>
         </div>
-        <h1 class="popup-title">Корзина пуста</h1>
+        <h1 class="popup-title">/*{'Корзина пуста'|translate}*</h1>
         <div name='app-message'></div>
         <span class="btn-link btn-link-transparent">
-            <a href="#" name="close" class="btn-link-i">&larr; <span class="underline">Продолжить покупки</span></a>
+            <a href="#" name="close" class="btn-link-i">&larr; <span class="underline">/*{'Продолжить покупки'|translate}*/</span></a>
         </span>
     </div>
 

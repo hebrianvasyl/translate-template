@@ -15,7 +15,7 @@
 				<span class="toddler-i-separator">-</span>
 				<input class="input-field" type="text" id="{$field.name}[max]" name="{$field.name}[max]" value="{if $field.value}{$field.value[1]}{/if}" pattern="^\s*(\+|-)?\d*((\.|,)\d+)?\s*$">
 				<span class="toddler-i-separator">&nbsp;&nbsp;</span>
-				<button id="submit{$field.name}" type="submit">Ok</button>
+				<button id="submit{$field.name}" type="submit">{'Ok'|translate}</button>
 			</div>
 		</div>
 	</section>

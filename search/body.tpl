@@ -1,11 +1,11 @@
 <section class="b-search-results catalog" id="goods-parent">
 	<div class="b-search-results-header">
-		<div class="b-search-results-hint">По запросу:</div>
+		<div class="b-search-results-hint">{'По запросу'|translate}:</div>
 		<h1 class="b-search-results-title">
 			<span class="b-search-results-request">{$searchResults.text nofilter}</span>
 		</h1>
 		{if isset($searchResults.sections_menu) and $searchResults.sections_menu|@count}
-		<div class="b-search-results-hint">Найден{$searchResults.total_count|@morphology:'':'ы':'ы'} {$searchResults.total_count} товар{$searchResults.total_count|@morphology:'':'а':'ов'}, в {$searchResults.sections_menu|count} категори{$searchResults.sections_menu|count|@morphology:'и':'ях':'ях'}:</div>
+		<div class="b-search-results-hint">{'Найден'|translate}{$searchResults.total_count|@morphology:'':"{'ы'|translate}":"{'ы'|translate}"} {$searchResults.total_count} товар{$searchResults.total_count|@morphology:'':"{'а'|translate}":"{'ов'|translate}"}, в {$searchResults.sections_menu|count} категори{$searchResults.sections_menu|count|@morphology:"{'и'|translate}":"{'ях'|translate}":"{'ях'|translate}"}:</div>
 		{capture name="sections_menu"}
 			<ul class="search-results-sort-l clearfix">
 				{foreach from=$searchResults.sections_menu item=node name=sections_menu}
@@ -60,7 +60,7 @@
 
 			</script>
 		{else}
-			<div class="b-search-results-hint">ничего не найдено</div>
+			<div class="b-search-results-hint">{'ничего не найдено'|translate}</div>
 		{/if}
 
         {if 'min_price'|array_key_exists:$searchResults and $searchResults.min_price}

@@ -5,7 +5,7 @@
 		{assign var='goods_records' value=$goods_records}
 
 		<div class="catalog">
-			<h2 class="promotions-goods-title">Товары из этой акции</h2>
+			<h2 class="promotions-goods-title">{'Товары из этой акции'|translate}</h2>
 			<div class="g hits g-tile">
 				<ul class="g-l catalog-l" name="promotion-goods">
 					{foreach $goods_records as $record}

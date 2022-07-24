@@ -11,9 +11,9 @@
 		<div class="toddler toggle-box">
 			<div class="toddler-i">
 				<div class="toddler-i-line">
-					<span>От</span> <input class="input-field" type="text" id="{$field.name}[min]" name="{$field.name}[min]" value="{if $field.value}{$field.value[0]}{/if}" pattern="^\s*(\+|-)?\d*((\.|,)\d+)?\s*$">
-					<span>до</span> <input class="input-field" type="text" id="{$field.name}[max]" name="{$field.name}[max]" value="{if $field.value}{$field.value[1]}{/if}" pattern="^\s*(\+|-)?\d*((\.|,)\d+)?\s*$">
-					<button id="submit{$field.name}" type="submit">Ok</button>
+					<span>{'От'|translate}</span> <input class="input-field" type="text" id="{$field.name}[min]" name="{$field.name}[min]" value="{if $field.value}{$field.value[0]}{/if}" pattern="^\s*(\+|-)?\d*((\.|,)\d+)?\s*$">
+					<span>{'до'|translate}</span> <input class="input-field" type="text" id="{$field.name}[max]" name="{$field.name}[max]" value="{if $field.value}{$field.value[1]}{/if}" pattern="^\s*(\+|-)?\d*((\.|,)\d+)?\s*$">
+					<button id="submit{$field.name}" type="submit">{'Ok'|translate}</button>
 				</div>
 				<div class="trackbarprice" id="trackbar{$field.name}"></div>
 			</div>

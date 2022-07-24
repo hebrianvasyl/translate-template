@@ -22,9 +22,9 @@
                 {include file="content-header-logo.tpl"}
             </div>
             <div class="header__menu" onclick="popupOpen('popup_callback_1')">
-                <div class="header__menu_1">Чат центр</div>
+                <div class="header__menu_1">{'Чат центр'|translate}</div>
                 <div class="header__menu_dash">|</div>
-                <div class="header__menu_2">Колл центр</div>
+                <div class="header__menu_2">{'Колл центр'|translate}</div>
             </div>
         </div>
     </header>
@@ -44,18 +44,18 @@
                 <div class="content__section">
                     <div class="content__1">
                         <div class="part">
-                            <h2 class="part__title">Контактные данные</h2>
+                            <h2 class="part__title">{'Контактные данные'|translate}</h2>
                             <div class="tabs">
                                 {if !$user}
                                     <input type="radio" name="checkout_user_mode" value="new_user" id="checkout_user_mode_new" checked="checked"/>
                                     <label class="tab" for="checkout_user_mode_new" href="#checkout_new_user">
                                         <div class="tab__icon tab__icon_1"></div>
-                                        <div class="tab__text">Я новый покупатель</div>
+                                        <div class="tab__text">{'Я новый покупатель'|translate}</div>
                                     </label>
                                     <input type="radio" name="checkout_user_mode" value="member_user" id="checkout_user_mode_member"/>
                                     <label class="tab" for="checkout_user_mode_member" href="#checkout_member_user">
                                         <div class="tab__icon tab__icon_2"></div>
-                                        <div class="tab__text">Я постоянный клиент</div>
+                                        <div class="tab__text">{'Я постоянный клиент'|translate}</div>
                                     </label>
                                 {else}
                                     <input type="radio" name="checkout_user_mode" value="new_user" id="checkout_user_mode_new" checked="checked"/>
@@ -63,9 +63,9 @@
                                         <div class="tab__icon tab__icon_1"></div>
                                         <div class="tab__text">
                                             {if $user && $user.user_type == 'dealer'}
-                                                Контактые данные получателя
+                                                {'Контактые данные получателя'|translate}
                                             {else}
-                                                Ваши контактные данные
+                                                {'Ваши контактные данные'|translate}
                                             {/if}
                                         </div>
                                     </label>
@@ -98,7 +98,7 @@
                                                             type="text"
                                                             name="new_user[last_name]"
                                                             id="reg_surname"
-                                                            placeholder="Фамилия"
+                                                            placeholder="{'Фамилия'|translate}"
                                                             autocorrect="off"
                                                             autocapitalize="on"
                                                             _required="required"
@@ -113,7 +113,7 @@
                                                             type="text"
                                                             name="new_user[first_name]"
                                                             id="reg_name"
-                                                            placeholder="Имя"
+                                                            placeholder="{'Имя'|translate}"
                                                             autocorrect="off"
                                                             autocapitalize="on"
                                                             _required="required"
@@ -128,7 +128,7 @@
                                                             type="text"
                                                             name="new_user[second_name]"
                                                             id="reg_patronymic"
-                                                            placeholder="Отчество"
+                                                            placeholder="{'Отчество'|translate}"
                                                             autocorrect="off"
                                                             autocapitalize="on"
                                                             _required="required"
@@ -147,7 +147,7 @@
                                                             id="reg_tel"
                                                             _required="required"
                                                             _pattern="^\+?[0-9\-() ]{10,19}$"
-                                                            placeholder="Моб. телефон"
+                                                            placeholder="{'Моб. телефон'|translate}"
                                                     />
                                                     {/literal}
                                                     <div name="message" id="new_user_login_error"></div>
@@ -162,7 +162,7 @@
                                                                class="input-field search-text stw-popup-text custom-field-error search-text-default select-input inner__item input-required"
                                                                _required="required"
                                                                autocomplete="off"
-                                                               placeholder="Введите свой город"
+                                                               placeholder="{'Введите свой город'|translate}"
                                                         />
                                                     </div>
                                                 </div>
@@ -173,7 +173,7 @@
                                                             type="email"
                                                             name="new_user[email]"
                                                             id="reg_email"
-                                                            placeholder="Ваш E-mail"
+                                                            placeholder="{'Ваш E-mail'|translate}"
                                                             autocorrect="off"
                                                             autocapitalize="off"
                                                             autocomplete="new-password"
@@ -189,7 +189,7 @@
                                                         <div class="row_acc__text">
                                                             <div class="row_acc__text_left">
                                                                 <div>
-                                                                    Получатель другой человек
+                                                                    {'Получатель другой человек'|translate}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -197,13 +197,13 @@
                                                 </div>
 
                                                 <div id="checkout_recipient_block" class="hidden">
-                                                    <p style="color: red;font-style: italic;">* все поля обязательны для заполнения</p>
+                                                    <p style="color: red;font-style: italic;">* {'все поля обязательны для заполнения'|translate}</p>
                                                     <div class="inner__block">
                                                         <div>
                                                             <input class="inner__item input-required"
                                                                    type="text"
                                                                    name="recipient[last_name]"
-                                                                   placeholder="Фамилия"
+                                                                   placeholder="{'Фамилия'|translate}"
                                                                    autocorrect="off"
                                                                    autocapitalize="on"
                                                                    _pattern="^[А-ЩЬЮЯҐЄІЇЁЪЭЫа-щьюяґєіїёъэы'`’ʼ\- ]{literal}{2,}{/literal}$"
@@ -215,7 +215,7 @@
                                                             <input class="inner__item input-required"
                                                                    type="text"
                                                                    name="recipient[first_name]"
-                                                                   placeholder="Имя"
+                                                                   placeholder="{'Имя'|translate}"
                                                                    autocorrect="off"
                                                                    autocapitalize="on"
                                                                    _pattern="^[А-ЩЬЮЯҐЄІЇЁЪЭЫа-щьюяґєіїёъэы'`’ʼ\- ]{literal}{2,}{/literal}$"
@@ -227,7 +227,7 @@
                                                             <input class="inner__item input-required"
                                                                    type="text"
                                                                    name="recipient[second_name]"
-                                                                   placeholder="Отчество"
+                                                                   placeholder="{'Отчество'|translate}"
                                                                    autocorrect="off"
                                                                    autocapitalize="on"
                                                                    _pattern="^[А-ЩЬЮЯҐЄІЇЁЪЭЫа-щьюяґєіїёъэы'`’ʼ\- ]{literal}{2,}{/literal}$"
@@ -241,7 +241,7 @@
                                                                 <input class="inner__item input-required"
                                                                        type="text"
                                                                        name="recipient[phone]"
-                                                                       placeholder="Моб. телефон"
+                                                                       placeholder="{'Моб. телефон'|translate}"
                                                                        autocorrect="off"
                                                                        _pattern='^\+?[0-9\-() ]{1,19}$'
                                                                 />
@@ -260,7 +260,7 @@
                                         <div>
                                             <div class="check-form-i f-i">
                                                 <div class="f-i-text hidden">
-                                                    <span class="check-form-i-text">Мобильный телефон</span>
+                                                    <span class="check-form-i-text">{'Мобильный телефон'|translate}</span>
                                                 </div>
                                                 <div class="f-i-field">
                                                     <p class="f-i-field-border">
@@ -268,7 +268,7 @@
                                                             <input type="text"
                                                                    name="member_user[login]"
                                                                    class="inner__item custom-field-error input-field"
-                                                                   placeholder="Моб. телефон"
+                                                                   placeholder="{'Моб. телефон'|translate}"
                                                                    _pattern="^\+?[0-9\-() ]{9,19}$"
                                                                    autocomplete="off"
                                                             >
@@ -281,14 +281,14 @@
                                         <div id="authorization">
                                             <div class="check-form-i f-i">
                                                 <div class="f-i-text hidden">
-                                                    <span class="check-form-i-text">Пароль</span>
+                                                    <span class="check-form-i-text">{'Пароль'|translate}</span>
                                                 </div>
                                                 <div class="f-i-field">
                                                     <p class="f-i-field-border">
                                                         {literal}
                                                             <input type="password"
                                                                    name="member_user[password]"
-                                                                   placeholder="Введите пароль"
+                                                                   placeholder="{'Введите пароль'|translate}"
                                                                    class="inner__item custom-field-error input-field">
                                                         {/literal}
                                                     </p>
@@ -298,8 +298,8 @@
                                             <div class="check-form-i btn-checkout_magrin f-i">
                                                 <div class="f-i-field text-center">
                                                     {literal}
-                                                        <a name="remind_password_link" class="forget forgot-pass-link" href="#remind_password">Забыли пароль?</a>
-                                                        <button type="button" class="submit btn-checkout" name="member_user[sign_in]">Войти</button>
+                                                        <a name="remind_password_link" class="forget forgot-pass-link" href="#remind_password">{'Забыли пароль?'|translate}</a>
+                                                        <button type="button" class="submit btn-checkout" name="member_user[sign_in]">{'Войти'|translate}</button>
                                                     {/literal}
                                                 </div>
                                             </div>
@@ -307,8 +307,8 @@
                                         <div id="remind_password" class="check-form-i  btn-checkout_magrin f-i">
                                             <div class="f-i-field text-center">
                                                 {literal}
-                                                    <button type="button" class="submit btn-checkout btn-checkout_send" name="member_user[send_password]">Отправить</button>
-                                                    <a id="remembered_password_link" class="forget forgot-pass-link" href="#authorization">Я вспомнил пароль</a>
+                                                    <button type="button" class="submit btn-checkout btn-checkout_send" name="member_user[send_password]">{'Отправить'|translate}</button>
+                                                    <a id="remembered_password_link" class="forget forgot-pass-link" href="#authorization">{'Я вспомнил парол'|translate}</a>
                                                 {/literal}
                                             </div>
                                         </div>
@@ -318,7 +318,7 @@
                                                 <div class="user-enter-social-b">
                                                     <div class="user-enter-social-b-content">
                                                         <div class="check-social__main">
-                                                            <p class="user-enter-social-b-text">Войти через аккаунт:</p>
+                                                            <p class="user-enter-social-b-text">{'Войти через аккаунт'|translate}:</p>
                                                             <ul class="user-enter-social-l">
                                                                 <li class="user-enter-social-l-i facebook">
                                                                     <div class="social-big-btn" name="social_button_auth" type="facebook"></div>
@@ -361,20 +361,20 @@
                                     <div id="checkout_delivery_payment">
 
                                         <div class="part">
-                                            <h2 class="part__title">Доставка</h2>
+                                            <h2 class="part__title">{'Доставка'|translate}</h2>
                                             <div class="part__row">
                                                 <div class="part__left">
-                                                    <div class="part__left_item hidden">Количество мест:
+                                                    <div class="part__left_item hidden">{'Количество мест'|translate}:
                                                         <p>5 шт.</p>
                                                     </div>
-                                                    <div id="weight_container" class="part__left_item">Вес:
+                                                    <div id="weight_container" class="part__left_item">{'Вес'|translate}:
                                                         <span id="weight_value">2.555</span>
                                                     </div>
-                                                    <div id="volume_container" class="part__left_item">Объем:
+                                                    <div id="volume_container" class="part__left_item">{'Объем'|translate}:
                                                         <span id="volume_value">0,168 м³</span>
                                                     </div>
                                                 </div>
-                                                <div class="part__right">Стоимость доставки</div>
+                                                <div class="part__right">{'Стоимость доставки'|translate}</div>
                                             </div>
                                             <div id="checkout_delivery" class="part__accordion delivery">
                                                 <div id="delivery-methods" class="f-i-field"></div>
@@ -385,10 +385,10 @@
                                         </div>
                                         <div class="line"></div>
                                         <div class="part">
-                                            <h2 class="part__title">Оплата</h2>
+                                            <h2 class="part__title">{'Оплата'|translate}</h2>
                                             <div class="part__row">
-                                                <div id="law-notice" class="part__left">Получение заказа</div>
-                                                <div class="part__right">Комисия за платёж</div>
+                                                <div id="law-notice" class="part__left">{'Получение заказа'|translate}</div>
+                                                <div class="part__right">{'Комисия за платёж'|translate}</div>
                                             </div>
                                             <div class="part__accordion pay">
                                                 <div id="payment-method-cash-disabled" class="row_acc inactive hidden">
@@ -396,7 +396,7 @@
                                                     <label for="in_parts">
                                                         <div class="row_acc__text">
                                                             <div class="row_acc__text_left">
-                                                                Оплата при получении недоступна (минимальный заказ от {$settings.Orders_Checkout.cash_max_total|intval} грн)
+{'Оплата при получении недоступна (минимальный заказ от'|translate} {$settings.Orders_Checkout.cash_max_total|intval} грн)
                                                             </div>
                                                         </div>
                                                     </label>
@@ -409,7 +409,7 @@
                                                     <input type="radio" disabled="disabled"/>
                                                     <label for="in_parts">
                                                         <div class="row_acc__text">
-                                                            <div class="row_acc__text_left">Оплата частями недоступна</div>
+                                                            <div class="row_acc__text_left">{'Оплата частями недоступна'|translate}</div>
                                                         </div>
                                                     </label>
                                                     <div></div>
@@ -427,7 +427,7 @@
                                                     <input type="radio" disabled="disabled"/>
                                                     <label for="in_parts">
                                                         <div class="row_acc__text">
-                                                            <div class="row_acc__text_left">Отправка по Вашему ТТН - недоступна</div>
+                                                            <div class="row_acc__text_left">{'Отправка по Вашему ТТН - недоступна'|translate}</div>
                                                         </div>
                                                     </label>
                                                     <div></div>
@@ -438,12 +438,12 @@
                                                             <input type="radio" disabled="disabled"/>
                                                             <label for="in_parts">
                                                                 <div class="row_acc__text">
-                                                                    <div class="row_acc__text_left">Оплата при получении - недоступна</div>
+                                                                    <div class="row_acc__text_left">{'Оплата при получении - недоступна'|translate}</div>
                                                                 </div>
                                                             </label>
                                                             <div></div>
                                                         </div>
-                                                    <div class="dealer-price-error-balance">Внимание! Оплата при получении недоступна, ожидаем пополнение баланса!</div>
+                                                    <div class="dealer-price-error-balance">{'Внимание! Оплата при получении недоступна, ожидаем пополнение баланса'|translate}!</div>
                                                     {/if}
                                                 {/if}
                                             </div>
@@ -456,8 +456,8 @@
                                     <div id="call-confirmation-disabled">
                                         {if $settings.Orders_Checkout.disable_call_confirmation}
                                             <div>
-                                                <p>Ваш заказ будет обработан <strong>без звонка</strong>, ожидайте информацию в SMS уведомлении.</p>
-                                                <p>Внимание! Остались вопросы, нужна консультация?<br>Воспользуйтесь полем "Добавить комментарий к заказу".</p>
+{'<p>Ваш заказ будет обработан <strong>без звонка</strong>, ожидайте информацию в SMS уведомлении.</p>
+                                                <p>Внимание! Остались вопросы, нужна консультация?<br>Воспользуйтесь полем "Добавить комментарий к заказу".</p>'|translate}
                                             </div>
                                         {/if}
                                     </div>
@@ -465,7 +465,7 @@
                                     <div class="line"></div>
 
                                     <div id="check-form-i-call-block" class="part">
-                                        <h2 class="part__title">Подтверждение</h2>
+                                        <h2 class="part__title">{'Подтверждение'|translate}</h2>
 
                                         <details id="comment-wrap">
                                             <summary class="summary">
@@ -473,16 +473,16 @@
                                                     <div class="summary__icon summary__icon_2"></div>
                                                     <div id="add_comment" class="summary__text">
                                                         {if $user && $user.user_type == 'dealer'}
-                                                            <strong>Трудности с оформление заказа?</strong><br>
-                                                            Запрос на тех. поддержку, отправка через 24 часа
+                                                            <strong>{'Трудности с оформление заказа?'|translate}</strong><br>
+                                                            {'Запрос на тех. поддержку, отправка через 24 часа'|translate}
                                                         {else}
-                                                            <strong>Добавить комментарий к заказу</strong>
+                                                            <strong>{'Добавить комментарий к заказу'|translate}</strong>
                                                         {/if}
                                                     </div>
                                                     <div class="summary__chevron"></div>
                                                 </div>
                                             </summary>
-                                            <textarea name="comment" id="comment" cols="100%" rows="max-content" placeholder="Комментарий к заказу"></textarea>
+                                            <textarea name="comment" id="comment" cols="100%" rows="max-content" placeholder="{'Комментарий к заказу'|translate}"></textarea>
                                         </details>
 
                                         <div class="{if $settings.Orders_Checkout.disable_call_confirmation == 1 || $user.user_type == 'dealer'}hidden{/if}">
@@ -497,9 +497,9 @@
                                                 <div class="row_acc__text_left">
                                                     <div>
                                                         {if $menu.www->guaranty}
-                                                            Подтверждая заказ, я принимаю <a href="{$menu.www->guaranty.href}" target="_blank">условия гарантии</a> интернет-магазина IntexPool.ua
+                                                            {'Подтверждая заказ, я принимаю'|translate} <a href="{$menu.www->guaranty.href}" target="_blank">{'условия гарантии'|translate}</a> {'интернет-магазина IntexPool.ua'|translate}
                                                         {else}
-                                                            Подтверждая заказ, я принимаю условия гарантии интернет-магазина IntexPool.ua
+                                                            {'Подтверждая заказ, я принимаю условия гарантии интернет-магазина IntexPool.ua'|translate}
                                                         {/if}
                                                     </div>
                                                 </div>
@@ -512,10 +512,10 @@
                                     </div>
 
                                     <button class="submit disabled" type="submit" id="order-submit" disabled="disabled">
-                                        Заказ подтверждаю
+                                        {'Заказ подтверждаю'|translate}
                                     </button>
 
-                                    <div class="error-text hidden">Проверьте все обязательные поля</div>
+                                    <div class="error-text hidden">{'Проверьте все обязательные поля'|translate}</div>
                                 </div>
                             </div>
                         </div>
@@ -524,9 +524,9 @@
                         <section id="cart">
                             <div class="part">
                                 <div class="part__row">
-                                    <h2 class="part__title">Корзина</h2>
+                                    <h2 class="part__title">{'Корзина'|translate}</h2>
                                     <a class="part__button" href="javascript:history.go(-1);">
-                                        <span>Продолжить покупки</span>
+                                        <span>{'Продолжить покупки'|translate}</span>
                                         <span class="chevron__right"></span>
                                     </a>
                                 </div>
@@ -548,7 +548,7 @@
                 <div class="overflow__box_close" onclick="popupClose('popup_callback_1')"></div>
                 <div class="screen_callback">
                     <div class="screen_callback__box_1">
-                        <h2 class="screen_callback__title">Чат центр | Колл центр</h2>
+                        <h2 class="screen_callback__title">{'Чат центр | Колл центр'|translate}</h2>
                         <div>
                             {if $user && $user.user_type == 'dealer'}
                                 {GoodsDescriptions->getRecord id=3753}
@@ -569,7 +569,7 @@
                 <div class="overflow__box_close" onclick="popupClose('popup_uzhhorod_map')"></div>
                 <div class="screen_callback">
                     <div class="screen_callback__box_1">
-                        <h2 class="screen_callback__title">Точка выдачи интернет магазина IntexPool</h2>
+                        <h2 class="screen_callback__title">{'Точка выдачи интернет магазина IntexPool'|translate}</h2>
                         <div>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1318.852722486893!2d22.27477960159068!3d48.615481281864696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47391855d2c973df%3A0x72812a7e2e099016!2sIntexPool!5e0!3m2!1sru!2sua!4v1637012784435!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
@@ -768,13 +768,13 @@
             <div class="overflow__box popup">
                 <div class="screen_callback">
                     <div class="screen_callback__box_1">
-                        <h3 class="screen_callback__title">Внимание! Изменения на сайте!</h3>
+                        <h3 class="screen_callback__title">{'Внимание! Изменения на сайте!'|translate}</h3>
                         <p>
-                            Пожалуйста, чтоб продолжить работу (оформить заказ), ознакомьтесь с информацией:
+                            {'Пожалуйста, чтоб продолжить работу (оформить заказ), ознакомьтесь с информацией'|translate}:
                         </p>
                         {foreach from=$agreements item=item name=agreements}
                             <div style="font-size: 15px; margin-bottom: 8px;">
-                                <a href="{$menu.my->profile->agreements.href}?id={$item.id}">{$item.title}</a>&nbsp;&mdash;&nbsp;Ожидаем Ваше подтверждение, кнопка "Я ознакомился"
+                                <a href="{$menu.my->profile->agreements.href}?id={$item.id}">{$item.title}</a>&nbsp;&mdash;&nbsp;{'Ожидаем Ваше подтверждение, кнопка "Я ознакомился"'|translate}
                             </div>
                         {/foreach}
                     </div>
@@ -806,7 +806,7 @@
                     checkbox.set('disabled', false);
                     checkbox.removeClass('disabled');
 
-                    alert('Ошибка на сервере');
+                    alert('{'Ошибка на сервере'|translate}');
                 }.bind(this)
             }).send();
         });

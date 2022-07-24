@@ -1,12 +1,12 @@
 /*{UsersSignUp->getNewUser assign="user"}*/
 <div class="popup light-popup light-popup-signin" name="signin-popup">
-	<h1 class="light-popup-title">Вход с паролем</h1>
+	<h1 class="light-popup-title">/*{'Вход с паролем'|translate}*/</h1>
 	<div name="msg"></div>
 	<form method="post">
 		<div class="f-step clearfix">
-			<label class="f-label" for="login-field">Мобильный телефон:</label>
+			<label class="f-label" for="login-field">/*{'Мобильный телефон'|translate}*/:</label>
 			<input type="text" class="custom-field-error input-field phone-number" name="login" id="login-field" _required="required" _pattern="^\+?[0-9\-() ]{9,19}$" tabindex="1" autofocus>
-			<div class="text-hint phone">Например, (067) 123-45-67</div>
+			<div class="text-hint phone">/*{'Например'|translate}*/, (067) 123-45-67</div>
 		</div>
 
 		<div class="if-signin">
@@ -14,19 +14,19 @@
 			<label class="f-label" for="password-field">Пароль:</label>
 			<input type="password" class="custom-field-error input-field password" id="password-field" name="password" _required="required" tabindex="2">
 			<span class="btn-link">
-				<button name="signin-continue" type="submit" class="btn-link-i">Продолжить</button>
+				<button name="signin-continue" type="submit" class="btn-link-i">/*{'Продолжить'|translate}*/</button>
 			</span>
 		</div>
 		<input type="hidden" name="remember" checked="checked" value="1">
 		<div class="f-step f-last-step">
-			<a href="#" class="remind-password-link xhr novisited" name="remind">Напомнить пароль по SMS</a>
+			<a href="#" class="remind-password-link xhr novisited" name="remind">/*{'Напомнить пароль по SMS'|translate}*/</a>
 		</div>
 		</div>
 	</form>
-	<h2 class="light-popup-subtitle"><a name="signup" class="light-popup-subtitle-link novisited" href="/*{$menu.my->signup.href}*/">Регистрация</a> постоянного покупателя</h2>
+	<h2 class="light-popup-subtitle"><a name="signup" class="light-popup-subtitle-link novisited" href="/*{$menu.my->signup.href}*/">/*{'Регистрация'|translate}*/</a> /*{'постоянного покупателя'|translate}*/</h2>
 	<div name="close" class="close">
-	    Закрыть
-		<a href="#" title="Закрыть"></a>
+	    /*{'Закрыть'|translate}*/
+		<a href="#" title="/*{'Закрыть'|translate}*/"></a>
 	</div>
 </div>
 

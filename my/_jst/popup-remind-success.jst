@@ -2,14 +2,14 @@
 <div class="popup light-popup light-popup-signin">
 	<div name="close" class="close">
 	    Закрыть
-		<a href="#" title="Закрыть"></a>
+		<a href="#" title="/*{'Закрыть'|translate}*/"></a>
 	</div>
-	<h1 class="light-popup-title">Вход с паролем</h1>
+	<h1 class="light-popup-title">/*{'Вход с паролем'|translate}*/</h1>
 	<form href="#" method="post">
 		<div class="f-step clearfix">
-			<label class="f-label" for="login-field">Мобильный телефон:</label>
+			<label class="f-label" for="login-field">/*{'Мобильный телефон'|translate}*/:</label>
 			<input type="text" class="custom-field-error input-field phone-number" name="login" id="login-field" required="required" _pattern="^\+?[0-9\-() ]{9,19}$" tabindex="1" autofocus>
-			<div class="text-hint phone">Например, (067) 123-45-67</div>
+			<div class="text-hint phone">/*{'Например'|translate}*/, (067) 123-45-67</div>
 		</div>
 
 		<div class="if-password-remind">
@@ -17,15 +17,15 @@
 			<div class="f-step">
 				<input type="password" class="custom-field-error input-field password" name="password" required="required" tabindex="2">
 				<span class="btn-link">
-					<button type="submit" class="btn-link-i" tabindex="3">Продолжить</button>
+					<button type="submit" class="btn-link-i" tabindex="3">/*{'Продолжить'|translate}*/</button>
 				</span>
 			</div>
 			<input type="hidden" name="remember" checked="checked" value="1">
 			<a href="#" class="remind-password-link xhr" name="remind">
-				<span>Прислать пароль еще раз</span>
+				<span>/*{'Прислать пароль еще раз'|translate}*/</span>
 			</a>
 		</div>
 
 	</form>
-	<h2 class="light-popup-subtitle"><a href="/*{$menu.my->signup.href}*/" class="novisited">Регистрация</a> постоянного покупателя</h2>
+	<h2 class="light-popup-subtitle"><a href="/*{$menu.my->signup.href}*/" class="novisited">/*{'Регистрация'|translate}*/</a> /*{'постоянного покупателя'|translate}*/</h2>
 </div>

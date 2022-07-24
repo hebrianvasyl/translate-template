@@ -7,7 +7,7 @@
                 {else}
             <li class="active">
                 {/if}
-                <a href="{$item.href}">Все</a>
+                <a href="{$item.href}">{'Все'|translate}</a>
             </li>
 
             {foreach from=$categories item=category}

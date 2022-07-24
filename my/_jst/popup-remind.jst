@@ -1,25 +1,25 @@
 /*{UsersSignUp->getNewUser assign="user"}*/
 <div class="popup light-popup light-popup-signin">
-	<h3 class="light-popup-title">Восстановление пароля</h3>
+	<h3 class="light-popup-title">/*{'Восстановление пароля'|translate}*/</h3>
 	<div name="msg"></div>
 	<form>
 		<div class="f-step">
-			<label class="f-label" for="login-field">Мобильный телефон:</label>
+			<label class="f-label" for="login-field">/*{'Мобильный телефон'|translate}*/:</label>
 			<input type="text" class="custom-field-error input-field phone-number" name="phone" id="login-field" required="required" _pattern="^\+?[0-9\-() ]{9,19}$" tabindex="1" autofocus>
-			<div class="text-hint phone">Например, (067) 123-45-67</div>
+			<div class="text-hint phone">/*{'Например'|translate}*/, (067) 123-45-67</div>
 		</div>
 		<div class="f-step f-last-step">
 			<span class="btn-link">
-				<button type="submit" class="btn-link-i" tabindex="2">Получить пароль</button>
+				<button type="submit" class="btn-link-i" tabindex="2">/*{'Получить пароль'|translate}*/</button>
 			</span>
 			<div class="remember-password-link-wrap">
-				<a href="#" class="xhr novisited" name="signin">Я вспомнил пароль</a>
+				<a href="#" class="xhr novisited" name="signin">/*{'Я вспомнил пароль'|translate}*/</a>
 			</div>
 		</div>
 	</form>
   <div name="close" class="close">
-	    Закрыть
-		<a href="#" title="Закрыть"></a>
+	    /*{'Закрыть'|translate}*/
+		<a href="#" title="/*{'Закрыть'|translate}*/"></a>
 	</div>
 </div>
 

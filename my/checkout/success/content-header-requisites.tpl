@@ -15,7 +15,7 @@
         <li class="contact-phones-l-i" name="additional_phone" style="float: right;">
             <a href="viber://pa?chatURI=intexpool_ua">
                 <i class="icon-viber-old"></i>
-                Открыть Viber
+                {'Открыть Viber'|translate}
             </a>
         </li>
     </ul>

@@ -15,7 +15,7 @@
 
             <div class="card__row">
                 <div class="card__title">
-                    Акционный комплект
+                    /*{'Акционный комплект'|translate}*/
                 </div>
 
                 <input type="checkbox" class="cart-i-check hidden" name="will_be_added_to_order" {if purchase.record.will_be_added_to_order == 1} checked {/if}>
@@ -29,7 +29,7 @@
 			<div class="b-goods-kit-footer hidden">
 				<table class="b-goods-kit-info">
 					<tr>
-						<td class="b-goods-kit-td b-goods-kit-price">Цена комплекта:</td>
+						<td class="b-goods-kit-td b-goods-kit-price">/*{'Цена комплекта'|translate}*/:</td>
 						<td class="b-goods-kit-td b-goods-kit-amount">
 
 						</td>
@@ -44,7 +44,7 @@
 			</div>
 
 			{if is_customized}
-            <div class="goods_customized_status">В комплекте присутствуют товары, которые оформляються под заказ.</div>
+            <div class="goods_customized_status">/*{'В комплекте присутствуют товары, которые оформляються под заказ'|translate}*/.</div>
             {/if}
 
 			<div class="card_complect__row">
@@ -84,7 +84,7 @@
                                         </div>
                                     </td>
                                     <td class="g-l-info-i g-l-info-amount">
-                                        <span class="g-l-info-amount-content">1</span> шт
+                                        <span class="g-l-info-amount-content">1</span> /*{'шт'|translate}*/
                                     </td>
                                     <td class="g-l-info-i g-l-info-price price-cur-b">
                                         <span class="g-l-info-price-cur">${purchase.record.goods.price.primary.string}</span>
@@ -187,14 +187,14 @@
                     {if App.get("User").getProperty("user_type") == "dealer"}
                     {var kit_price = Math.round(purchase.kit.single_kit_price.primary.raw)}
                     <div class="clearfix dealer_price_wrap">
-                        <label class="hidden">Ваша цена (за шт.):</label>
+                        <label class="hidden">/*{'Ваша цена (за шт.)'|translate}*/:</label>
                         <input
                             name="dealer_price"
                             value=""
                             data-good-id="${purchase.kit.kit_id}"
                             data-good-price="${kit_price}"
                             class="amount__input dealer-price-input input-field"
-                            placeholder="Ваша цена ${kit_price}" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                            placeholder="/*{'Ваша цена'|translate}*/ ${kit_price}" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                         >
                     </div>
                     {/if}

@@ -27,7 +27,7 @@
                 </div>
                 {/foreach}
                 <div class="button">
-                    <a href="{$inner_record.external_href}" target="_blank">Узнать подробнее</a>
+                    <a href="{$inner_record.external_href}" target="_blank">{'Узнать подробнее'|translate}</a>
                 </div>
             </div>
         </div>

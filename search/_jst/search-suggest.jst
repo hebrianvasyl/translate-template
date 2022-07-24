@@ -8,11 +8,11 @@
                         <tr>
                             <td class="image-column">
                                 <div class="g-l-i-img">
-                                    {if record.title.indexOf("Уценка") != -1}
+                                    {if record.title.indexOf("/*{'Уценка'|translate}*/") != -1}
                                     <div class="additional-tags">
                                         <div class="tag tag-sale small">
                                             <img src="/*{$settings.path.design}*//_.gif">
-                                            <span>Уценка</span>
+                                            <span>/*{'Уценка'|translate}*/</span>
                                         </div>
                                     </div>
                                     {/if}
@@ -45,7 +45,7 @@
         </ul>
 
 		<a href="#" name="show-all" class="search-popup-link show-results-link">
-			<span class="show-results-title">Все результаты</span>
+			<span class="show-results-title">/*{'Все результаты'|translate}*/</span>
 			<span class="show-results-count">${count}</span>
 		</a>
 	</div>

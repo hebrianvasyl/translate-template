@@ -1,8 +1,8 @@
 {literal}
 <div style="display: flex;height: 22px;justify-content: flex-end;align-items: center;margin: 0;text-align: right;">
     <!-- GTranslate: https://gtranslate.io/ -->
-    <a href="#" id="glang-uk" onclick="translateTo('ru|uk');return false;" title="Українська" class="gflag nturl notranslate">Українська</a>
-    <a href="#" id="glang-ru" onclick="translateTo('ru|ru');return false;" title="Русский" class="gflag active nturl notranslate" style="margin-left: 5px;">Русский</a>
+    <a href="#" id="glang-uk" onclick="translateTo('ru|uk');return false;" title="{'Українська'|translate}" class="gflag nturl notranslate">{'Українська'|translate}</a>
+    <a href="#" id="glang-ru" onclick="translateTo('ru|ru');return false;" title="{'Русский'|translate}" class="gflag active nturl notranslate" style="margin-left: 5px;">{'Русский'|translate}</a>
 
     <style type="text/css">
         <!--

@@ -46,7 +46,7 @@
 
                 <div class="return-to-list">
                     <span class="btn-link btn-link-blue">
-                        <a class="btn-link-i" href="{$menu.www->promotions.href}">Вернуться к списку</a>
+                        <a class="btn-link-i" href="{$menu.www->promotions.href}">{'Вернуться к списку'|translate}</a>
                     </span>
                 </div>
             </div>

@@ -4,11 +4,11 @@
     {Users->getUser assign="user"}
     {if $user.user_type == 'dealer'}
     <div style="color: #856404;background-color: #fff3cd;border: 3px solid #f1b813;padding: 10px; margin: 0 0 30px 0;">
-        <p style="margin: 0;">Для загрузки товаров на Prom.ua используйте <a href="http://export.intexpool.ua/promua.xml" target="_blank">специальный XML-фид</a>.</p>
+        <p style="margin: 0;">{'Для загрузки товаров на Prom.ua используйте'|translate} <a href="http://export.intexpool.ua/promua.xml" target="_blank">{'специальный XML-фид'|translate}</a>.</p>
         <hr style="margin: 10px 0;border: 0;height: 1px;background: #f1b813;">
-        <p style="margin: 0 0 5px 0;">Для получения актуальных цен и наличия товара на складе используйте <a href="http://export.intexpool.ua/offers.xml" target="_blank">специальный XML-файл</a>.</p>
-        <p style="margin: 0 0 5px 0;"><em>Файл обновляется каждый час.</em></p>
-        <p><strong>Внимание! Парсинг запрещен и будет блокироваться. Используйте выгрузку.</strong></p>
+        <p style="margin: 0 0 5px 0;">{'Для получения актуальных цен и наличия товара на складе используйте'|translate} <a href="http://export.intexpool.ua/offers.xml" target="_blank">{'специальный XML-файл'|translate}</a>.</p>
+        <p style="margin: 0 0 5px 0;"><em>{'Файл обновляется каждый час'|translate}.</em></p>
+        <p><strong>{'Внимание! Парсинг запрещен и будет блокироваться. Используйте выгрузку'|translate}.</strong></p>
     </div>
     {/if}
 
@@ -75,22 +75,22 @@
 
 										<table class="order-t">
 											<tr>
-												<td class="order-t-lt">Дата и время</td>
+												<td class="order-t-lt">{'Дата и время'|translate}</td>
 												<td class="order-t-rt">{$order->created->nice_date}, {"H:i"|date:$order->created->getTimeStamp()}</td>
 											</tr>
 
                                             {if $order.order_type == 'dealer_client'}
                                             <tr>
-                                                <td class="order-t-lt">Имя и фамилия получателя</td>
+                                                <td class="order-t-lt">{'Имя и фамилия получателя'|translate}</td>
                                                 <td class="order-t-rt">{$order.recipient_title}</td>
                                             </tr>
                                             <tr>
-                                                <td class="order-t-lt">Телефон получателя</td>
+                                                <td class="order-t-lt">{'Телефон получателя'|translate}</td>
                                                 <td class="order-t-rt">{$order.recipient_phone}</td>
                                             </tr>
                                             {else}
 											<tr>
-												<td class="order-t-lt">Имя и фамилия</td>
+												<td class="order-t-lt">{'Имя и фамилия'|translate}</td>
 												<td class="order-t-rt">
                                                     {if !empty($order->deliveries[0]['recipient_title'])}
 														{$order->deliveries[0]['recipient_title']}
@@ -103,11 +103,11 @@
 												</td>
 											</tr>
 											<tr>
-												<td class="order-t-lt">Мобильный телефон</td>
+												<td class="order-t-lt">{'Мобильный телефон'|translate}</td>
 												<td class="order-t-rt">{if !empty($order->deliveries[0]->phone)}{$order->deliveries[0]->phone|replace:" (мобильный)":""}{else}-{/if}</td>
 											</tr>
                                             <tr>
-                                                <td class="order-t-lt">Эл. почта</td>
+                                                <td class="order-t-lt">{'Эл. почта'|translate}</td>
                                                 <td class="order-t-rt">
                                                     {if !empty($order->user.email)}
                                                     {$order->user.email}
@@ -118,20 +118,20 @@
                                             </tr>
                                             {/if}
 											<tr>
-												<td class="order-t-lt">Доставка</td>
+												<td class="order-t-lt">{'Доставка'|translate}</td>
 												<td class="order-t-rt">{if !empty($order->deliveries[0]->method) && $order->deliveries[0]->method['id'] != 23}{$order->deliveries[0]->method}{else}-{/if}</td>
 											</tr>
 											<tr>
-												<td class="order-t-lt">Адрес</td>
+												<td class="order-t-lt">{'Адрес'|translate}</td>
 												<td class="order-t-rt">
 													{if $order->deliveries[0].method_id == 22}
-														г. Ужгород, ул. Радищева, 1
+														{'г. Ужгород, ул. Радищева, 1'|translate}
 													{else}
 														{if !empty($order->deliveries[0]->address)}
 															{$order->deliveries[0]->address}
 														{else}
 															{if !empty($order->deliveries[0]->place)}
-																{$order->deliveries[0]->place|replace:"Новая почта, ":""}
+																{$order->deliveries[0]->place|replace:"{'Новая почта'|translate}, ":""}
 															{else}
 																-
 															{/if}
@@ -140,7 +140,7 @@
 												</td>
 											</tr>
 											<tr>
-												<td class="order-t-lt">Оплата</td>
+												<td class="order-t-lt">{'Оплата'|translate}</td>
 												<td class="order-t-rt">{if !empty($order->invoices[0]->payment_method)}{$order->invoices[0]->payment_method}{else}-{/if}</td>
 											</tr>
 											{if !empty($order->declaration_number.value)}
@@ -148,7 +148,7 @@
 												<td colspan="2"><hr style="background: #e4e4e4;border: 0;height: 1px;margin: 0px 0px 10px 0px;"></td>
 											</tr>
 											<tr>
-												<td class="order-t-lt">Номер декларации от службы доставки</td>
+												<td class="order-t-lt">{'Номер декларации от службы доставки'|translate}</td>
 												<td class="order-t-rt">
 													{$order->declaration_number.value}
 												</td>
@@ -156,7 +156,7 @@
 											{/if}
                                             {if !empty($order.comment)}
                                             <tr>
-                                                <td class="order-t-lt">Комментарий</td>
+                                                <td class="order-t-lt">{'Комментарий'|translate}</td>
                                                 <td class="order-t-rt">{$order.comment|nl2br nofilter}</td>
                                             </tr>
                                             {/if}
@@ -164,7 +164,7 @@
 									</div>
 									<div class="order-right float-lt">
 										<div class="order-title-head">
-											<h2>Ваш заказ</h2>
+											<h2>{'Ваш заказ'|translate}</h2>
 										</div>
 										<ul class="order-l">
 											{Controller->getChildController assign="order_controller" name="order"}
@@ -180,7 +180,7 @@
 														<div class="kit-wrap-red">
 															<div class="b-goods-kit">
 																<div class="b-goods-kit-header">
-																	<h4 class="b-goods-kit-title">Акционный комплект</h4>
+																	<h4 class="b-goods-kit-title">{'Акционный комплект'|translate}</h4>
 																</div>
                                                                 {$first_purchase = reset($kit.purchases)}
 																<ul class="cart-g-l">
@@ -236,7 +236,7 @@
 																<div class="b-goods-kit-footer">
 																	<table class="b-goods-kit-info">
 																		<tr>
-																			<td class="b-goods-kit-price">Цена комплекта:</td>
+																			<td class="b-goods-kit-price">{'Цена комплекта'|translate}:</td>
 																			<td class="b-goods-kit-cost">
                                                                                 <span class="kit-cost-without-discount">
                                                                                     {$first_purchase->price->getValueObject($kit_cost_without_discount) nofilter}
@@ -318,7 +318,7 @@
 
 											<li class="order-i cart-g-l-i total">
 												<div class="order-i-text left-column-text valigned-bottom">
-                                                    Итого{if $user.user_type == 'dealer' && $order.dealer_discount == 1} (для дропшиппера){/if}:
+													{'Итого'|translate}{if $user.user_type == 'dealer' && $order.dealer_discount == 1} ({'для дропшиппера'|translate}){/if}:
                                                 </div>
 												<div class="order-i-text right-column-text valigned-bottom g-l-info-cost">
 													{if isset($order->cost_with_discount)}
@@ -331,7 +331,7 @@
 
                                             {if $order.order_type == 'dealer_client' && $order.recipient_amount > 0}
                                             <li class="order-i cart-g-l-i total">
-                                                <div class="order-i-text left-column-text valigned-bottom">Итого (для покупателя):</div>
+                                                <div class="order-i-text left-column-text valigned-bottom">{'Итого (для покупателя)'|translate}:</div>
                                                 <div class="order-i-text right-column-text valigned-bottom g-l-info-cost">
                                                     {$order.recipient_amount|number_format:0:',':' '} грн
                                                 </div>
@@ -344,18 +344,18 @@
                                             <hr style="border: 0;border-top: 1px solid #d9d9d9; height: 1px;width: 100%; margin: 30px 0;">
                                             {if !$order->isCanceled() && count($order->attachments->invoice) > 0}
                                             <a href="{$order->attachments->invoice.original.url}" target="_blank" class="downloadPDFInvoice">
-                                                <i>&nbsp;</i>Скачать счет на оплату
+                                                <i>&nbsp;</i>{'Скачать счет на оплату'|translate}
                                             </a>
                                             {/if}
                                             {if $order.status == 'complete' && $order.order_type != 'dealer_client'}
                                             <a href="{$order->getPDFInvoiceUrl()}" target="_blank" class="downloadPDFInvoice">
-                                                <i>&nbsp;</i>Скачать расходную накладную
+                                                <i>&nbsp;</i>{'Скачать расходную накладную'|translate}
                                             </a>
                                             {/if}
 
                                             {if $order.status == 'new' || $order.status == 'progress'}
                                             <span class="btn-link btn-grey submit-btn float-rt" >
-											    <a class="btn-link-i js-order-cancel" data-order-id="{$order.id}" name="cancel-order-link" href="javascript:;">Отменить заказ</a>
+											    <a class="btn-link-i js-order-cancel" data-order-id="{$order.id}" name="cancel-order-link" href="javascript:;">{'Отменить заказ'|translate}</a>
 										    </span>
                                             <div class="text-right order-cancel-result" id="order-cancel-result-{$order.id}"></div>
                                             {/if}
@@ -387,7 +387,7 @@
 											{/if}
 											{if $isset_unpaid}
 												<span class="pb-text">
-												<span class="pb-text-i">Для оплаты заказа вы будете переадресованны на страницу процессингового центра</span>
+												<span class="pb-text-i">{'Для оплаты заказа вы будете переадресованны на страницу процессингового центра'|translate}</span>
 											</span>
 											{/if}
 										</div>
@@ -395,20 +395,21 @@
 											{$isset_unpaid = false}
 											{if count($invoices) == 1 && $invoices.0.status == 'unpaid'}
 												{$isset_unpaid = true}
-												{include file="my/checkout/payments/{$invoices.0->payment_method.processing}.tpl" invoice=$invoice submit_caption='Оплатить заказ сейчас'}
+												{include file="my/checkout/payments/{$invoices.0->payment_method.processing}.tpl" invoice=$invoice submit_caption="{'Оплатить заказ сейчас'|translate}"}
 
 											{elseif count($invoices) > 1}
 
 												{foreach from=$invoices item='invoice'}
 
 													<p>
-														Номер счета: {$invoice.id}
-														Сумма: {$invoice->amount nofilter}
-														Статус: {if $invoice.status == 'paid' || $invoice.status == 'hold'}Оплачен{else}Не оплачен{/if}
+
+														{'Номер счета'|translate}: {$invoice.id}
+														{'Сумма'|translate}: {$invoice->amount nofilter}
+														{'Статус'|translate}: {if $invoice.status == 'paid' || $invoice.status == 'hold'}{'Оплачен'|translate}{else}{'Не оплачен'|translate}{/if}
 
 														{if $invoice.status == 'unpaid'}
 															{$isset_unpaid = true}
-															{include file="my/checkout/payments/{$invoice->payment_method.processing}.tpl" invoice=$invoice submit_caption='Оплатить счет'}
+															{include file="my/checkout/payments/{$invoice->payment_method.processing}.tpl" invoice=$invoice submit_caption="{'Оплатить счет'|translate}"}
 														{/if}
 													</p>
 
@@ -451,7 +452,7 @@
 
                     {include file="body-page-navigation.tpl" pos='videocontent'}
 				{else}
-                    <p>Вы еще ничего не заказывали в нашем магазине.</p>
+                    <p>{'Вы еще ничего не заказывали в нашем магазине'|translate}.</p>
 				{/if}
 			</div>
 		</div>
@@ -516,7 +517,7 @@ $('order-list').getElements('[name=cancel-order-link]').addEvent('click', functi
             button.set('disabled', false);
             button.removeClass('disabled');
 
-            alert('Ошибка на сервере');
+            alert("{'Ошибка на сервере'|translate}");
         }.bind(this)
     }).send();
 });

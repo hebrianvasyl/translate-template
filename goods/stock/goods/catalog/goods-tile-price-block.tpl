@@ -49,7 +49,7 @@
     {* Под заказ *}
     {if $record.sell_status=="customized"}
     <div class="g-l-i-content-i-wrap customized">
-        <div class="g-l-i-status">{$record->sell_status->value.title} <span class="g-l-i-status-info">(от 3 дней)</span></div>
+        <div class="g-l-i-status">{$record->sell_status->value.title} <span class="g-l-i-status-info">({'от 3 дней'|translate})</span></div>
         {if !empty($record.price)}
         {if !empty($menu.active->stock_record)}
         <div class="old-price-b"><span class="g-l-i-price old-price crossed">{$record_with_content->price nofilter}</span></div>

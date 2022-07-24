@@ -16,14 +16,14 @@
                             <div class="image-wrap">
                                 <img src="{$slide.image}" alt="{$slide.title}" style="max-width: 100%; max-height: 100%; width: auto; height: auto;" >
                                 <div class="show-more">
-                                    Подробнее
+                                    {'Подробнее'|translate}
                                 </div>
                             </div>
                             <div class="g-details-title">
                                 {$slide.sub_title_big}
                             </div>
                             <div class="price-block">
-                                <span>Цена:</span>
+                                <span>{'Цена'|translate}:</span>
                                 <span class="price">{$slide.price nofilter}</span>
                             </div>
                         </div>

@@ -12,7 +12,7 @@
             var banner = b1.getRandom();
 
             var alt = banner['alt'];
-            alt = 'Категория. Правая колонка. №1 - ' + alt.replace(/<br>/g, ' ');
+            alt = '{'Категория. Правая колонка'|translate}. №1 - ' + alt.replace(/<br>/g, ' ');
             banner['alt'] = alt;
 
             html += App.getHTML("{template_js_fetch file='_jst/banner.jst'}", banner);
@@ -35,11 +35,11 @@
                 index++;
 
                 var canonical_alt1 = banner1['alt'];
-				var alt1 = 'Категория. Правая колонка. №1 - ' + canonical_alt1.replace(/<br>/g, ' ');
+				var alt1 = '{'Категория. Правая колонка'|translate}. №1 - ' + canonical_alt1.replace(/<br>/g, ' ');
                 banner1['alt'] = alt1;
 
                 var canonical_alt2 = banner2['alt'];
-                var alt2 = 'Категория. Правая колонка. №1 - ' + canonical_alt2.replace(/<br>/g, ' ');
+                var alt2 = '{'Категория. Правая колонка'|translate}. №1 - ' + canonical_alt2.replace(/<br>/g, ' ');
                 banner2['alt'] = alt2;
 
                 html += App.getHTML("{template_js_fetch file='_jst/banner.jst'}", banner1);

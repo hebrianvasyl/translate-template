@@ -40,7 +40,7 @@
             <td colspan="2">
                 <p class="pl-30 text-center">
                     <br>
-                    <a href="{$inner_record.external_href}" class="more-btn blue" target="_blank">Узнать подробнее</a>
+                    <a href="{$inner_record.external_href}" class="more-btn blue" target="_blank">{'Узнать подробнее'|translate}</a>
                 </p>
             </td>
         </tr>
