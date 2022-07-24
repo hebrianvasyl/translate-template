@@ -14,7 +14,7 @@
 
 	<div class="sidebar-i sidebar-i-content actions">
 		<h2 class="sidebar-i-content-title clearfix">
-			<a class="sidebar-i-content-title-link" href="{$menu.www->promotions.href}">Акции</a>
+			<a class="sidebar-i-content-title-link" href="{$menu.www->promotions.href}">{'Акции'|translate}</a>
 		</h2>
 		<ul class="sidebar-i-content-l">
 
@@ -53,7 +53,7 @@
 
 		</ul>
 		{if isset($all_promotions_link)}
-			<a class="show-more-link" href="{$all_promotions_link}"><span>Все акции</span> &#8594;</a>
+			<a class="show-more-link" href="{$all_promotions_link}"><span>{'Все акции'|translate}</span> &#8594;</a>
 		{/if}
 	</div>
 

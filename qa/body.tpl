@@ -23,7 +23,7 @@
 			{foreach from=$categories key="title" item="faqs"}
 				<li class="b-static-content-i faq-layout faq-title">
 					{if $title == '---'}
-						<h4>Без категории</h4>
+						<h4>{'Без категории'|translate}</h4>
 					{else}
 						<h2>{$title}</h2>
 					{/if}

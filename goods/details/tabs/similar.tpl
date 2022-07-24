@@ -348,7 +348,7 @@
 
                             {if $similar_model->isATP()}
                             <div class="price-block">
-                                <span>Цена:</span>
+                                <span>{'Цена'|translate}:</span>
                                 {if !empty($similar_model.old_price) && ($similar_model.old_price > $similar_model.price)}
                                 <span class="old-price">{$similar_model->old_price nofilter}</span>
                                 {/if}

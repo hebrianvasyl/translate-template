@@ -26,6 +26,6 @@
 				</li>
 			{/foreach}
 		</ul>
-		<a class="show-more-link" href="{$menu->videocontent.href}"><span>Все видео</span> &#8594;</a>
+		<a class="show-more-link" href="{$menu->videocontent.href}"><span>{'Все видео'|translate}</span> &#8594;</a>
 	</div>
 {/if}

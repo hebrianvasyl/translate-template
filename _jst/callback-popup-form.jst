@@ -1,26 +1,26 @@
 <div class="popup callback-popup light-popup">
-	<h3 class="light-popup-title">Ваш номер мобильного телефона:</h3>
+	<h3 class="light-popup-title">/*{'Ваш номер мобильного телефона'|translate}*/:</h3>
 	<div name="msg"></div>
 	<form href="#" method="post">
 		<input type="text" class="custom-field-error input-field phone-number" id="phone_number" name="contact" {if App.get("User").isAuth()}value = ${App.get("User").getProperty("login")} {/if} _pattern="^\+\d{2} \(\d{3}\) \d{3}-\d{2}-\d{2}$" _required="required" tabindex="1" autofocus>
-		<div class="text-hint phone">Например, (067) 123-45-67</div>
+		<div class="text-hint phone">/*{'Например'|translate}*/, (067) 123-45-67</div>
 
 		<div class="f-step clearfix">
-			<label class="f-label" for="name-field">Ваше имя:</label>
+			<label class="f-label" for="name-field">/*{'Ваше имя'|translate}*/:</label>
 			<input type="text" class="custom-field-error input-field name" id="name-field" name="name" {if App.get("User").isAuth()} value = ${App.get("User").getProperty("title")} {/if} _required="required" tabindex="2">
 		</div>
 
 		<div class="f-step clearfix">
-			<label class="f-label f-label-message" for="message-field">Комментарий:</label>
+			<label class="f-label f-label-message" for="message-field">/*{'Комментарий'|translate}*/:</label>
 			<textarea class="input-field message" id="message-field" name="message" tabindex="3"></textarea>
 		</div>
 
 		<div class="f-step f-last-step">
 			<span class="btn-link btn-grey">
-				<button type="submit" class="btn-link-i" tabindex="4">Заказать обратный звонок</button>
+				<button type="submit" class="btn-link-i" tabindex="4">/*{'Заказать обратный звонок'|translate}*/</button>
 			</span>
 			<div class="text-hint addition">/*{$settings.Contacts.schedule_popup nofilter}*/</div>
 		</div>
 	</form>
-    <div name="close" class="close"><a href="#" title="Закрыть"></a></div>
+    <div name="close" class="close"><a href="#" title="/*{'Закрыть'|translate}*/"></a></div>
 </div>

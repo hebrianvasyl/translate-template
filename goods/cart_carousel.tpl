@@ -1,7 +1,7 @@
 <div>
 	{if !empty($relations)}
 		<section class="goods slider accessories-carousel" id="accessories_carousel">
-			<h2>Аксессуары</h2>
+			<h2>{'Аксессуары'|translate}</h2>
 			<a class="btn btn-lt" href="#" name="carousel_control_left"><img class="btn-img"  src="{$settings.path.design}/_.gif"></a>
 			<a class="btn btn-rt" href="#" name="carousel_control_right"><img class="btn-img" src="{$settings.path.design}/_.gif"></a>
 			<div class="slider-i">
@@ -63,7 +63,7 @@
 								{/if}
 
 								<div class="price-block">
-									<span>Цена:</span>
+									<span>{'Цена'|translate}:</span>
                                     {*{if !empty($record['old_price']) and $record['old_price'] > $record['price']}*}
 										{*<span class="old-price">{$record->old_price nofilter}</span>*}
                                     {*{/if}*}

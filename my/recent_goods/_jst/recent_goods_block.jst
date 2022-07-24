@@ -134,7 +134,7 @@
 											</div>
 										{else}
 											<div class="rating-content float-rt">
-												<a href="${item.href}#tab=comments">оставь отзыв</a>
+												<a href="${item.href}#tab=comments">/*{'оставь отзыв'|translate}*/</a>
 											</div>
 										{/if}
 
@@ -146,7 +146,7 @@
 										<div class="g-l-i-content-i-wrap sku-content available">
 											<div class="g-l-i-content-wrap">
 												<div class="price">
-													<div class="g-l-i-price">от ${min_price.get("html")}</div>
+													<div class="g-l-i-price">/*{'от'|translate}*/ ${min_price.get("html")}</div>
 												</div>
 											</div>
 										</div>
@@ -186,7 +186,7 @@
 
 											{if (price.get("raw"))}
 											    <div class="price-block">
-                                                    <span>Цена:</span>
+                                                    <span>/*{'Цена'|translate}*/:</span>
                                                     {if old_price.get("raw") > price.get("raw")}
                                                         <span class="old-price">${old_price.get("html")}</span>
                                                     {/if}

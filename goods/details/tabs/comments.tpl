@@ -9,13 +9,13 @@
 
 				<div class="{if empty($comments)}hidden{/if}">
 					<ul class="add-new-comment-l" name="add_new_mark_small" id="add_new_comment_header">
-						<li class="add-new-comment-l-i"><h2 class="tabs-content-title">Вопросы и отзывы покупателей <span class="pp-characteristics-tab-product-name">({$total_comments})</span></h2></li>
+						<li class="add-new-comment-l-i"><h2 class="tabs-content-title">{'Вопросы и отзывы покупателей'|translate} <span class="pp-characteristics-tab-product-name">({$total_comments})</span></h2></li>
 						<li class="add-new-comment-l-i">
 							<span>
-								<button class="btn-link-i" name="show_add_new_comment" id="new_comment_btn">Напишите свой отзыв</button>
+								<button class="btn-link-i" name="show_add_new_comment" id="new_comment_btn">{'Напишите свой отзыв'|translate}</button>
 							</span>
 						</li>
-						<li class="add-new-comment-l-i">или оцените товар</li>
+						<li class="add-new-comment-l-i">{'или оцените товар'|translate}</li>
 						<li class="add-new-comment-l-i">
 							<div class="b-rating user-mark large" id="rating_small" name="rating_small">
 								<div class="rating-content" name="rating_value"></div>
@@ -96,7 +96,7 @@
 	<div class="to-left light-gray more-news all-review l-gray-ie-right">
 		<div class="to-right l-gray-ie-left-white">
 			<span class="text-b-i-c">
-				<a href="#" name="switch_to_comments" class="to-top novisited">Смотреть Все отзывы</a>
+				<a href="#" name="switch_to_comments" class="to-top novisited">{'Смотреть Все отзывы'|translate}</a>
 			</span>
 		</div>
 	</div>

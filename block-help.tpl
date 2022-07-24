@@ -3,11 +3,11 @@
     <div class="clearfix">
 
         <div class="intexpool-help">
-            <h4>Помощь от IntexPool</h4>
+            <h4>{'Помощь от IntexPool'|translate}</h4>
             <div class="bg">
                 <div class="content">
                     <div class="content-title">{'Полезная и необходимая информация'|translate}</div>
-                    <p>О продукции Intex и Bestway</p>
+                    <p>{'О продукции Intex и Bestway'|translate}</p>
                 </div>
                 <ul>
                   <li><a href="{$menu.www->qa.href}">{'Вопросы и ответы'|translate}</a></li>

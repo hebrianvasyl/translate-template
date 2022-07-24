@@ -8,12 +8,12 @@
         {*
         <div class="calculator">
             <div class="inner">
-                <h2>Расчет стоимости доставки</h2>
+                <h2>{'Расчет стоимости доставки'|translate}</h2>
 
                 <form class="personal-information check-lt" action="/cgi-bin/form.php" method="POST">
                     <div class="user-info">
                         <div class="check-form-i">
-                            <span class="check-form-i-text valigned-middle">Дата отправки:</span>
+                            <span class="check-form-i-text valigned-middle">{'Дата отправки'|translate}:</span>
                             <div id="delivery-time" class="f-i-field delivery-time">
                                 {if date('H') < 12 && date('w') != 0}
                                 Сегодня, {$today|@date_format:"%e"} {$today|@date_format:"%m"|@month_title:genitive}
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="check-form-i check-form-i_town">
-                            <span class="check-form-i-text valigned-middle">Куда:</span>
+                            <span class="check-form-i-text valigned-middle">{'Куда'|translate}:</span>
                             <div class="f-i-field" id="new_user_locality">
                                 <div id="countries"></div>
                                 <div class="f-i-field-border">
@@ -34,7 +34,7 @@
                                             id="new_user_locality_cities_suggest"
                                             class="input-field search-text stw-popup-text custom-field-error search-text-default"
                                             _required="required"
-                                            placeholder="Введите свой город"
+                                            placeholder="{'Введите свой город'|translate}"
                                             autocomplete="off" />
                                     <button class="btn-field-list cities-show-default"></button>
                                 </div>
@@ -46,12 +46,12 @@
                         </div>
 
                         <div class="check-form-i">
-                            <span class="check-form-i-text valigned-middle">Доставка:</span>
+                            <span class="check-form-i-text valigned-middle">{'Доставка'|translate}:</span>
                             <div class="f-i-field" id="delivery-methods"></div>
                         </div>
 
                         <div class="check-form-i">
-                            <span class="check-form-i-text valigned-middle">Оплата:</span>
+                            <span class="check-form-i-text valigned-middle">{'Оплата'|translate}:</span>
                             <div class="f-i-field" id="payment-methods"></div>
                         </div>
                     </div>
@@ -276,7 +276,7 @@
 
                 var el = new Element('div', {
                     'id': 'delivery-time-info',
-                    'html': '<em>Отправка осуществляеться после 100% оплаты</em>'
+                    'html': '<em>{'Отправка осуществляеться после 100% оплаты'|translate}</em>'
                 });
                 el.inject($('delivery-time').getParent('.check-form-i'));
             } else {

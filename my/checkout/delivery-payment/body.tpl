@@ -333,24 +333,24 @@
                                             </aside>
                                         </div>
                                         {*                                <div class="inner__block">*}
-                                        {*                                    <input class="inner__item inner__button input-required" type="email" name="member_user[login]" placeholder="Ваш E-mail" data-placeholder="Введите корректный E-mail" id="email_entry"/>*}
+                                        {*                                    <input class="inner__item inner__button input-required" type="email" name="member_user[login]" placeholder="{'Ваш E-mail'|translate}" data-placeholder="{'Введите корректный E-mail'|translate}" id="email_entry"/>*}
                                         {*                                </div>*}
 
                                         {*                                <div id="authorization">*}
                                         {*                                    <div class="inner__block">*}
-                                        {*                                        <input class="inner__item inner__button input-required" type="text" name="member_user[password]" placeholder="Введите пароль" data-placeholder="Неверый пароль" id="password_entry"/>*}
+                                        {*                                        <input class="inner__item inner__button input-required" type="text" name="member_user[password]" placeholder="{'Введите пароль'|translate}" data-placeholder="{'Неверый пароль'|translate}" id="password_entry"/>*}
                                         {*                                    </div>*}
 
                                         {*                                    <div name="message"></div>*}
 
-                                        {*                                    <a class="forget" onclick="tabChoice(2)" name="remind_password_link" href="#remind_password">Забыли пароль?</a>*}
-                                        {*                                    <button class="submit" type="button" name="member_user[sign_in]" value="entry" id="entry">Вход</button>*}
+                                        {*                                    <a class="forget" onclick="tabChoice(2)" name="remind_password_link" href="#remind_password">{'Забыли пароль'|translate}?</a>*}
+                                        {*                                    <button class="submit" type="button" name="member_user[sign_in]" value="entry" id="entry">{'Вход'|translate}</button>*}
                                         {*                                </div>*}
 
                                         {*                                <div id="remind_password">*}
-                                        {*                                    <button class="submit" type="button" name="member_user[send_password]" value="restore" id="restore">Восстановить</button>*}
+                                        {*                                    <button class="submit" type="button" name="member_user[send_password]" value="restore" id="restore">{'Восстановить'|translate}</button>*}
 
-                                        {*                                    <a id="remembered_password_link" class="forgot-pass-link" href="#authorization">Я вспомнил пароль</a>*}
+                                        {*                                    <a id="remembered_password_link" class="forgot-pass-link" href="#authorization">{'Я вспомнил пароль'|translate}</a>*}
                                         {*                                </div>*}
                                     </div>
                                 </div>

@@ -6,7 +6,7 @@
 
 	<div class="sidebar-i sidebar-i-content">
 		<div class="sidebar-i-content-title clearfix">
-			<a class="sidebar-i-content-title-link" href="{$menu.www->articles.href}">Советы от IntexPool</a>
+			<a class="sidebar-i-content-title-link" href="{$menu.www->articles.href}">{'Советы от IntexPool'|translate}</a>
 		</div>
 		<ul class="sidebar-i-content-l">
 
@@ -77,7 +77,7 @@
 			{/foreach}
 
 		</ul>
-		<a class="show-more-link" href="{$all_articles_href}"><span>Просмотреть все советы</span></a>
+		<a class="show-more-link" href="{$all_articles_href}"><span>{'Просмотреть все советы'|translate}</span></a>
 	</div>
 
     <script>

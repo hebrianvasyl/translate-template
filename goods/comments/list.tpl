@@ -8,8 +8,7 @@
 
             <div itemprop="review" itemscope itemtype="http://schema.org/Review" class="b-comment" name="{$comment.id}">
                 <div class="b-comment-info b-comment-header">
-                    <div class="b-comment-info-i comment-author" itemprop="author">{if $comment.name}{$comment.name}{else}{'
-Анонимный пользователь'|translate}{/if}</div>
+                    <div class="b-comment-info-i comment-author" itemprop="author">{if $comment.name}{$comment.name}{else}{'Анонимный пользователь'|translate}{/if}</div>
 
                     {if $comment.mark}
                         <div class="b-comment-info-i">
@@ -53,12 +52,12 @@
                             <div name="msg"></div>
                             <span>{'Отзыв полезен'|translate}?</span>
                             <span class="yes" name="positive_block">
-                                <a href="#" class="xhr underline" name="positive_vote" id="{$comment.id}">Да</a>
+                                <a href="#" class="xhr underline" name="positive_vote" id="{$comment.id}">{'Да'|translate}</a>
                                 <span name="count">{$comment.positive_vote_count}</span>
                             </span>
                             <span>/</span>
                             <span class="no" name="negative_block">
-                                <a href="#" class="xhr underline" name="negative_vote">Нет</a>
+                                <a href="#" class="xhr underline" name="negative_vote">{'Нет'|translate}</a>
                                 <span name="count">{$comment.negative_vote_count}</span>
                             </span>
                         </div>

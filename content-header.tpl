@@ -133,7 +133,7 @@
               </g>
             </svg>
           </div>
-          <div class="catalog-item-menu-text">Каталог товаров</div>
+          <div class="catalog-item-menu-text">{'Каталог товаров'|translate}</div>
         </div>
         <div class="mob-phones">
           <div class="mob-phones__icon">
@@ -171,11 +171,11 @@
             </a>
             <a href="http://m.me/379391889115786" class="icon-messenger tooltip" target="_blank">
                 <img data-src="{$settings.path.design}/_.gif" class="lazyload">
-                <span class="tooltiptext tooltip-bottom">Открыть Messenger</span>
+                <span class="tooltiptext tooltip-bottom">{'Открыть Messenger'|translate}</span>
             </a>
             <a href="https://t.me/intexpool_bot" class="icon-telegram tooltip" target="_blank">
                 <img data-src="{$settings.path.design}/_.gif" class="lazyload">
-                <span class="tooltiptext tooltip-bottom">Открыть Telegram</span>
+                <span class="tooltiptext tooltip-bottom">{'Открыть Telegram'|translate}</span>
             </a>
         </div>
         <div id="user_enter" class="user-enter-b float-rt">
@@ -268,10 +268,10 @@
 						<form method="get" name="searchForm" action="{$menu.www.href}search/">
 							<div class="search-text-wrap">
 								<div id="suggest-result"></div>
-								<input autocomplete="off" id="search-text" type="text" name="text" class="search-text custom-field-error" placeholder="Поиск" {*value="{if isset($searchResults)}{$searchResults.text}{/if}"*} _required="required">
+								<input autocomplete="off" id="search-text" type="text" name="text" class="search-text custom-field-error" placeholder="{'Поиск'|translate}" {*value="{if isset($searchResults)}{$searchResults.text}{/if}"*} _required="required">
 							</div>
 							<span class="btn-link btn-link-blue">
-							    <button type="submit" class="btn-link-i">Найти</button>
+							    <button type="submit" class="btn-link-i">{'Найти'|translate}</button>
 						    </span>
                             <script>
                                 SearchSuggest.init('search-text');
@@ -293,7 +293,7 @@
                     </a>
                     <a href="https://t.me/intexpool_bot" class="icon-telegram tooltip" target="_blank">
                         <img data-src="{$settings.path.design}/_.gif" class="lazyload">
-                        <span class="tooltiptext tooltip-bottom">Открыть Telegram</span>
+                        <span class="tooltiptext tooltip-bottom">{'Открыть Telegram'|translate}</span>
                     </a>
                 </div>
 

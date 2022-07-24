@@ -185,7 +185,7 @@
 		<div class="content-wrapper clearfix">
 
 			<div class="intexpool-help">
-				<h4>Помощь от IntexPool</h4>
+				<h4>{'Помощь от IntexPool'|translate}</h4>
 				<div class="bg">
 					<div class="content">
 						<div class="content-title">{'ПОЛЕЗНАЯ и НЕОБХОДИМАЯ информация'|translate}</div>

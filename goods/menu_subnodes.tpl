@@ -52,7 +52,7 @@
 								</ul>
 								{if ($sub_subnodes_counter > 10)}
 									<a onclick="return false" more_hide name="more_categories" href="#" class="link-more novisited">
-										<span class="underline">Еще</span>▼
+										<span class="underline">{'Еще'|translate}</span>▼
 									</a>
 								{/if}
 
@@ -109,7 +109,7 @@
                                 </ul>
                                 {if ($sub_subnodes_counter > 10)}
                                 <a onclick="return false" more_hide name="more_categories" href="#" class="link-more novisited">
-                                    <span class="underline">Еще</span>▼
+                                    <span class="underline">{'Еще'|translate}</span>▼
                                 </a>
                                 {/if}
                                 {/if}

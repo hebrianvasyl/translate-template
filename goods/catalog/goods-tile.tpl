@@ -30,7 +30,7 @@
             {foreach from=$record -> relations -> videos item=item name=videos}
                 {assign var=video value=$item -> record_to}
                 {$href = $record.external_href|cat:"#video_container_"|cat:$video.id}
-                <a class="video-review" href="{$href}" data-link-id="goods-link-{$record.id}"]>Видеообзор <i class="icon-video"></i></a>
+                <a class="video-review" href="{$href}" data-link-id="goods-link-{$record.id}"]>{'Видеообзор'|translate} <i class="icon-video"></i></a>
                 {break}
             {/foreach}
         </div>

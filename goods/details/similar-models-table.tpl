@@ -24,7 +24,7 @@
 					<tr class="similar-models-t-head">
 						<th class="similar-models-t-sort-cell"></th>
 						<th class="similar-models-t-sort-cell similar-models-t-medium-cell" colspan="2">
-							{*<span >Цена</span>*}
+							{*<span >{'Цена'|translate}</span>*}
 						</th>
 
 						{foreach from=$main_characteristics item='main_detail'}
@@ -113,7 +113,7 @@
 										{*{/if}*}
 
 										<div class="price-block">
-											<span>Цена:</span>
+											<span>{'Цена'|translate}:</span>
 											{if !empty($similar_model.old_price) && ($similar_model.old_price > $similar_model.price)}
 												<span class="old-price">{$similar_model->old_price nofilter}</span>
 											{/if}
@@ -195,7 +195,7 @@
 				</table>
 			</div>
 			{if !empty($show_link_to_similar)}
-				<a href="#" class="tabs-content-link underline novisited" name="switch_to_similar">Все похожие модели</a>
+				<a href="#" class="tabs-content-link underline novisited" name="switch_to_similar">{'Все похожие модели'|translate}</a>
 
 				<script type="text/javascript">
 					$$("a[name=switch_to_similar]").addEvent('click',function(e){

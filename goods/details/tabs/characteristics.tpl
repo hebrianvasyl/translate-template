@@ -12,8 +12,8 @@
 
 		{if count($characteristics)}
 
-			{*<h2 class="tabs-content-title">Технические характеристики: {$record.title}</h2>*}
-			<h2 class="detail-tab-i-title">Технические характеристики <span class="pp-characteristics-tab-product-name">{$record.title|@mnemonics_convert nofilter}</span></h2>
+			{*<h2 class="tabs-content-title">{'Технические характеристики'|translate}: {$record.title}</h2>*}
+			<h2 class="detail-tab-i-title">{'Технические характеристики'|translate} <span class="pp-characteristics-tab-product-name">{$record.title|@mnemonics_convert nofilter}</span></h2>
 
 
             {foreach from=$characteristics item="fieldset" name="sections"}
@@ -21,7 +21,7 @@
 					{if $fieldset.section !== NULL}
 						<caption class="characteristics-t-title">{$fieldset.section.title}</caption>
 					{elseif ($characteristics.0.section !== NULL)}
-						<caption class="characteristics-t-title">Другие характеристики</caption>
+						<caption class="characteristics-t-title">{'Другие характеристики'|translate}</caption>
 					{/if}
 
 					{foreach from=$fieldset.details item="detail"}
@@ -51,7 +51,7 @@
                             </td>
 						</tr>
 					{/foreach}
-                    {if $fieldset.section.title == "Упаковка"}
+                    {if $fieldset.section.title == "{'Упаковка'|translate}"}
                         {$weight = $record -> getDetail('Ves-upakovki')}
                         {if $weight['value'] > 0}
                         <tr>
@@ -101,7 +101,7 @@
                         {/if}
                     {/if}
 				</table>
-        {if $fieldset.section.title == "Комплектация"}
+        {if $fieldset.section.title == "{'Комплектация'|translate}"}
         {foreach from=$fieldset.details item="detail"}
         {if $detail.type == 'Suggest' and !empty($detail.record_ref)}
         {$characteristicsShownInParent = $detail->ref_record->getCharacteristicsShownInParent()}
@@ -148,7 +148,7 @@
         {/if}
         </table>
 			{/foreach}
-			{*<a href="#" class="tabs-content-link dictionary before">Словарь технических терминов</a>*}
+			{*<a href="#" class="tabs-content-link dictionary before">{'Словарь технических терминов'|translate}</a>*}
 
 		{/if}
 

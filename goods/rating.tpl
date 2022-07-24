@@ -22,7 +22,7 @@
 	</div>
 	{else}
 	<div class="rating-content float-rt">
-		<a name="switch_to_comments" class="novisited" href="{$comments_url}">оставь отзыв</a>
+		<a name="switch_to_comments" class="novisited" href="{$comments_url}">{'оставь отзыв'|translate}</a>
 	</div>
 	{/if}
 </div>

@@ -4,7 +4,7 @@
     <div class="clearfix">
         <h1 class="segment-page-title">{$menu.active.title}</h1>
         {if isset($offers_records) && !empty($offers_records)}
-            <div class="segment-page-title-count">{$offers_records|count} товар{$offers_records|count|@morphology:'':"{'а'|translate}":"{'ов'|translate}"}</div>
+            <div class="segment-page-title-count">{$offers_records|count} {'товар'|translate}{$offers_records|count|@morphology:'':"{'а'|translate}":"{'ов'|translate}"}</div>
         {/if}
     </div>
 
@@ -29,7 +29,7 @@
         </div>
     </div>
     {else}
-    <p><br>Товаров нет :(</p>
+    <p><br>{'Товаров нет'|translate} :(</p>
     {/if}
 </div>
 

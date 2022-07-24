@@ -4,7 +4,7 @@
 		<div class="float-lt">
 			<input type="hidden" name="action" value="create" />
 			<label>/*{'Название списка'|translate}*/</label>
-			<input class="input-field" type="text" required="1" value="Мой список" name="wishlist_title" onFocus="this.selectionStart = this.value.length">
+			<input class="input-field" type="text" required="1" value="/*{'Мой список'|translate}*/" name="wishlist_title" onFocus="this.selectionStart = this.value.length">
 			<span class="btn-link btn-link-blue">
 				<button type="submit" class="btn-link-i">/*{'Сохранить'|translate}*/</button>
 			</span>
@@ -138,7 +138,7 @@
 														</div>
 													{else}
 														<div class="g-l-i-content-i-wrap sku-content unavailable">
-															<div class="g-l-i-status">Нет в наличии</div>
+															<div class="g-l-i-status">/*{'Нет в наличии'|translate}*/</div>
 														</div>
 													{/if}
 
@@ -153,7 +153,7 @@
 	                                                            <a onclick="return false" class="wishlist-btn-controls-i-link novisited btn-move before" href="#" more_hide name="more_categories"
 	                                                                goods_id="${goods_item.id}"
 	                                                            >
-	                                                                <span class="underline" name="del">Переместить</span> ▼
+	                                                                <span class="underline" name="del">/*{'Переместить'|translate}*/</span> ▼
 	                                                            </a>
 
 	                                                            <ul name="categories_cut" class="subnodes-l under-cut">

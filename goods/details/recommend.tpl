@@ -1,4 +1,4 @@
-<div class="tabs-content-title">Рекомендуем новые модели</div>
+<div class="tabs-content-title">{'Рекомендуем новые модели'|translate}</div>
 
 <div class="tabs section-tabs">
     <div class="slider tab-content-scroll catalog" id="recommend_carousel">

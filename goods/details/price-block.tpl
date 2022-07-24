@@ -12,7 +12,7 @@
     </div>
     <div class="let-me-know m-top-15 aligned-center" name="waitlist_details"></div>
     {elseif $record_tmp.sell_status == "archive"}
-    <div class="status sell-status-title status-archive">Снят с продаж</div>
+    <div class="status sell-status-title status-archive">{'Снят с продаж'|translate}</div>
     {else}
 
     <div name="sell_status" class="status status-{$record_tmp.sell_status} {if $record_tmp.sell_status == "call"}before{/if}">

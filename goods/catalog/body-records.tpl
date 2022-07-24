@@ -31,7 +31,7 @@
                                     <a  href="{$catalog_promos.banners[$banner_id].url}"
                                         class="hidden"
                                         enhanced-gtm-data='{
-                                            "eventLabel": "Категория. В каталоге - {$catalog_promos.banners[$banner_id].alt|replace:'/*br*/':' '|replace:'<br>':' '|escape:'quotes' nofilter}",
+                                            "eventLabel": "{'Категория. В каталоге'|translate} - {$catalog_promos.banners[$banner_id].alt|replace:'/*br*/':' '|replace:'<br>':' '|escape:'quotes' nofilter}",
                                             "ecommerce": {
                                                 "promoClick": {
                                                     "promotions": [

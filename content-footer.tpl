@@ -55,10 +55,10 @@
                 <div class="viber-phone">
                     <a href="viber://pa?chatURI=intexpool_bot">
                         <i class="icon-viber-old"></i>
-                        Открыть Viber
+                        {'Открыть Viber'|translate}
                     </a>
                 </div>
-				{*<div class="callback"><a id="callback-header" class="contact-phones-l-i-link xhr" href="#Callback">Заказать обратный звонок</a></div>*}
+				{*<div class="callback"><a id="callback-header" class="contact-phones-l-i-link xhr" href="#Callback">{'Заказать обратный звонок'|translate}</a></div>*}
 
 				{*используем механизм обратной связи только в случае, когда есть причины для обратной связи*}
 
@@ -142,15 +142,15 @@
 				<nav>
 					<ul id="footer_links" class="footer-links">
 						{if $menu.www->articles}
-							<li><a href="{$menu.www->articles.href}" class="novisited">Помощь</a></li>
+							<li><a href="{$menu.www->articles.href}" class="novisited">{'Помощь'|translate}</a></li>
 						{/if}
 						{if $menu.www->dostavka_i_oplata}
-						<li><a href="{$menu.www->dostavka_i_oplata.href}" class="novisited">Оплата и доставка</a></li>
+						<li><a href="{$menu.www->dostavka_i_oplata.href}" class="novisited">{'Оплата и доставка'|translate}</a></li>
 						{/if}
 						{if $menu.www->contacts}
-							<li><a href="{$menu.www->contacts.href}" class="novisited">Контакты</a></li>
+							<li><a href="{$menu.www->contacts.href}" class="novisited">{'Контакты'|translate}</a></li>
 						{/if}
-                        <li><a href="https://drive.google.com/file/d/1i5V8uYQ9XgS3gXFRfpzNU1ijms1JUy1J/view?usp=sharing" class="novisited" target="_blank">Договор оферты</a></li>
+                        <li><a href="https://drive.google.com/file/d/1i5V8uYQ9XgS3gXFRfpzNU1ijms1JUy1J/view?usp=sharing" class="novisited" target="_blank">{'Договор оферты'|translate}</a></li>
 					</ul>
 				</nav>
 				<div class="h-line"></div>
@@ -253,7 +253,7 @@
 		{*<div class="footer-i justify-i" style="display: none;">
 			<div class="owox">
 				<a href="http://www.owox.ua/" title="Разработка и поддержка интернет-магазинов">{image file="design/owox-webstore.png" alt="OWOX — Разработка и поддержка интернет-магазинов"}</a>
-				<div class="text">Решение для эффективных<br/> интернет-магазинов</div>
+				<div class="text">{'Решение для эффективных<br/> интернет-магазинов'|translate}</div>
 			</div>
 			{if isset($seo_footer)}
 			<div class="seo">
@@ -265,8 +265,8 @@
 		</div>*}
 	</div>
 	<div class="copyright">
-		<p>Мы работаем по всей Украине. Быстрая доставка в Киев, Львов, Харьков, Одесса, Винница, Запорожье, Днепропетровск и др. города.</p>
-		<p>&copy;&nbsp;{$settings.Contacts.copyright_year_start|copyright_years_range nofilter} Интернет-магазин IntexPool.ua. Все права защищены.</p>
+		<p>{'Мы работаем по всей Украине. Быстрая доставка в Киев, Львов, Харьков, Одесса, Винница, Запорожье, Днепропетровск и др. города.'|translate}</p>
+		<p>&copy;&nbsp;{$settings.Contacts.copyright_year_start|copyright_years_range nofilter} {'Интернет-магазин IntexPool.ua. Все права защищены.'|translate}</p>
 	</div>
 </footer>
 
@@ -274,19 +274,19 @@
 <div id="callbacks" class="hidden">
     <div class="body-layout wrap clearfix">
         {if (("w"|date) == 0 && ("H"|date) >= 11 && ("H"|date) < 21) || (("w"|date) == 6 && ("H"|date) >= 11 && ("H"|date) < 18) || (("w"|date) >= 1 && ("w"|date) <= 5 && ("H"|date) >= 8 && ("H"|date) <= 17)}
-        <p class="text">Хотите, перезвоним Вам?</p>
+        <p class="text">{'Хотите, перезвоним Вам'|translate}?</p>
         {else}
         <p class="text two-lines">
-            Хотите, перезвоним Вам<br><small>завтра в <span class="tooltip" title="Пн-Пт: c 08:30 до 21:00, Сб: с 11:00 до 18:00, Вс: с 11:00 до 17:00">рабочее время</span>?</small>
+			{'Хотите, перезвоним Вам'|translate}<br><small>{'завтра в'|translate} <span class="tooltip" title="{'Пн-Пт'|translate}: {'c'|translate} 08:30 {'до'|translate} 21:00, {'Сб'|translate}: {'с'|translate} 11:00 {'до'|translate} 18:00, {'Вс'|translate}: {'с'|translate} 11:00 {'до'|translate} 17:00">{'рабочее время'|translate}</span>?</small>
         </p>
         {/if}
 
         <div class="right-form">
-            <input id="callback-phone" type="text" placeholder="Ваш номер телефона">
+            <input id="callback-phone" type="text" placeholder="{'Ваш номер телефона'|translate}">
             <div id="callback-phone-error"></div>
-            <button id="request-callback">Перезвоните</button>
+            <button id="request-callback">{'Перезвоните'|translate}</button>
 
-            <button class="close"><small>Закрыть</small> <i>x</i></button>
+            <button class="close"><small>{'Закрыть'|translate}</small> <i>x</i></button>
         </div>
     </div>
 </div>
@@ -326,7 +326,7 @@ $('request-callback').addEvent('click', function () {
                     $('callback-phone-error').set('html', data.message);
                     $('callback-phone').addClass('error');
                 } else {
-                    $$('#callbacks .wrap').set('html', '<div class="callbacks-success">Заявка на обратный звонок принята. В ближайшее время вам перезвонит менеджер магазина<br>и ответит на все интересующие вас вопросы<br><a href="#" class="close">Спасибо, жду звонка</a></div>');
+                    $$('#callbacks .wrap').set('html', '<div class="callbacks-success">{'Заявка на обратный звонок принята. В ближайшее время вам перезвонит менеджер магазина<br>и ответит на все интересующие вас вопросы'|translate}<br><a href="#" class="close">{'Спасибо, жду звонка'|translate}</a></div>');
                     {literal}
                     Cookie.write('hide_callbacks', true, {duration: 28});
                     {/literal}
@@ -336,7 +336,7 @@ $('request-callback').addEvent('click', function () {
 
         }).send();
     } else {
-        $('callback-phone-error').set('html', 'Неверный формат телефона');
+        $('callback-phone-error').set('html', "{'Неверный формат телефона'|translate}");
         $('callback-phone').addClass('error');
     }
 

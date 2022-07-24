@@ -1,8 +1,8 @@
 {if !empty($accessories) and count($accessories)}
-		<h2 class="tabs-content-title">С этим товаром покупают:</h2>
+		<h2 class="tabs-content-title">{'С этим товаром покупают'|translate}:</h2>
 
 		{if count($accessories) > 5}
-			<a href="#" class="tabs-content-link underline novisited switch_to_accessories" name="switch_to_accessories">Все аксессуары</a>
+			<a href="#" class="tabs-content-link underline novisited switch_to_accessories" name="switch_to_accessories">{'Все аксессуары'|translate}</a>
 		{/if}
 
 		<ul class="goods-l" name="accessories_items">
@@ -50,7 +50,7 @@
 							<div class="g-l-i-status">{$record->sell_status->value.title}</div>
 						{else}
 							<div class="price-block">
-								<span>Цена:</span>
+								<span>{'Цена'|translate}:</span>
 								{if !empty($record.old_price) && ($record.old_price > $record.price)}
 									<span class="old-price">{$record->old_price nofilter}</span>
 								{/if}

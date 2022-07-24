@@ -10,7 +10,7 @@
 </div>
 {*<div class="text-description-more">*}
 	{*<a href="#" id="short_text_show_link" class="novisited arrow-link text-description-more-link">*}
-		{*<span class="xhr arrow-link-inner">Читать полностью</span>&nbsp;→*}
+		{*<span class="xhr arrow-link-inner">{'Читать полностью'|translate}</span>&nbsp;→*}
 	{*</a>*}
 {*</div>*}
 {*<script>*}

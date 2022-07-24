@@ -1,6 +1,6 @@
 {if count($accessories)}
 	<div class="tabs-content-wrap">
-        {* <h2 class="detail-tab-i-title">Аксессуары к товару <span class="pp-characteristics-tab-product-name">{$record.title|@mnemonics_convert nofilter}</span></h2> *}
+        {* <h2 class="detail-tab-i-title">{'Аксессуары к товару'|translate} <span class="pp-characteristics-tab-product-name">{$record.title|@mnemonics_convert nofilter}</span></h2> *}
 
 		{* Выводим меню категорий *}
         {*

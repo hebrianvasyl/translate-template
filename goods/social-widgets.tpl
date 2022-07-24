@@ -1,6 +1,6 @@
 <div class="item mainpage-social-widgets-col" id="youtube_widget">
-    <div class="title"><span>Наш канал</span><img src="{$settings.path.design}/youtube_widget.png"></div>
-    <div class="description"><p>Большое количество полезных видеообзоров, рекомендаций<br>и инструкций.</p><p>Подписывайся на наш канал!</p></div>
+    <div class="title"><span>{'Наш канал'|translate}</span><img src="{$settings.path.design}/youtube_widget.png"></div>
+    <div class="description"><p>{'Большое количество полезных видеообзоров, рекомендаций<br>и инструкций'|translate}.</p><p>{'Подписывайся на наш канал'|translate}!</p></div>
     <div class="g-ytsubscribe" data-channelid="UC0rzaRCiZVosKaFLkgckTtg" data-layout="full" data-count="default"></div>
 </div>
 <div class="item mainpage-social-widgets-col vk_item" id="vk_widget"></div>

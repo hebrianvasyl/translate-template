@@ -61,7 +61,7 @@
 					<div class="b-goods-kit-footer">
 						<table class="b-goods-kit-info">
 							<tr>
-								<td class="b-goods-kit-price">Цена комплекта:</td>
+								<td class="b-goods-kit-price">{'Цена комплекта'|translate}:</td>
 								<td class="kit-cost-without-discount">{$first_purchase->price->getValueObject($kit_cost_without_discount) nofilter}</td>
 								<td class="b-goods-kit-cost">{$kit.discount_raw_data->kit_cost.primary.string nofilter}</td>
 							</tr>

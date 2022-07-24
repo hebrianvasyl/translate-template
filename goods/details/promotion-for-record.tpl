@@ -16,10 +16,10 @@
 	<article class="action-prize before after" name="promotion">
         <a href="{$promotion_record.href}" class="action-prize-link" >
             <div class="prize-right">
-                <span class="title">До конца акции:</span>
+                <span class="title">{'До конца акции'|translate}:</span>
                 {if $days > 0}
                 <span class="days">
-                    {$days} {$days|morphology:"день":"дня":"дней"}
+                    {$days} {$days|morphology:"{'день'|translate}":"{'дня'|translate}":"{'дней'|translate}"}
                 </span>
                 {/if}
 
@@ -54,11 +54,11 @@
                         {else}
                             {$promotion_record.summary nofilter}
                         {/if}
-                        <a href="{$promotion_record.href}" class="novisited prize-right-link-full">Перейти на страницу акции&nbsp;→</a>
+                        <a href="{$promotion_record.href}" class="novisited prize-right-link-full">{'Перейти на страницу акции'|translate}&nbsp;→</a>
                     {/capture}
                 {/strip}
                 <div class="cut">
-                    <a more_hide name="more_actions" href="#" class="novisited prize-right-link underline">Подробнее об акции</a>
+                    <a more_hide name="more_actions" href="#" class="novisited prize-right-link underline">{'Подробнее об акции'|translate}</a>
                 </div>
                 *}
             </div>

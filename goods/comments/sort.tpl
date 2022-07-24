@@ -1,6 +1,6 @@
 
 <div class="m-sort-i m-sort-select m-sort-comments">
-	<span>Сортировка</span>
+	<span>{'Сортировка'|translate}</span>
 	<select class="m-sort-select-i" id="comments-sort">
 		{foreach from=$menu.active->sort item="node"}
 			<option name="sort_item" value="{$node.href}"{if $node->isSelected()} selected="selected"{/if}>{$node.title nofilter}</option>
